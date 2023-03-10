@@ -1,14 +1,16 @@
 <template>
   <div>
     <my-header />
-    <carousel class="d-none d-md-block d-lg-block d-xl-block"
+
+
+    <!-- <carousel class="d-none d-md-block d-lg-block d-xl-block"
       style="height: 0; padding-bottom: 31.2%"
       size="big"
-    />
-    <carousel class="d-block d-md-none d-lg-none d-xl-none"
+    /> -->
+    <!-- <carousel class="d-block d-md-none d-lg-none d-xl-none"
       style="height: 0; padding-bottom: 120%"
       size="small"
-    />
+    /> -->
     <nuxt />
     <concat />
     <my-footer />

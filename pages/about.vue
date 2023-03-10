@@ -1,5 +1,20 @@
 <template>
-  <section>
+    <section>
+    <!-- <b-img fluid
+              :src="require('~/static/img/banner/inside-banner1.jpeg')"
+              height="300"
+            ></b-img> -->
+    <div class="header-content spin-content">
+        <div style="height: 100%">
+          <div class="flex">
+            <div class="content">
+              <h1 class="wow slideInLeft">关于我们</h1>
+              <p class="wow slideInRight">值得信赖的伙伴，为您提供优质的服务</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
     <!-- 固定导航 -->
     <!-- <b-nav v-if="showNavFixed" tabs align="center" ref="nav2"
       class="py-3 navFixed"
@@ -47,19 +62,20 @@
         <template v-if="!item.desc">
           <b-row>
             <b-col lg="6" class="mb-3">
-              <iframe width='100%' height='300' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://surl.amap.com/4RbgAE1ncwv'></iframe>
+              <iframe width='100%' height='300' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://lbs.amap.com/tools/showmap?1_560_440_113.87345_22.564725&=%E6%B7%B1%E5%9C%B3%E7%9D%BF%E6%80%9D%E7%A7%91%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&=%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%AE%9D%E5%AE%89%E5%8C%BA%E5%85%B4%E4%B8%9A%E8%B7%AF2005%E5%8F%B7%E5%B9%BF%E5%85%B4%E6%BA%90%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9B%E6%84%8F%E5%9B%ADC%E6%A0%8B509&=&=&='></iframe>
             </b-col>
-            <b-col lg="6" class="d-none d-lg-block">
-              <p>地址： 江苏省南京市鼓楼区广州路37号江苏科技大厦27F</p>
-              <p>电话： 025-5180 2988</p>
-              <p>邮箱：public@mayiyundt.com</p>
-              <p>公司网站：www.mayiyundt.com</p>
+            <b-col lg="6" class="desc d-none d-lg-block">
+              <p>地址： 深圳市宝安区兴业路2005号广兴源互联网创意园C栋509</p>
+              <p>电话： 熊先生 13798209586</p>
+              <p>邮箱： xiongpeng0809@raysko.cn</p>
+              <p>公司网站： www.raysko.com</p>
             </b-col>
           </b-row>
         </template>
       </article>
     </div>
   </section>
+
 </template>
 
 <script>
@@ -73,6 +89,7 @@ if (process.browser) { // 在这里根据环境引入wow.js
 }
 
 export default {
+  scrollToTop: true,
   data() {
     return {
       topList: [],
@@ -83,24 +100,23 @@ export default {
       list: [
         {
           title: '公司介绍',
-          desc: `江苏蚂蚁云数据技术有限公司（简称蚂蚁云）成立于2017年，是国家级高新技术软件企业，专业从事云计算、大数据和智慧城市等领域的产品研发及技术服务；蚂蚁云秉持“以人为本、客户至上、生态协作、诚信敬业”的经营理念，从客户实际需求出发，为客户提供行业化的DT、IT设计咨询、方案规划、建设交付、运营维护、综合运营、行业应用软件开发等全方位的解决方案及技术服务。<br/>
-          蚂蚁云根植江苏、辐射全国，拥有一支扎实稳固的高端技术人才团队，成功建设了江苏省政府、江苏省公安厅、南京市政府、建邺区、溧水区等大数据平台，助力政务互联网化；为中天集团、悦达起亚等生产企业提供智慧城市信息化整体解决方案，助力产业互联网化。<br/>
-          “精于开发，长于数据”蚂蚁云作为大数据时代卓越的技术与服务提供商，我们将不断创新与实践，赋能更多的客户及生态伙伴。`
+          desc: `深圳睿思科信息技术有限公司是国家级高新技术企业和双软企业，是手持终端机厂家_手持终端品牌制造商。专注于研究移动智能数据终端，移动智能支付终端，金融POS，手持数据采集器，移动警务通，手持工业终端,访客机，RFID手持机，RFID超高频终端，工业PDA，刷脸支付设备，物流扫描巴枪，移动手持终端，身份证核验终端，手持机厂家等领域的移动应用设备的研发，生产，销售和服务以及整体解决方案。它是中国移动行业应用和发展的先驱和市场领袍者。我们有十五年的行为背景和发展经验。
+          在成立之日，睿思科率先在中国推出了自己的移动智能数据终端系列产品。公司十份重视产品和技术的研发投入，不断追求技术创新。现有研究人员占50％以上，其中95％为本科生，研究生和博士。公司拥有多项专利和软件著作权，产品线齐全，不断更新，业绩持续高速增长，在业界移动应用领域享有盛誉。研究成果已成功应用于国佳电网，支付宝移动支付和交警检查等大型项目。同时，它为物流和快递，零售连锁，医疗卫生，金融POS，电力，政附和公用事业等行业提供合适的移动应用软件和硬件集成解决方案。`
         },
         {
           title: '企业文化',
-          desc: `愿景：成为您身边的大数据专家。<br/>
-          使命：助力政府和企业的数字化转型。<br/>
-          核心价值观：客户至上、生态协助、诚信敬业。`
+          desc: `愿景：造客户最满意的手持终端 <br/>
+          使命：创行业一流，做全国第一 <br />
+          核心价值观：创新，协作，睿智，思考`
         },
-        {
-          title: '荣誉资质',
-          desc: `信用等级AAA认证<br/>
-          ISO9001质量管理体系认证<br/>
-          ISO27001信息安全管理体系认证<br/>
-          双软企业认证<br/>
-          高新企业`
-        },
+        // {
+        //   title: '荣誉资质',
+        //   desc: `信用等级AAA认证<br/>
+        //   ISO9001质量管理体系认证<br/>
+        //   ISO27001信息安全管理体系认证<br/>
+        //   双软企业认证<br/>
+        //   高新企业`
+        // },
         // {
         //   title: '公司新闻',
         //   desc: `公司最新的动态，重大事件`
@@ -143,6 +159,8 @@ export default {
 
     window.addEventListener('scroll', this.handleWindowScroll)
     window.addEventListener('resize', this.handleWindowResize)
+
+
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleWindowScroll)
@@ -164,9 +182,13 @@ export default {
       const myTop = document.documentElement.scrollTop||document.body.scrollTop
       // 固定tab
       const flag = myTop > this.navTop - this.headerHeight
+
+      console.log(flag,"flag")
       if(this.showNavFixed != flag) {
         this.showNavFixed = flag
       }
+      console.log(myTop,this.navTop,this.headerHeight)
+
       // 高亮tab-item
       const list = [...this.topList, 9999]
       const doubleBarHeight = this.navHeight + this.headerHeight
@@ -199,6 +221,47 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.header-content{
+  background: url("~/static/img/banner/inside-banner1.jpeg") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.spin-content{
+    height: 200px;
+    .flex{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    >div{
+      margin: auto;
+    }
+    h1{
+      font-size: 24px;
+      color: #FFFFFF;
+      text-align: center;
+    }
+    p{
+      font-size: 14px;
+      color: #FFFFFF;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  // content-1居中大行
+  .spin-content{
+    height: 456px;
+    .flex{
+      h1{
+        font-size: 48px;
+      }
+      p{
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+}
 .navFixed {
   position: fixed;
   left: 0;
@@ -233,6 +296,11 @@ export default {
   }
 }
 .desc {
-  line-height: 3;
+  // line-height: 3;
+  font-size: 16px;
+    color: #0a1633;
+    line-height: 30px;
+    text-align: left;
+
 }
 </style>

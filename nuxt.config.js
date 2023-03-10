@@ -7,12 +7,12 @@ module.exports = {
     htmlAttrs: {
       lang: 'zh-CN'
     },
-    title: '江苏蚂蚁云数据技术有限公司',
+    title: '深圳睿思科信息技术有限公司',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
-      { hid: 'description', name: 'description', content: '立足政务互联网和工业信息化互联网两大领域；整合行业生态合作伙伴技术资源，打造具有蚂蚁云特色的互联网+政务和互联网+工业信息化解决方案' },
-      { hid: 'keywords', name: 'keywords', content: '云计算、大数据、智慧城市、软件定制开发' }
+      { hid: 'description', name: 'description', content: '立足终端领域，做世界一流企业' },
+      { hid: 'keywords', name: 'keywords', content: '手持终端，人脸识别，RK3399及RK3288 主板' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -87,5 +87,12 @@ module.exports = {
     extractCSS: {
       allChunks: true
     }
-  }
+  },
+
+  server: {
+    port: 3004, // default: 3000
+    host: '0.0.0.0', // default: localhost (推荐)
+    // host: '0', // 等于 host: '0.0.0.0' 这样配置，在mac上这么配置没问题，但是在window上这么配置有报错。
+    timing: false
+  },
 }

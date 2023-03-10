@@ -4,7 +4,7 @@
       <div class="container">
         <!-- logo -->
         <b-navbar-brand to="/">
-          <img src="@/assets/img/logo.png" class="mr-2" alt="logo">蚂蚁云
+          <img src="@/assets/img/logo2.png" height="50" class="mr-2" alt="logo">
         </b-navbar-brand>
         <!-- 切换按钮 -->
         <b-navbar-toggle target="nav-collapse"
@@ -19,7 +19,7 @@
                 {{item.nav}}
               </b-nav-item>
               <template v-else>
-                <b-nav-item-dropdown @show="handleShowDrop" right>
+                <b-nav-item-dropdown @show="handleShowDrop" right block>
                   <template v-slot:button-content>
                     <span @click="handleNavbarClick(item, '', $event)"
                       :class="{active: $route.path.includes(item.link)}"
@@ -52,20 +52,20 @@ export default {
       showDrop: false,
       navBarList: [
         {nav: '网站首页', link: '/' , children: []},
-        {nav: '产品解决方案', link: '/product' , children: [
-          {nav: '云计算', link: '/product', children: []},
-          {nav: '大数据', link: '/product', children: []}
-        ]},
-        {nav: '行业解决方案', link: '/business' , children: [
-          {nav: '互联网+政务', link: '/business/1', children: []},
-          {nav: '互联网+企业', link: '/business/2', children: []},
-          {nav: '智慧城市', link: '/business/3', children: []}
-        ]},
-        {nav: '技术与支持', link: '/technology' , children: [
-          {nav: '服务理念', link: '/technology', children: []},
-          {nav: '服务体系', link: '/technology', children: []},
-          {nav: '在线反馈', link: '/technology', children: []}
-        ]},
+        // {nav: '产品解决方案', link: '/product' , children: [
+        //   {nav: '云计算', link: '/product', children: []},
+        //   {nav: '大数据', link: '/product', children: []}
+        // ]},
+        // {nav: '行业解决方案', link: '/business' , children: [
+        //   {nav: '互联网+政务', link: '/business/1', children: []},
+        //   {nav: '互联网+企业', link: '/business/2', children: []},
+        //   {nav: '智慧城市', link: '/business/3', children: []}
+        // ]},
+        // {nav: '技术与支持', link: '/technology' , children: [
+        //   {nav: '服务理念', link: '/technology', children: []},
+        //   {nav: '服务体系', link: '/technology', children: []},
+        //   {nav: '在线反馈', link: '/technology', children: []}
+        // ]},
         // {nav: '主营业务', link: '/profession' , children: [
         //   {nav: '业务聚焦', link: '/profession?index=0', children: []},
         //   {nav: '云计算与大数据主要方向', link: '/profession?index=1', children: []}
@@ -73,7 +73,7 @@ export default {
         {nav: '关于我们', link: '/about' , children: [
           {nav: '公司介绍', link: '/about', children: []},
           {nav: '企业文化', link: '/about', children: []},
-          {nav: '荣誉资质', link: '/about', children: []},
+          // {nav: '荣誉资质', link: '/about', children: []},
           // {nav: '公司新闻', link: '/about', children: []},
           {nav: '联系我们', link: '/about', children: []}
         ]},
@@ -139,6 +139,7 @@ export default {
   z-index: 99;
 }
 
+
 ::v-deep.dropdown:hover .btn, ::v-deep.dropdown-item:hover {
   border-color: transparent;
   background: none;
@@ -148,6 +149,18 @@ export default {
 ::v-deep .navbar-nav .nav-link.active {
   color: $theme-color !important;
 }
+
+::v-deep.nav-item {
+  border-bottom:2px solid transparent;
+}
+::v-deep.nav-item:hover{
+  border-bottom-color:$theme-color !important;
+  transition: all .8s;
+}
+
+
+
+
 
 ::v-deep.navbar-toggler {
   padding: 0;
@@ -194,16 +207,24 @@ export default {
 }
 ::v-deep .nav-link {
   color: #fff !important;
+  font-size:16px !important;
+  font-weight: 700;
 }
 ::v-deep .navbar {
   background: transparent !important;
   &.active {
-    background: #fff !important;
+    // background: #fff !important;
+    background:rgba(0,0,0,.90) !important;
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    transition: all 0.6s;
+
     .navbar-brand, .nav-link {
-      color: #333 !important;
+      // color: #333 !important;
+      color: #fff !important;
+
       &.active {
-        color: #3269A5 !important;
+        color: $theme-color !important;
+
       }
     }
     .navbar-toggler {
@@ -227,7 +248,8 @@ export default {
       .navbar-brand, .nav-link {
         color: #333 !important;
         &.active {
-          color: #3269A5 !important;
+          color: $theme-color !important;
+
         }
       }
       .navbar-toggler {
@@ -273,5 +295,8 @@ export default {
       border-bottom-color: #fff;
     }
   }
+}
+.dropdown-menu{
+  border-radius: 0 !important;
 }
 </style>

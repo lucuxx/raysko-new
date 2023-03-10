@@ -1,5 +1,6 @@
 <template>
   <section class="container py-5">
+
     <b-row v-if="subNavIndex == 0">
       <b-col class="text-center mb-3 wow bounceInDown"
         v-for="(item, index) of list" :key="index"
