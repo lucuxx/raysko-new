@@ -10,11 +10,12 @@
 
     </parallax>
 
-    <div class="hero-text text-center">
+    <div class="hero-text text-center ">
 
       <Heading :level="3">Hey</Heading>
 
       <Heading :level="2">welcome</Heading>
+
 
     </div>
 
@@ -29,7 +30,7 @@ export default { components: { Parallax, Heading } }
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/styles/variables.scss";
+
 // .Masthead {
 //   &:after {
 //     content: "";

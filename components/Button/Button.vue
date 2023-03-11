@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .btn-primary {
-  background:gray !important;
+  background:#0a64d2 !important;
   border:transparent;
   border-radius: 18px;
 }

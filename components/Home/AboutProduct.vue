@@ -2,6 +2,7 @@
 import Heading from '~/components/Heading.vue'
 import Btn from '~/components/Button/Button.vue'
 import SectionHeading from '~/components/SectionHeading'
+
   export default {
     components: {
       Heading,

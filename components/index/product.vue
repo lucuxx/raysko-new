@@ -57,7 +57,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/variables.scss';
 .card {
   position: relative;
   .mask {

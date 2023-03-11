@@ -1,0 +1,9 @@
+.page-enter-active, page-leave-active{
+  opacity: 1;
+  transition: all 1.2s;
+}
+
+.page-enter, page-leave-active{
+  opacity: 0;
+}
+

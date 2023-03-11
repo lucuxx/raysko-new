@@ -20,8 +20,18 @@
 
 <script>
 import { mapMutations } from 'vuex'
+if (process.browser) {
+  // 在这里根据环境引入wow.js
+  var { WOW } = require("wowjs");
+}
 
 export default {
+  mounted(){
+    if (process.browser) {
+      // 在页面mounted生命周期里面 根据环境实例化WOW
+      new WOW({}).init();
+    }
+  },
   methods: {
     ...mapMutations(['setSubNavIndex']),
     handleAboutClick() {
@@ -33,7 +43,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/variables.scss';
 
 .container {
   padding-top: 70px;

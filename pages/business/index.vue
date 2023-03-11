@@ -62,7 +62,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/variables.scss';
 .card {
   border: 5px solid #e8e8e8;
   box-shadow: 3px 3px 12px #e8e8e8;

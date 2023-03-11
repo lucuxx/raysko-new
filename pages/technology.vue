@@ -195,7 +195,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/variables.scss';
 
 ::v-deep .nav-tabs {
   padding: 15px 0;

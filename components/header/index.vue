@@ -1,36 +1,54 @@
 <template>
   <header id="header" ref="header">
-    <b-navbar toggleable="lg" type="dark" variant="dark" class="active2" :class="{active: showNavbarBg}">
+    <b-navbar
+      toggleable="lg"
+      type="light"
+      variant="light"
+      class="active2"
+      :class="{ active: showNavbarBg }"
+    >
       <div class="container">
         <!-- logo -->
         <b-navbar-brand to="/">
-          <img src="@/assets/img/logo2.png" height="50" class="mr-2" alt="logo">
+          <img
+            src="@/assets/img/logo2.png"
+            height="50"
+            class="mr-2"
+            alt="logo"
+          />
         </b-navbar-brand>
+
         <!-- 切换按钮 -->
-        <b-navbar-toggle target="nav-collapse"
-          :class="{active: showCollaps}"
+        <b-navbar-toggle
+          target="nav-collapse"
+          :class="{ active: showCollaps }"
         ></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav v-model="showCollaps">
           <b-navbar-nav class="ml-auto">
             <template v-for="(item, index) of navBarList" :Key="index">
-              <b-nav-item v-if="item.children.length <= 0"
-                :to="item.link" :active="$route.path === item.link">
-                {{item.nav}}
+              <b-nav-item
+                v-if="item.children.length <= 0"
+                :to="item.link"
+                :active="$route.path === item.link"
+              >
+                {{ item.nav }}
               </b-nav-item>
               <template v-else>
                 <b-nav-item-dropdown @show="handleShowDrop" right block>
                   <template v-slot:button-content>
-                    <span @click="handleNavbarClick(item, '', $event)"
-                      :class="{active: $route.path.includes(item.link)}"
-                    >{{item.nav}}</span>
+                    <span
+                      @click="handleNavbarClick(item, '', $event)"
+                      :class="{ active: $route.path.includes(item.link) }"
+                      >{{ item.nav }}</span
+                    >
                   </template>
                   <!-- 子菜单 -->
                   <b-dropdown-item
                     v-for="(ite, ind) of item.children"
                     :key="ind"
                     @click="handleNavbarClick(ite, ind, $event)"
-                    >{{ite.nav}}
+                    >{{ ite.nav }}
                   </b-dropdown-item>
                 </b-nav-item-dropdown>
               </template>
@@ -43,7 +61,6 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -51,7 +68,7 @@ export default {
       showNavbarBg: false,
       showDrop: false,
       navBarList: [
-        {nav: '网站首页', link: '/' , children: []},
+        { nav: "网站首页", link: "/", children: [] },
         // {nav: '产品解决方案', link: '/product' , children: [
         //   {nav: '云计算', link: '/product', children: []},
         //   {nav: '大数据', link: '/product', children: []}
@@ -70,66 +87,70 @@ export default {
         //   {nav: '业务聚焦', link: '/profession?index=0', children: []},
         //   {nav: '云计算与大数据主要方向', link: '/profession?index=1', children: []}
         // ]},
-        {nav: '关于我们', link: '/about' , children: [
-          {nav: '公司介绍', link: '/about', children: []},
-          {nav: '企业文化', link: '/about', children: []},
-          // {nav: '荣誉资质', link: '/about', children: []},
-          // {nav: '公司新闻', link: '/about', children: []},
-          {nav: '联系我们', link: '/about', children: []}
-        ]},
+        {
+          nav: "关于我们",
+          link: "/about",
+          children: [
+            { nav: "公司介绍", link: "/about", children: [] },
+            { nav: "企业文化", link: "/about", children: [] },
+            // {nav: '荣誉资质', link: '/about', children: []},
+            // {nav: '公司新闻', link: '/about', children: []},
+            { nav: "联系我们", link: "/about", children: [] },
+          ],
+        },
         // {nav: '公司客户', link: '/client' , children: [
         //   {nav: '企业客户', link: '/client', children: []},
         //   {nav: '政府客户', link: '/client', children: []}
         // ]},
-      ]
-    }
+      ],
+    };
   },
   mounted() {
     this.$nextTick(() => {
-      this.getHeaderHeight()
-    })
-    window.addEventListener('scroll', this.handleWindowScroll)
+      this.getHeaderHeight();
+    });
+    window.addEventListener("scroll", this.handleWindowScroll);
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.handleWindowScroll)
+    window.removeEventListener("scroll", this.handleWindowScroll);
   },
   methods: {
     // 导航栏点击事件
     handleNavbarClick(item, index, bvEvt) {
-      if(index !== '') {
-        this.$store.commit('setSubNavIndex', index + 1)
-      }else {
-        this.$store.commit('setSubNavIndex', 0)
-        this.showDrop = false
+      if (index !== "") {
+        this.$store.commit("setSubNavIndex", index + 1);
+      } else {
+        this.$store.commit("setSubNavIndex", 0);
+        this.showDrop = false;
       }
-      this.$router.push(item.link)
-      this.showCollaps = false
+      this.$router.push(item.link);
+      this.showCollaps = false;
     },
     handleShowDrop(bvEvt) {
-      if(!this.showDrop) {
-        bvEvt.preventDefault()
+      if (!this.showDrop) {
+        bvEvt.preventDefault();
       }
-      this.showDrop = true
+      this.showDrop = true;
     },
     // 监听窗口滚动，改变导航背景色
     handleWindowScroll(e) {
-      const myTop = document.documentElement.scrollTop||document.body.scrollTop
-      const flag = myTop > 60
-      if(this.showNavbarBg != flag) {
-        this.showNavbarBg = flag
+      const myTop =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      const flag = myTop > 60;
+      if (this.showNavbarBg != flag) {
+        this.showNavbarBg = flag;
       }
     },
     // 获取导航栏高度
     getHeaderHeight() {
-      const headerHeight = this.$refs.header.clientHeight
-      this.$store.commit('setHeaderHeight', headerHeight)
-    }
-  }
-}
+      const headerHeight = this.$refs.header.clientHeight;
+      this.$store.commit("setHeaderHeight", headerHeight);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/variables.scss';
 
 #header {
   position: fixed;
@@ -139,8 +160,8 @@ export default {
   z-index: 99;
 }
 
-
-::v-deep.dropdown:hover .btn, ::v-deep.dropdown-item:hover {
+::v-deep.dropdown:hover .btn,
+::v-deep.dropdown-item:hover {
   border-color: transparent;
   background: none;
 }
@@ -150,17 +171,24 @@ export default {
   color: $theme-color !important;
 }
 
-::v-deep.nav-item {
-  border-bottom:2px solid transparent;
+::v-deep.nav-item::after {
+  display: block;
+  content: "";
+  margin-top: 0px;
+  height: 2px;
+  width: 40px;
+  margin: auto;
+  background: transparent;
+  border-radius: 4px;
 }
-::v-deep.nav-item:hover{
-  border-bottom-color:$theme-color !important;
-  transition: all .8s;
+
+::v-deep.nav-item:hover {
+  border-bottom-color: #1db0f7 !important;
+  transition: all 0.8s;
+  &::after {
+    background: #fff;
+  }
 }
-
-
-
-
 
 ::v-deep.navbar-toggler {
   padding: 0;
@@ -173,15 +201,16 @@ export default {
     height: 2px;
     border-radius: 1px;
     background: #fff;
-    &:after, &:before {
+    &:after,
+    &:before {
       position: absolute;
       left: 0;
-      content: '';
+      content: "";
       width: 1em;
       height: 2px;
       // height: 0.1rem;
       background: #fff;
-      transition: all .2s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
     &:before {
       top: -0.3em;
@@ -207,30 +236,30 @@ export default {
 }
 ::v-deep .nav-link {
   color: #fff !important;
-  font-size:16px !important;
+  font-size: 16px !important;
   font-weight: 700;
 }
 ::v-deep .navbar {
   background: transparent !important;
   &.active {
     // background: #fff !important;
-    background:rgba(0,0,0,.90) !important;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    background: rgba(0, 0, 0, 0.9) !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     transition: all 0.6s;
 
-    .navbar-brand, .nav-link {
-      // color: #333 !important;
+    .navbar-brand,
+    .nav-link {
       color: #fff !important;
 
       &.active {
         color: $theme-color !important;
-
       }
     }
     .navbar-toggler {
       .navbar-toggler-icon {
         background: #333;
-        &:after, &:before {
+        &:after,
+        &:before {
           background: #333;
         }
       }
@@ -243,20 +272,21 @@ export default {
 @media screen and (max-width: 992px) {
   ::v-deep .navbar {
     background: #fff !important;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     &.active2 {
-      .navbar-brand, .nav-link {
-        color: #333 !important;
+      .navbar-brand,
+      .nav-link {
+        color: #999 !important;
         &.active {
           color: $theme-color !important;
-
         }
       }
       .navbar-toggler {
         .navbar-toggler-icon {
-          background: #333;
-          &:after, &:before {
-            background: #333;
+          background: #999;
+          &:after,
+          &:before {
+            background: #999;
           }
         }
         &.active .navbar-toggler-icon {
@@ -270,13 +300,14 @@ export default {
   ::v-deep.dropdown:hover .dropdown-menu {
     display: block;
   }
+
   ::v-deep .dropdown-menu {
     display: none;
-    margin-top: 20px;
+    margin-top: 16px;
     border-color: transparent;
-    box-shadow: 0 3px 12px rgba(0,0,0,.05);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       top: -20px;
       left: 0;
@@ -285,7 +316,7 @@ export default {
       background: transparent;
     }
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: -13px;
       right: 1px;
@@ -296,7 +327,10 @@ export default {
     }
   }
 }
-.dropdown-menu{
+.dropdown-menu {
   border-radius: 0 !important;
+}
+::v-deep.nav-link.dropdown-toggle::after {
+  display: none !important;
 }
 </style>

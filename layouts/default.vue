@@ -1,16 +1,11 @@
 <template>
   <div>
+    <!-- loading -->
+    <!-- <Loading :hidden="!show2" /> -->
+    <!-- 内容 -->
     <my-header />
+    <div style="height: 60px" class="d-block d-md-none"></div>
 
-
-    <!-- <carousel class="d-none d-md-block d-lg-block d-xl-block"
-      style="height: 0; padding-bottom: 31.2%"
-      size="big"
-    /> -->
-    <!-- <carousel class="d-block d-md-none d-lg-none d-xl-none"
-      style="height: 0; padding-bottom: 120%"
-      size="small"
-    /> -->
     <nuxt />
     <concat />
     <my-footer />
@@ -18,12 +13,14 @@
 </template>
 
 <script>
-import MyHeader from '@/components/header/index'
-import Carousel from '@/components/index/carousel'
-import Concat from '@/components/index/concat'
-import MyFooter from '@/components/footer/index'
-if (process.browser) { // 在这里根据环境引入wow.js
-  var {WOW} = require('wowjs')
+import MyHeader from "@/components/header/index";
+import Carousel from "@/components/index/carousel";
+import Concat from "@/components/index/concat";
+import MyFooter from "@/components/footer/index";
+import Loading from "~/components/Loading.vue";
+if (process.browser) {
+  // 在这里根据环境引入wow.js
+  var { WOW } = require("wowjs");
 }
 
 export default {
@@ -31,23 +28,42 @@ export default {
     MyHeader,
     Carousel,
     Concat,
-    MyFooter
+    MyFooter,
+    Loading,
+  },
+  data() {
+    return {
+      show2: true,
+    };
+  },
+  created() {
+    var that = this;
+    if (process.client) {
+      document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+          that.show2 = false;
+        }
+      };
+    }
   },
   mounted() {
-    if (process.browser) {  // 在页面mounted生命周期里面 根据环境实例化WOW
-      new WOW({}).init()
+    if (process.browser) {
+      // 在页面mounted生命周期里面 根据环境实例化WOW
+      new WOW({}).init();
     }
-  }
-}
+  },
+};
 </script>
-
+<!--
 <style lang="scss">
-@import '@/assets/styles/normalize.css';
-@import '@/assets/styles/reset.scss';
-@import '@/assets/styles/variables.scss';
+@import "@/assets/styles/normalize.css";
+@import "@/assets/styles/reset.scss";
+
 
 html {
-  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Roboto, Arial, sans-serif;
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei",
+    FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB",
+    "Hiragino Sans GB W3", Roboto, Arial, sans-serif;
   font-size: 14px;
   color: #333;
   word-spacing: 1px;
@@ -67,4 +83,4 @@ html {
   padding: 0;
   list-style: none;
 }
-</style>
+</style> -->

@@ -21,7 +21,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/variables.scss';
 
 .global-parallax {
     background: url("~static/img/home/home2.png") center center no-repeat;
