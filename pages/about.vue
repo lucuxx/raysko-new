@@ -1,6 +1,6 @@
 <template>
   <section>
-    <!-- <div class="header-content spin-content">
+    <div class="header-content spin-content">
       <div style="height: 100%">
         <div class="flex">
           <div class="content">
@@ -68,8 +68,7 @@
           </b-row>
         </template>
       </article>
-    </div> -->
-    <h1>hello</h1>
+    </div>
   </section>
 </template>
 
@@ -143,17 +142,19 @@ export default {
       new WOW({}).init();
     }
 
-    // this.getTitleHeight();
+    this.getTitleHeight();
 
-    // this.active = this.subNavIndex == 0 ? 0 : this.subNavIndex - 1;
-    // if (this.active != 0) {
-    //   setTimeout(() => {
-    //     this.handleNavClick(this.active);
-    //   }, 0);
-    // }
+    console.log(this.navTop,"console")
 
-    // window.addEventListener("scroll", this.handleWindowScroll);
-    // window.addEventListener("resize", this.handleWindowResize);
+    this.active = this.subNavIndex == 0 ? 0 : this.subNavIndex - 1;
+    if (this.active != 0) {
+      setTimeout(() => {
+        this.handleNavClick(this.active);
+      }, 0);
+    }
+
+    window.addEventListener("scroll", this.handleWindowScroll);
+    window.addEventListener("resize", this.handleWindowResize);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleWindowScroll);
@@ -163,6 +164,7 @@ export default {
     // 点击切换tab
     handleNavClick(index) {
       // this.active = index
+      console.log(this.topList[index],this.headerHeight,this.navHeight)
       window.scrollTo({
         top: this.topList[index] - this.headerHeight - this.navHeight,
         left: 0,
@@ -177,11 +179,11 @@ export default {
       // 固定tab
       const flag = myTop > this.navTop - this.headerHeight;
 
+      console.log(myTop, this.navTop, this.headerHeight);
       console.log(flag, "flag");
       if (this.showNavFixed != flag) {
         this.showNavFixed = flag;
       }
-      console.log(myTop, this.navTop, this.headerHeight);
 
       // 高亮tab-item
       const list = [...this.topList, 9999];
