@@ -6,9 +6,13 @@
 
       <!-- <img src="~/static/img/home/home.gif" alt="" height="800"/> -->
 
-      <b-img fluid :src="require('~/static/img/home/home.gif')"></b-img>
-
+      <b-img fluid :src="require('~/static/img/home/home.gif')">
+      
+      </b-img>
+      
+      
     </parallax>
+    <div class="masthead_btn wow bounce" data-wow-iteration="infinite">More</div>
 
     <div class="hero-text text-center ">
 
@@ -16,9 +20,7 @@
 
       <Heading :level="2">welcome</Heading>
 
-
     </div>
-    <h1 class=" animated puffIn">test</h1>
 
   </div>
 
@@ -33,17 +35,20 @@ export default { components: { Parallax, Heading } }
 <style scoped lang="scss">
 
 // .Masthead {
-//   &:after {
-//     content: "";
-//     background: rgba($black, 0.5);
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     top: 0;
-//     bottom: 0;
-//     z-index: 1;
-//   }
+  // &:after {
+  //   content: "";
+  //   background: rgba($black, 0.5);
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   top: 0;
+  //   bottom: 0;
+  //   z-index: 1;
+  // }
+  
 // }
+
+
 .hero-text {
   position: absolute;
   left: 0;
@@ -90,5 +95,25 @@ export default { components: { Parallax, Heading } }
     }
   }
 }
+
+.masthead_btn{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 90%;
+  z-index: 2;
+  color: $white;
+  margin: auto;
+  width:50px;
+  height: 50px;
+
+  @media screen and (max-width: 767px) {
+    top: 70%;
+  }
+  @media screen and (min-width: 767px) {
+    top: 92%;
+  }
+}
+
 </style>
 

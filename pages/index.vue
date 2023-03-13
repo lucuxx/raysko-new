@@ -1,5 +1,6 @@
 <template>
   <div>
+  
     <no-ssr>
       <Hero />
     </no-ssr>

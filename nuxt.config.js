@@ -100,9 +100,16 @@ module.exports = {
     resourceHints: false
   },
   build: {
+
+    // plugins:[
+    //   new webpack.ProvidePlugin({
+    //     '$':'jquery'
+    //   })
+    // ],
     /*
     ** You can extend webpack config here
     */
+
     extend (config, ctx) {
     },
     // analyze: true,

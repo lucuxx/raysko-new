@@ -1,10 +1,15 @@
 <template>
-  <component :is="type" class="heading">
+  <component :is="type" class="wow zoomIn  heading" data-wow-duration='2s'>
   	<slot />
   </component>
 </template>
 
 <script>
+if (process.browser) {
+  // 在这里根据环境引入wow.js
+  var { WOW } = require("wowjs");
+}
+
 export default {
   props: {
     level: {
@@ -28,7 +33,13 @@ export default {
         return "h6";
       }
     }
-  }
+  },
+  mounted(){
+    if (process.browser) {
+      // 在页面mounted生命周期里面 根据环境实例化WOW
+      new WOW({}).init();
+    }
+  },
 };
 </script>
 
