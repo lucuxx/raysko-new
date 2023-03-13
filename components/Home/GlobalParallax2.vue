@@ -1,10 +1,10 @@
 <template>
-  <div class="global-parallax py-5">
+  <!-- <div class="global-parallax py-5"> -->
      <b-container class="text-center">
       <AboutProduct />
        <!-- <Btn to="/about">更多</Btn> -->
      </b-container>
-   </div>
+   <!-- </div> -->
 </template>
 
 <script>
@@ -22,24 +22,24 @@ export default {
 
 <style lang="scss" scoped>
 
-.global-parallax {
-    background: url("~static/img/home/home2.png") center center no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background: rgba($white, 0.5);
-      z-index: 0;
-    }
-    > * {
-      z-index: 1;
-      position: relative;
-    }
-}
+// .global-parallax {
+//     background: url("~static/img/home/home2.png") center center no-repeat;
+//     background-size: cover;
+//     background-attachment: fixed;
+//     position: relative;
+//     &:after {
+//       content: "";
+//       position: absolute;
+//       left: 0;
+//       right: 0;
+//       top: 0;
+//       bottom: 0;
+//       background: rgba($white, 0.5);
+//       z-index: 0;
+//     }
+//     > * {
+//       z-index: 1;
+//       position: relative;
+//     }
+// }
 </style>

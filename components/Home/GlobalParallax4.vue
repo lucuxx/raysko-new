@@ -26,6 +26,7 @@ export default {
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    width: 100%;
     &:after {
       content: "";
       position: absolute;

@@ -274,19 +274,22 @@ export default {
     background: #fff !important;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     &.active2 {
+      background: #fff !important;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      transition: all 0.6s;
       .navbar-brand,
       .nav-link {
-        color: #999 !important;
+        color: #333 !important;
         &.active {
           color: $theme-color !important;
         }
       }
       .navbar-toggler {
         .navbar-toggler-icon {
-          background: #999;
+          background: #333;
           &:after,
           &:before {
-            background: #999;
+            background: #333;
           }
         }
         &.active .navbar-toggler-icon {

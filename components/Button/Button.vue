@@ -31,10 +31,10 @@ export default {
 </script>
 
 <style scoped>
-.btn-primary {
+/* .btn-primary {
   background:#0a64d2 !important;
   border:transparent;
   border-radius: 18px;
-}
+} */
 
 </style>

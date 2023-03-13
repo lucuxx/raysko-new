@@ -8,6 +8,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  width:100vw;
+  overflow-x: hidden !important;
 }
 
 body {
@@ -23,10 +25,10 @@ a, a:hover {
     text-decoration: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+// img {
+//   max-width: 100%;
+//   height: auto;
+// }
 
 a.nuxt-link-exact-active {
     color:#3b8070;
@@ -76,7 +78,7 @@ a.nuxt-link-exact-active {
   display: block;
   font-weight: 300;
   // font-size: 100px;
-  font-size: 70px;
+  font-size: 20px;
   color: #35495e;
   letter-spacing: 1px;
 }

@@ -11,7 +11,8 @@
     cursor: pointer;
 
     &-primary {
-        background-color: $primary-color;
+        // background-color: $primary-color;
+        background-color: $theme-color;
     }
 
     &:not([href]):not([tabindex]),

@@ -18,6 +18,7 @@
 
 
     </div>
+    <h1 class=" animated puffIn">test</h1>
 
   </div>
 
@@ -53,7 +54,7 @@ export default { components: { Parallax, Heading } }
   max-width: 510px;
   margin: auto;
   @media screen and (max-width: 767px) {
-    top: 15%;
+    top: 30%;
     padding-right: 15px;
     padding-left: 15px;
   }
