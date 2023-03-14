@@ -22,6 +22,10 @@
               ></b-img>
 
             </dd>
+            <!-- <dd>
+              <b-img :src="require('~/static/img/footer/ditu.png')"
+                height="50"></b-img>
+            </dd> -->
 
             <dd>深圳睿思科信息技术有限公司</dd>
 
@@ -81,9 +85,10 @@
 .concat {
   width: 100%;
   padding: 50px 0;
-  background-image: url("~/static/img/footer/footer-bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
+  background:$mask-color;
+  // background-image: url("~/static/img/footer/footer-bg.png");
+  // background-repeat: no-repeat;
+  // background-position: center;
   // background-size: cover;
 
   dd {

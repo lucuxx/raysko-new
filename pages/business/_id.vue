@@ -67,7 +67,7 @@ export default {
   background: url("~/static/img/banner/banner02_big.jpg") center center
     no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 }
 .spin-content {
   height: 200px;

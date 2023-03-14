@@ -14,7 +14,7 @@
 
 <style lang="scss" scoped>
 .bg-color {
-  background-color: #000000;
+  background-color:$mask-color;
 }
 a {
   color:#FFFFFF99;

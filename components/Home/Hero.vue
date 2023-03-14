@@ -6,11 +6,15 @@
       <b-img fluid :src="require('~/static/img/home/home.gif')"> </b-img>
     </parallax>
     <div
-      class="masthead_btn wow bounce"
+      class="masthead_btn wow fadeOutDown"
       data-wow-iteration="infinite"
+      data-wow-duration="2s"
       data-wow-delay="1.5s"
     >
-      More
+    下拉<br/>
+      <font-awesome-icon size="lg" :icon="['fas', 'chevron-down']"/>
+
+      <!-- <font-awesome-icon size="lg"  icon="fa-solid fa-chevrons-down" /> -->
     </div>
 
     <div class="hero-text text-center">
@@ -114,6 +118,7 @@ export default {
   color: $white;
   margin: auto;
   width: 50px;
+  text-align: center;
   height: 50px;
 
   @media screen and (max-width: 767px) {

@@ -178,6 +178,7 @@ export default {
   // padding: 20px;
   // background: #333;
   border-radius: 10px;
+  padding-bottom:20px;
 
   /* _wrapper.css */
   .wrapper {
@@ -238,7 +239,8 @@ export default {
 
   .timeline__item:nth-child(2n) .timeline__item__content {
     float: right;
-    background: #8287a9;
+    // background: #8287a9;
+    background: $theme-color;
   }
 
   .timeline__item:nth-child(2n) .timeline__item__content::before {
@@ -252,7 +254,8 @@ export default {
   @media (min-width: 768px) {
     .timeline__item:nth-child(2n) .timeline__item__content::before {
       left: inherit;
-      background: #8287a9;
+      // background: #8287a9;
+      background:  $theme-color;;
     }
   }
   @media (min-width: 576px) {
@@ -345,7 +348,8 @@ export default {
   .timeline__item__content {
     width: 80%;
     // background: rgba(255, 255, 255, 0.1);
-    background:#8287a9;
+    // background:#8287a9;
+    background: $theme-color;
     padding: 20px 30px;
     border-radius: 8px;
     float: right;

@@ -91,7 +91,7 @@ export default {
   background: url("~/static/img/banner/inside-banner3.jpeg") center center
     no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 }
 .spin-content {
   height: 200px;

@@ -13,7 +13,7 @@
 
     <div class="container py-5 wrapper">
       <b-row>
-        <b-col md="3" order="1" order-md="0" class="mb-4 wow fadeInUp">
+        <b-col md="3" order="0" order-md="0" class="mb-4 wow fadeInUp">
           <b-list-group>
             <b-list-group-item
               class="bg-muted"
@@ -24,7 +24,7 @@
             >{{item}}</b-list-group-item>
           </b-list-group>
         </b-col>
-        <b-col md="9" order="0" order-md="1" class="">
+        <b-col md="9" order="1" order-md="1" class="">
           <b-card class="mb-3 wow fadeInUp"
             :data-wow-delay="(index * 0.2) + 's'"
             v-for="(item, index) of list"
@@ -34,7 +34,7 @@
             <b-card-title>{{item.title}}</b-card-title>
             <b-card-text class="text-muted">{{item.desc}}</b-card-text>
             <b-button
-              variant="outline-info"
+              variant="primary"
               class="d-block ml-auto"
               @click="handleDetail(item.id)"
             >查看详情</b-button>
@@ -115,7 +115,7 @@ export default {
   background: url("~/static/img/banner/inside-banner3.jpeg") center center
     no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 }
 .spin-content {
   height: 200px;

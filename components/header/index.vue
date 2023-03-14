@@ -172,6 +172,10 @@ export default {
   color: $theme-color !important;
 }
 
+::v-deep.nav-item{
+  margin-right:10px;
+}
+
 ::v-deep.nav-item::after {
   display: block;
   content: "";
@@ -184,7 +188,7 @@ export default {
 }
 
 ::v-deep.nav-item:hover {
-  border-bottom-color: #1db0f7 !important;
+  border-bottom-color: $theme-color !important;
   transition: all 0.8s;
   &::after {
     background: #fff;
@@ -238,15 +242,15 @@ export default {
 ::v-deep .nav-link {
   color: #fff !important;
   font-size: 16px !important;
-  font-weight: 700;
+  // font-weight: 700;
 }
 ::v-deep .navbar {
   background: transparent !important;
   &.active {
     // background: #fff !important;
-    background: rgba(0, 0, 0, 0.9) !important;
+    background: $mask-color !important;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    transition: all 0.6s;
+    transition: all 0.4s;
 
     .navbar-brand,
     .nav-link {
@@ -258,10 +262,10 @@ export default {
     }
     .navbar-toggler {
       .navbar-toggler-icon {
-        background: #333;
+        background: $mask-color;
         &:after,
         &:before {
-          background: #333;
+          background: $mask-color;
         }
       }
       &.active .navbar-toggler-icon {
@@ -280,17 +284,17 @@ export default {
       transition: all 0.6s;
       .navbar-brand,
       .nav-link {
-        color: #333 !important;
+        color: $mask-color !important;
         &.active {
           color: $theme-color !important;
         }
       }
       .navbar-toggler {
         .navbar-toggler-icon {
-          background: #333;
+          background: $mask-color;
           &:after,
           &:before {
-            background: #333;
+            background: $mask-color;
           }
         }
         &.active .navbar-toggler-icon {

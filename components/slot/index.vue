@@ -61,7 +61,7 @@ export default {
       BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
       sans-serif; /* 1 */
     display: block;
-    font-weight: 600;
+    // font-weight: 600;
     font-size: 24px;
     letter-spacing: 1px;
     color: $white;

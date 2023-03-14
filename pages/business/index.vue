@@ -48,7 +48,7 @@
                   <b-card-title>{{ item.title }}</b-card-title>
                   <b-card-text class="w-100">{{ item.desc }}</b-card-text>
                   <b-button
-                    variant="outline-info"
+                    variant="primary"
                     @click="$router.push('/business/' + item.id)"
                     >查看详情</b-button
                   >
@@ -107,7 +107,7 @@ export default {
   background: url("~/static/img/banner/banner02_big.jpg") center center
     no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 }
 .spin-content {
   height: 200px;

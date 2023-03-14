@@ -48,6 +48,7 @@ module.exports = {
     'bootstrap-vue/dist/bootstrap-vue.css',
     '~/static/css/animate.css',
     '~/assets/styles/animation.css',  // 全局过渡动画
+    '@fortawesome/fontawesome-svg-core/styles.css'
   ],
 
   /*
@@ -60,7 +61,7 @@ module.exports = {
     },
     {src: '@/plugins/vue-awesome-swiper', ssr: false},
     '@/plugins/bootstrap-vue',
-
+    '~/plugins/fontawesome.js'
   ],
   /**
    * 关闭遥感采集
