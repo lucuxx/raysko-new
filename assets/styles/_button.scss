@@ -13,6 +13,7 @@
     &-primary {
         // background-color: $primary-color;
         background-color: $theme-color;
+        margin-bottom:20px;
     }
 
     &:not([href]):not([tabindex]),

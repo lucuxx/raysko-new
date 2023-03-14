@@ -7,12 +7,12 @@
       <!-- <img src="~/static/img/home/home.gif" alt="" height="800"/> -->
 
       <b-img fluid :src="require('~/static/img/home/home.gif')">
-      
+
       </b-img>
-      
-      
+
+
     </parallax>
-    <div class="masthead_btn wow bounce" data-wow-iteration="infinite">More</div>
+    <div class="masthead_btn wow bounce" data-wow-iteration="infinite" data-wow-delay="1.5s" >More</div>
 
     <div class="hero-text text-center ">
 
@@ -45,7 +45,7 @@ export default { components: { Parallax, Heading } }
   //   bottom: 0;
   //   z-index: 1;
   // }
-  
+
 // }
 
 

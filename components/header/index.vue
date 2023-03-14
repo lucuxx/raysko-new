@@ -92,6 +92,7 @@ export default {
           link: "/about",
           children: [
             { nav: "公司介绍", link: "/about", children: [] },
+            { nav: "发展历程", link: "/about", children: [] },
             { nav: "企业文化", link: "/about", children: [] },
             // {nav: '荣誉资质', link: '/about', children: []},
             // {nav: '公司新闻', link: '/about', children: []},

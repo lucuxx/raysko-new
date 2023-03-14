@@ -1,7 +1,7 @@
 // Default.vue
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -76,8 +76,8 @@ a.nuxt-link-exact-active {
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
-  font-weight: 300;
-  // font-size: 100px;
+  font-weight: 600;
+  font-size: 16px;
   font-size: 20px;
   color: #35495e;
   letter-spacing: 1px;
@@ -85,7 +85,7 @@ a.nuxt-link-exact-active {
 
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
+  font-size: 14px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
@@ -164,3 +164,7 @@ a.nuxt-link-exact-active {
     left: 70px;
   }
 }
+
+
+
+

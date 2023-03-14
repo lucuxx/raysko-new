@@ -54,8 +54,13 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {
+      src: '~/plugins/axios',
+      ssr: true // 开启服务端渲染
+    },
     {src: '@/plugins/vue-awesome-swiper', ssr: false},
-    '@/plugins/bootstrap-vue'
+    '@/plugins/bootstrap-vue',
+
   ],
   /**
    * 关闭遥感采集
@@ -89,6 +94,14 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true
+  },
+  // 后台接口
+  proxy: {
+    '/api': {
+      target: 'http://localhost:3003',
+      // pathRewrite: { '^/api': '' }
+    }
   },
   /*
   ** Build configuration
@@ -109,6 +122,9 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    // 避免重复打包
+    vendor: ['axios'],
+
 
     extend (config, ctx) {
     },
@@ -116,8 +132,19 @@ module.exports = {
     productionSourceMap: false,
     extractCSS: {
       allChunks: true
-    }
+    },
   },
+
+  loaders: [
+    {
+      test: /\.(png|jpe?g|gif|svg)$/,
+      loader: "url-loader",
+      query: {
+        limit: 10000,
+        name: 'img/[name].[hash].[ext]'
+      }
+    }
+  ],
 
   server: {
     port: 3004, // default: 3000

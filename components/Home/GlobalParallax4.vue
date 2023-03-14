@@ -34,7 +34,7 @@ export default {
       right: 0;
       top: 0;
       bottom: 0;
-      background: rgba($white, 0.5);
+      background: rgba($white, 0.2);
       z-index: 0;
     }
     > * {

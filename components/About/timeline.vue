@@ -1,26 +1,8 @@
 <template>
-  <div class="global-parallax py-5">
+  <div>
     <b-container class="text-center">
       <div class="content-wrap">
-        <section
-          id="about_timeline"
-          class="bgSection portfolio-section hidddden"
-        >
-          <div class="container">
-            <div class="">
-              <!-- Section Header -->
-              <div
-                class="col-md-12 col-sm-12 col-xs-12 section-header animated wow fadeInDown"
-              >
-                <h2 class="water-mask highlight-bg">Timeline</h2>
-                <h2><span class="highlight-text">历程</span></h2>
-              </div>
-              <!-- Section Header End -->
-            </div>
-          </div>
-        </section>
-        <!-- Portfolio Section -->
-        <section class="timeline wrapper grid animated wow fadeInUp hidddden">
+        <section class="timeline wrapper grid ">
           <div class="">
             <div class="timeline__item timeline__item--0">
               <div class="timeline__item__station"></div>
@@ -148,8 +130,8 @@
 </template>
 
 <script>
-import Heading from "~/components/Heading.vue";
-import Btn from "~/components/Button/Button.vue";
+// import Heading from "~/components/Heading.vue";
+// import Btn from "~/components/Button/Button.vue";
 
 if (process.browser) {
   // 在这里根据环境引入wow.js
@@ -158,10 +140,10 @@ if (process.browser) {
 
 export default {
   components: {
-    Heading,
-    Btn,
+    // Heading,
+    // Btn,
   },
-  mounted(){
+  mounted() {
     if (process.browser) {
       // 在页面mounted生命周期里面 根据环境实例化WOW
       new WOW({}).init();
@@ -172,35 +154,30 @@ export default {
 
 <style lang="scss" scoped>
 
-.global-parallax {
-  background: url("~static/img/home/home2.png") center center no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: rgba($white, 0.5);
-    z-index: 0;
-  }
-  > * {
-    z-index: 1;
-    position: relative;
-  }
-}
-
+// .global-parallax {
+//   background: url("~static/img/home/home1.jpg") center center no-repeat;
+//   background-size: cover;
+//   background-attachment: fixed;
+//   position: relative;
+//   &:after {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     background: rgba($white, 0.5);
+//     z-index: 0;
+//   }
+//   > * {
+//     z-index: 1;
+//     position: relative;
+//   }
+// }
 .content-wrap {
   // padding: 20px;
-  background:#333;
+  // background: #333;
   border-radius: 10px;
-  .site-header__title {
-    font-size: 36px;
-    color: #fff;
-  }
 
   /* _wrapper.css */
   .wrapper {
@@ -214,9 +191,9 @@ export default {
   /* _timeline.css */
   .timeline {
     position: relative;
-    margin: 30px auto;
-    padding: 60px 0;
-
+    margin: 10px auto;
+    margin-top:0;
+    padding: 0px 0;
 
   }
 
@@ -225,10 +202,10 @@ export default {
     position: absolute;
     top: 0;
     left: 10%;
-    width: 1px;
+    width: 2px;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.35);
-
+    // background-color: rgba(255, 255, 255, 0.35);
+    background:$color-heading;
   }
 
   @media (min-width: 768px) {
@@ -247,7 +224,6 @@ export default {
   .timeline__item {
     margin-bottom: -30px;
     position: relative;
-
   }
   @media (max-width: 576px) {
     .timeline__item {
@@ -262,21 +238,29 @@ export default {
 
   .timeline__item:nth-child(2n) .timeline__item__content {
     float: right;
+    background: #8287a9;
   }
 
   .timeline__item:nth-child(2n) .timeline__item__content::before {
     content: "";
     right: 40%;
+    display: block;
+    height: 2px;
+    background: $color-heading;
   }
 
   @media (min-width: 768px) {
     .timeline__item:nth-child(2n) .timeline__item__content::before {
       left: inherit;
+      background: #8287a9;
     }
   }
   @media (min-width: 576px) {
     .timeline__item:nth-child(2n) .timeline__item__content::before {
       left: inherit;
+      display: block;
+      height: 2px;
+      background: $color-heading;
     }
   }
 
@@ -322,13 +306,13 @@ export default {
 
   .timeline__item__station {
     background-color: #9aa0b9;
-    width: 8px;
-    height: 8px;
+    width: 14px;
+    height: 14px;
     position: absolute;
     border-radius: 50%;
     /*padding: 0px;*/
-    top: 18px;
-    left: 9.5%;
+    top: 14px;
+    left: 8.4%;
     /*margin-left: -33px;*/
     border: 4px solid #fff;
     -webkit-transition: all 0.3s ease-out;
@@ -337,10 +321,10 @@ export default {
 
   @media (min-width: 768px) {
     .timeline__item__station {
-      left: 49.6%;
+      left: 49%;
       /*margin-left: -30px;*/
-      width: 8px;
-      height: 8px;
+      width: 14px;
+      height: 14px;
       padding: 0px;
       border-width: 4px;
       top: 25px;
@@ -348,19 +332,20 @@ export default {
   }
   @media (min-width: 576px) {
     .timeline__item__station {
-      left: 49.6%;
+      left: 49.3%;
       /*margin-left: -30px;*/
-      width: 8px;
-      height: 8px;
+      width: 14px;
+      height: 14px;
       padding: 0px;
       border-width: 4px;
-      top: 25px;
+      top: 22px;
     }
   }
 
   .timeline__item__content {
     width: 80%;
-    background: rgba(255, 255, 255, 0.1);
+    // background: rgba(255, 255, 255, 0.1);
+    background:#8287a9;
     padding: 20px 30px;
     border-radius: 8px;
     float: right;
@@ -387,7 +372,8 @@ export default {
     content: "";
     position: absolute;
     left: 10%;
-    background: rgba(255, 255, 255, 0.35);
+    // background: rgba(255, 255, 255, 0.35);
+    background: $color-heading;
     top: 20px;
     width: 10%;
     height: 2px;
@@ -527,9 +513,9 @@ export default {
     font-size: 24px;
   }
   /*防动画闪烁*/
-  .hidddden {
-    opacity: 0;
-  }
+  // .hidddden {
+  //   opacity: 0;
+  // }
   .address_btn {
     position: relative;
     width: 25%;

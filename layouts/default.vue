@@ -1,12 +1,12 @@
 <template>
   <div>
     <!-- loading -->
-    <!-- <Loading :hidden="!show2" /> -->
+    <Loading :hidden="!show2" />
     <!-- 内容 -->
     <my-header />
     <div style="height: 60px" class="d-block d-md-none"></div>
 
-    <nuxt />
+    <nuxt  />
     <concat />
     <my-footer />
   </div>
@@ -18,9 +18,11 @@ import Carousel from "@/components/index/carousel";
 import Concat from "@/components/index/concat";
 import MyFooter from "@/components/footer/index";
 import Loading from "~/components/Loading.vue";
+import smoothscroll from 'smoothscroll-polyfill'
 if (process.browser) {
   // 在这里根据环境引入wow.js
   var { WOW } = require("wowjs");
+  smoothscroll.polyfill()
 }
 
 export default {

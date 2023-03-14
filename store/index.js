@@ -10,6 +10,6 @@ export const mutations = {
   },
   setSubNavIndex(state, index) {
     state.subNavIndex = index
-  }
+  },
 }
 
