@@ -1,14 +1,14 @@
 <template>
-  <component :is="type" class="wow zoomIn  heading" data-wow-duration='2s'>
+  <component :is="type" class="heading" >
   	<slot />
   </component>
 </template>
 
 <script>
-if (process.browser) {
-  // 在这里根据环境引入wow.js
-  var { WOW } = require("wowjs");
-}
+// if (process.browser) {
+//   // 在这里根据环境引入wow.js
+//   var { WOW } = require("wowjs");
+// }
 
 export default {
   props: {
@@ -34,12 +34,12 @@ export default {
       }
     }
   },
-  mounted(){
-    if (process.browser) {
-      // 在页面mounted生命周期里面 根据环境实例化WOW
-      new WOW({}).init();
-    }
-  },
+  // mounted(){
+  //   if (process.browser) {
+  //     // 在页面mounted生命周期里面 根据环境实例化WOW
+  //     new WOW({}).init();
+  //   }
+  // },
 };
 </script>
 

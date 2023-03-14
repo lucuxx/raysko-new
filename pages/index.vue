@@ -8,6 +8,8 @@
     <GlobalParallax3 />
     <GlobalParallax4 />
     <!-- <GlobalParallax /> -->
+    <Partner />
+
   </div>
 </template>
 
@@ -17,6 +19,8 @@ import Hero from '@/components/Home/Hero.vue'
 import GlobalParallax2 from '@/components/Home/GlobalParallax2.vue'
 import GlobalParallax3 from '@/components/Home/GlobalParallax3.vue'
 import GlobalParallax4 from '@/components/Home/GlobalParallax4.vue'
+import Partner from '@/components/index/partner'
+
 import NoSSR from 'vue-no-ssr'
 
 if (process.browser) {
@@ -35,6 +39,7 @@ export default {
     GlobalParallax2,
     GlobalParallax3,
     GlobalParallax4,
+    Partner,
     'no-ssr': NoSSR
   },
   mounted(){

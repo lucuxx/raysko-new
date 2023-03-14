@@ -23,9 +23,9 @@ const transport = nodemailer.createTransport({
 router.post('/sendmail', async (ctx, next) => {
   const { html, type } = ctx.request.body
   const mailOptions = {
-    from: `一条来自蚂蚁云网站的${type} public@mayiyundt.com`,
+    from: `一条来自睿思科网站的${type} public@mayiyundt.com`,
     to: 'public@mayiyundt.com',
-    subject: `一条来自蚂蚁云网站的${type}`,//邮件标题
+    subject: `一条来自睿思科网站的${type}`,//邮件标题
     html,//邮件内容
   }
   let error_code = 200

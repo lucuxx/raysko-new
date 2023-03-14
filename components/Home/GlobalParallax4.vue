@@ -1,8 +1,8 @@
 <template>
   <div class="global-parallax py-5">
      <b-container class="text-center">
-       <Heading :level="2" class="wow slideInLeft" >优秀的团队</Heading>
-       <p class="wow slideInRight">公司十分重视技术的研发投入，研发人员占比50%，拥有多项专利和软件著作权</p>
+       <Heading :level="2" class="wow fadeInUp" >优秀团队</Heading>
+       <p class="wow fadeInDown">公司十分重视技术的研发投入，研发人员占比50%，拥有多项专利和软件著作权</p>
        <Btn to="/about">关于我们</Btn>
      </b-container>
    </div>

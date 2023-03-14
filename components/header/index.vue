@@ -69,20 +69,20 @@ export default {
       showDrop: false,
       navBarList: [
         { nav: "网站首页", link: "/", children: [] },
-        // {nav: '产品解决方案', link: '/product' , children: [
-        //   {nav: '云计算', link: '/product', children: []},
-        //   {nav: '大数据', link: '/product', children: []}
-        // ]},
-        // {nav: '行业解决方案', link: '/business' , children: [
-        //   {nav: '互联网+政务', link: '/business/1', children: []},
-        //   {nav: '互联网+企业', link: '/business/2', children: []},
-        //   {nav: '智慧城市', link: '/business/3', children: []}
-        // ]},
-        // {nav: '技术与支持', link: '/technology' , children: [
-        //   {nav: '服务理念', link: '/technology', children: []},
-        //   {nav: '服务体系', link: '/technology', children: []},
-        //   {nav: '在线反馈', link: '/technology', children: []}
-        // ]},
+        {nav: '终端产品', link: '/product' , children: [
+          {nav: '云计算', link: '/product', children: []},
+          {nav: '大数据', link: '/product', children: []}
+        ]},
+        {nav: '解决方案', link: '/business' , children: [
+          {nav: '互联网+政务', link: '/business/1', children: []},
+          {nav: '互联网+企业', link: '/business/2', children: []},
+          {nav: '智慧城市', link: '/business/3', children: []}
+        ]},
+        {nav: '技术与支持', link: '/technology' , children: [
+          {nav: '服务理念', link: '/technology', children: []},
+          {nav: '服务体系', link: '/technology', children: []},
+          {nav: '在线反馈', link: '/technology', children: []}
+        ]},
         // {nav: '主营业务', link: '/profession' , children: [
         //   {nav: '业务聚焦', link: '/profession?index=0', children: []},
         //   {nav: '云计算与大数据主要方向', link: '/profession?index=1', children: []}

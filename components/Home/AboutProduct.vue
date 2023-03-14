@@ -13,20 +13,20 @@ import SectionHeading from '~/components/SectionHeading'
     homeabout: [
         {
           image: "product1.png",
-          heading: 'PDA手持终端',
-          desc1: '移动智能数据终端，移动智能支付终端，金融POS，手持数据采集器，移动警务通，手持工业终端，RFID手持机，RFID超高频终端，工业PDA，物流扫描巴枪，移动手持终端',
+          heading: '智能手持终端',
+          desc1: '公司自主研发的各类移动智能手持终端功能齐全。一维码、二维码、RFID、GPS、指纹识别、身份证读取，护照读取，ETC读取等功能由客户自主选择搭配，同时，也支持按需定制。睿思科手持终端目前广泛应用于物流和快递，零售连锁，医疗卫生，金融，电力，政府和公用事业。',
           desc2: ' '
         },
         {
           image: "product2.jpeg",
-          heading: '主板方案',
-          desc1: 'RK3399, RK3288',
+          heading: '安卓工控主板方案',
+          desc1: '公司自主研发的安卓工控主板方案广泛应用于大型广告机、教育视频终端、触摸一体机,人脸识别终端，人证核验终端等设备。',
           desc2: ' '
         },
         {
           image: "product3.png",
           heading: '人脸识别终端',
-          desc1: '访客机，刷脸支付设备，身份证核验终端',
+          desc1: '公司自主研发的人脸识别终端广泛应用于访客机，刷脸支付设备，身份证核验终端',
           desc2: ' '
         }
       ]
@@ -78,11 +78,11 @@ import SectionHeading from '~/components/SectionHeading'
       top: 10%;
       left: 10%;
       z-index: -1;
-      max-width: 500px;
+      max-width: 400px;
     }
     img {
       border-radius: 69% 37% 50% 50%/70% 68% 32% 30%;
-      height: 500px;
+      height: 400px;
       object-fit: cover;
       width: auto;
       margin: 0 auto;

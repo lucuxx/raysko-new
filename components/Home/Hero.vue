@@ -1,53 +1,62 @@
 <template>
-
   <div>
-
     <parallax>
-
       <!-- <img src="~/static/img/home/home.gif" alt="" height="800"/> -->
 
-      <b-img fluid :src="require('~/static/img/home/home.gif')">
-
-      </b-img>
-
-
+      <b-img fluid :src="require('~/static/img/home/home.gif')"> </b-img>
     </parallax>
-    <div class="masthead_btn wow bounce" data-wow-iteration="infinite" data-wow-delay="1.5s" >More</div>
-
-    <div class="hero-text text-center ">
-
-      <Heading :level="3">Hey</Heading>
-
-      <Heading :level="2">welcome</Heading>
-
+    <div
+      class="masthead_btn wow bounce"
+      data-wow-iteration="infinite"
+      data-wow-delay="1.5s"
+    >
+      More
     </div>
 
-  </div>
+    <div class="hero-text text-center">
+      <Heading :level="3" class="wow zoomIn" data-wow-duration="2s"
+        >Hey</Heading
+      >
 
+      <Heading :level="2" class="wow zoomIn" data-wow-duration="2s"
+        >welcome</Heading
+      >
+    </div>
+  </div>
 </template>
 
 <script>
-import Parallax from 'vue-parallaxy';
-import Heading from '~/components/Heading.vue'
-export default { components: { Parallax, Heading } }
+import Parallax from "vue-parallaxy";
+import Heading from "~/components/Heading.vue";
+if (process.browser) {
+  // 在这里根据环境引入wow.js
+  var { WOW } = require("wowjs");
+}
+export default {
+  components: { Parallax, Heading },
+  mounted() {
+    if (process.browser) {
+      // 在页面mounted生命周期里面 根据环境实例化WOW
+      new WOW({}).init();
+    }
+  },
+};
 </script>
 
 <style scoped lang="scss">
-
 // .Masthead {
-  // &:after {
-  //   content: "";
-  //   background: rgba($black, 0.5);
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-  //   top: 0;
-  //   bottom: 0;
-  //   z-index: 1;
-  // }
-
+// &:after {
+//   content: "";
+//   background: rgba($black, 0.5);
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   z-index: 1;
 // }
 
+// }
 
 .hero-text {
   position: absolute;
@@ -96,7 +105,7 @@ export default { components: { Parallax, Heading } }
   }
 }
 
-.masthead_btn{
+.masthead_btn {
   position: absolute;
   left: 0;
   right: 0;
@@ -104,7 +113,7 @@ export default { components: { Parallax, Heading } }
   z-index: 2;
   color: $white;
   margin: auto;
-  width:50px;
+  width: 50px;
   height: 50px;
 
   @media screen and (max-width: 767px) {
@@ -114,6 +123,4 @@ export default { components: { Parallax, Heading } }
     top: 92%;
   }
 }
-
 </style>
-

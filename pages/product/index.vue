@@ -1,8 +1,19 @@
 <template>
-  <section class="py-5 wrapper">
-    <div class="container">
+  <section >
+    <div class="header-content spin-content" >
+      <div style="height: 100%">
+        <div class="flex">
+          <div class="content">
+            <h1 class="wow slideInLeft">产品</h1>
+            <p class="wow slideInRight">先进产品，贴心服务</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5 wrapper">
       <b-row>
-        <b-col md="3" order="1" order-md="0" class="mb-4 wow slideInLeft">
+        <b-col md="3" order="1" order-md="0" class="mb-4 wow fadeInUp">
           <b-list-group>
             <b-list-group-item
               class="bg-muted"
@@ -49,9 +60,9 @@ export default {
       tabList: ['全部', '云计算', '大数据'],
       productList: [
         {id: 1, icon: require('~/static/img/product/product01.jpg'), title: '专有云解决方案', desc: '专有云解决方案依托于阿里云、数梦工场提供的云计算、大数据、中间件和云安全能力，为用户搭建企业级互联网架构。通过提供集计算、存储、网络于一身的IaaS层基础设施服务，云管理平台、数据、安全统一分布式处理平台，满足用户的中、大型专有云场景需求。'},
-        {id: 2, icon: require('~/static/img/product/product02.jpg'), title: '混合云解决方案', desc: '江苏蚂蚁云数据技术有限公司混合云解决方案深度融合阿里云，结合自身在政企云计算业务技术沉淀，打造出贯通公共云和专有云的解决方案。从业务视角出发，提供基础架构层、数据服务层、应用层、安全能力等多层次的跨云混合。数据服务混合、应用混合和安全能力混合补齐了业界常见的基础架构混合云方案的短板，为用户业务提供全栈混合云能力。'},
-        {id: 3, icon: require('~/static/img/product/product03.jpg'), title: '大数据解决方案', desc: '蚂蚁云大数据解决方案打造了易使用、高性能、低成本、高可靠的解决方案，帮助客户进行大数据运营，挖掘出蕴含在数据当中的价值。底层计算引擎提供海量数据存储和高速计算能力；中层大数据工作台为数据资产的开发、管理、挖掘、服务化提供工具；上层应用通过各种形式发挥数据的价值。'},
-        {id: 4, icon: require('~/static/img/product/product04.jpg'), title: '数据共享交换解决方案', desc: '蚂蚁云数据共享交换平台为用户提供了强大部署服务。平台在架构上基于分布式云架构。数据交换平台将分散建设的若干应用信息系统进行整合，通过构建数据共享交换平台，使若干个应用子系统信息/数据能够传输及共享，提高信息资源的利用率，保证分布异构系统之间互联互通，建立中心数据库，完成数据的抽取、集中、加载、展现，构造统一的数据处理和交换。数据共享交换平台帮助政府和企业打破部门间的数据孤岛，适应于大数据时代的数据交换场景。'},
+        {id: 2, icon: require('~/static/img/product/product02.jpg'), title: '混合云解决方案', desc: '深圳睿思科信息技术有限公司混合云解决方案深度融合阿里云，结合自身在政企云计算业务技术沉淀，打造出贯通公共云和专有云的解决方案。从业务视角出发，提供基础架构层、数据服务层、应用层、安全能力等多层次的跨云混合。数据服务混合、应用混合和安全能力混合补齐了业界常见的基础架构混合云方案的短板，为用户业务提供全栈混合云能力。'},
+        {id: 3, icon: require('~/static/img/product/product03.jpg'), title: '大数据解决方案', desc: '睿思科大数据解决方案打造了易使用、高性能、低成本、高可靠的解决方案，帮助客户进行大数据运营，挖掘出蕴含在数据当中的价值。底层计算引擎提供海量数据存储和高速计算能力；中层大数据工作台为数据资产的开发、管理、挖掘、服务化提供工具；上层应用通过各种形式发挥数据的价值。'},
+        {id: 4, icon: require('~/static/img/product/product04.jpg'), title: '数据共享交换解决方案', desc: '睿思科数据共享交换平台为用户提供了强大部署服务。平台在架构上基于分布式云架构。数据交换平台将分散建设的若干应用信息系统进行整合，通过构建数据共享交换平台，使若干个应用子系统信息/数据能够传输及共享，提高信息资源的利用率，保证分布异构系统之间互联互通，建立中心数据库，完成数据的抽取、集中、加载、展现，构造统一的数据处理和交换。数据共享交换平台帮助政府和企业打破部门间的数据孤岛，适应于大数据时代的数据交换场景。'},
         {id: 5, icon: require('~/static/img/product/product05.jpg'), title: '大数据工作台', desc: '数据治理平台帮助企业更好的管理数据资产，集合IT技术人员、系统运维人员、业务用户共同优化企业数据资产。数据治理覆盖整个数据生命周期：产生、流转、加工、使用、销毁，数据治理平台提供全链路的数据管理功能。'}
       ]
     }
@@ -99,6 +110,49 @@ export default {
 
 <style lang="scss" scoped>
 
+
+.header-content {
+  background: url("~/static/img/banner/inside-banner3.jpeg") center center
+    no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.spin-content {
+  height: 200px;
+  .flex {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    > div {
+      margin: auto;
+    }
+    h1 {
+      font-size: 24px;
+      color: #ffffff;
+      text-align: center;
+    }
+    p {
+      font-size: 14px;
+      color: #ffffff;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  // content-1居中大行
+  .spin-content {
+    height: 456px;
+    .flex {
+      h1 {
+        font-size: 48px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+}
 .wrapper {
   background: #f2f2f2;
 }

@@ -1,5 +1,16 @@
 <template>
-  <section class="pb-5">
+  <section>
+    <div class="header-content spin-content" >
+      <div style="height: 100%">
+        <div class="flex">
+          <div class="content">
+            <h1 class="wow slideInLeft">终端产品</h1>
+            <p class="wow slideInRight">先进产品，贴心服务</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pb-5">
     <div class="border-bottom mb-5">
       <div class="container d-flex justify-content-between align-items-center">
         <h4 class="py-3">{{info.title}}</h4>
@@ -48,7 +59,9 @@
         <p class="detail mb-5 text-justify" v-html="info.apply3"></p>
       </template>
     </div>
+  </div>
   </section>
+
 </template>
 
 <script>
@@ -74,7 +87,48 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.header-content {
+  background: url("~/static/img/banner/inside-banner3.jpeg") center center
+    no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.spin-content {
+  height: 200px;
+  .flex {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    > div {
+      margin: auto;
+    }
+    h1 {
+      font-size: 24px;
+      color: #ffffff;
+      text-align: center;
+    }
+    p {
+      font-size: 14px;
+      color: #ffffff;
+    }
+  }
+}
 
+@media screen and (min-width: 768px) {
+  // content-1居中大行
+  .spin-content {
+    height: 456px;
+    .flex {
+      h1 {
+        font-size: 48px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+}
 .title {
   font-size: 16px;
   font-weight: bold;

@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       title: '公司客户',
-      desc: '“精于开发，长于数据”蚂蚁云作为大数据时代卓越的技术与服务提供商，我们将不断创新与实践，赋能更多的客户及生态伙伴。',
+      desc: '“精于开发，长于数据”睿思科作为大数据时代卓越的技术与服务提供商，我们将不断创新与实践，赋能更多的客户及生态伙伴。',
       list: [
         {
           icon: require('~/static/img/client/client04.png'),
