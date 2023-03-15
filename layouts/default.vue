@@ -6,9 +6,10 @@
     <my-header />
     <div style="height: 60px" class="d-block d-md-none"></div>
 
-    <nuxt  />
+    <nuxt  v-if="!show2"/>
     <concat />
     <my-footer />
+    <go-top />
   </div>
 </template>
 
@@ -18,11 +19,11 @@ import Carousel from "@/components/index/carousel";
 import Concat from "@/components/index/concat";
 import MyFooter from "@/components/footer/index";
 import Loading from "~/components/Loading.vue";
+import GoTop from "~/components/GoTop.vue";
 import smoothscroll from 'smoothscroll-polyfill'
 if (process.browser) {
   // 在这里根据环境引入wow.js
   var { WOW } = require("wowjs");
-  smoothscroll.polyfill()
 }
 
 export default {
@@ -32,6 +33,7 @@ export default {
     Concat,
     MyFooter,
     Loading,
+    GoTop
   },
   data() {
     return {
@@ -52,6 +54,7 @@ export default {
     if (process.browser) {
       // 在页面mounted生命周期里面 根据环境实例化WOW
       new WOW({}).init();
+        smoothscroll.polyfill()
     }
   },
 };

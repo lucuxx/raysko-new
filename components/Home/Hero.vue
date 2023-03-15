@@ -1,31 +1,77 @@
 <template>
   <div>
-    <parallax>
-      <!-- <img src="~/static/img/home/home.gif" alt="" height="800"/> -->
+    <!-- <parallax> -->
+    <!-- <img src="~/static/img/home/home.gif" alt="" height="800"/> -->
 
-      <b-img fluid :src="require('~/static/img/home/home.gif')"> </b-img>
-    </parallax>
+    <!-- <b-img fluid :src="current.icon"> </b-img> -->
+    <b-carousel
+      style="text-shadow: 0px 0px 2px #000;"
+      fade
+      indicators
+      :interval="4000"
+      no-hover-pause
+    >
+      <!-- <parallax>
+      <img src="~/static/img/home/home.gif" alt="" height="800"/>
+      </parallax>
+      <parallax>
+      <img src="~/static/img/banner/banner02_big.jpg" alt="" height="800"/>
+      </parallax> -->
+      <b-carousel-slide caption="">
+        <template slot="img">
+          <!-- <parallax> -->
+            <div class="banner-img">
+              <img src="~/static/img/home/home.gif" alt="" height="100%" />
+            </div>
+          <!-- </parallax> -->
+        </template>
+      </b-carousel-slide>
+      <b-carousel-slide caption="">
+        <template slot="img">
+          <!-- <parallax> -->
+            <div class="banner-img">
+              <img
+                src="~/static/img/home/home6.png"
+                alt=""
+                height="100%"
+              />
+              </div>
+          <!-- </parallax> -->
+        </template>
+      </b-carousel-slide>
+      <b-carousel-slide caption="">
+        <template slot="img">
+          <!-- <parallax> -->
+            <div class="banner-img">
+              <img
+                src="~/static/img/home/home5.jpeg"
+                alt=""
+                height="100%"
+              />
+              </div>
+          <!-- </parallax> -->
+        </template>
+      </b-carousel-slide>
+    </b-carousel>
+    <!-- </parallax> -->
     <div
       class="masthead_btn wow fadeOutDown"
       data-wow-iteration="infinite"
       data-wow-duration="2s"
       data-wow-delay="1.5s"
     >
-    下拉<br/>
-      <font-awesome-icon size="lg" :icon="['fas', 'chevron-down']"/>
-
-      <!-- <font-awesome-icon size="lg"  icon="fa-solid fa-chevrons-down" /> -->
+      下拉<br />
+      <font-awesome-icon size="lg" :icon="['fas', 'chevron-down']" />
     </div>
-
-    <div class="hero-text text-center">
-      <Heading :level="3" class="wow zoomIn" data-wow-duration="2s"
+    <!-- <div class="hero-text text-center"> -->
+    <!-- <Heading :level="3" class="wow zoomIn" data-wow-duration="2s"
         >Hey</Heading
       >
 
       <Heading :level="2" class="wow zoomIn" data-wow-duration="2s"
         >welcome</Heading
-      >
-    </div>
+      > -->
+    <!-- </div> -->
   </div>
 </template>
 
@@ -38,11 +84,56 @@ if (process.browser) {
 }
 export default {
   components: { Parallax, Heading },
+  data() {
+    return {
+      bannerList: [
+        {
+          id: 1,
+          icon: require("~/static/img/banner/banner02_big.jpg"),
+          title: "互联网+政务",
+          desc: "资源集约共享、弹性伸缩、极致体验、敏捷支撑",
+        },
+        {
+          id: 2,
+          icon: require("~/static/img/banner/banner3.png"),
+          title: "互联网+企业",
+          desc: "以卓越绩效管理为目标，引入全局的、整体的、一贯的管理理念",
+        },
+        {
+          id: 3,
+          icon: require("~/static/img/banner/banner5.jpeg"),
+          title: "智慧城市（城市治理）",
+          desc: "通过政务外网打通各委办局网络，集成综治大联动",
+        },
+      ],
+      current: "",
+      currentIndex: 0,
+      timer: null,
+    };
+  },
   mounted() {
     if (process.browser) {
       // 在页面mounted生命周期里面 根据环境实例化WOW
       new WOW({}).init();
     }
+    this.current = this.bannerList[0];
+    this.changeBanner();
+  },
+  methods: {
+    changeBanner() {
+      this.timer = setInterval(() => {
+        if (this.currentIndex < this.bannerList.length - 1) {
+          this.currentIndex += 1;
+        } else {
+          this.currentIndex = 0;
+        }
+        this.current = this.bannerList[this.currentIndex];
+        console.log(this.current, "this.current");
+      }, 3000);
+    },
+  },
+  beforeDestroy() {
+    this.timer = null;
   },
 };
 </script>
@@ -59,8 +150,59 @@ export default {
 //   bottom: 0;
 //   z-index: 1;
 // }
-
 // }
+
+
+.banner-img{
+  height:200px;
+  width:100vh;
+}
+@media (min-width:385px) {
+	.banner-img{
+		height:300px;
+    width:100vh;
+	}
+}
+@media (min-width:576px) {
+	.banner-img{
+		height:385px;
+    width:100vh;
+	}
+}
+@media (min-width:768px) {
+	.banner-img{
+    height:460px;
+    width:100vh;
+	}
+}
+
+@media (min-width:824px) {
+	.banner-img{
+    height:500px;
+    width:100vh;
+	}
+}
+
+@media (min-width:992px) {
+	.banner-img{
+		height:100vh;
+    width:100vh;
+	}
+}
+
+@media (min-width:1200px) {
+	.banner-img{
+		height:100vh;
+    width:100vh;
+	}
+}
+
+@media (min-width:1400px) {
+	.banner-img{
+		height:100vh;
+    width:100vh;
+	}
+}
 
 .hero-text {
   position: absolute;
@@ -128,4 +270,5 @@ export default {
     top: 92%;
   }
 }
+
 </style>

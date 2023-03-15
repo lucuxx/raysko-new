@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="header-content spin-content" >
+    <div class="header-content spin-content">
       <div style="height: 100%">
         <div class="flex">
           <div class="content">
@@ -48,19 +48,17 @@
         <template v-if="!item.desc && !item.timeLine">
           <b-row>
             <b-col lg="6" class="mb-3 d-none d-sm-block">
-              <div style="height:300px;">
-
-              <iframe
-                width="100%"
-                height="300"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                src="https://lbs.amap.com/tools/showmap?1_560_440_113.87345_22.564725&=%E6%B7%B1%E5%9C%B3%E7%9D%BF%E6%80%9D%E7%A7%91%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&=%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%AE%9D%E5%AE%89%E5%8C%BA%E5%85%B4%E4%B8%9A%E8%B7%AF2005%E5%8F%B7%E5%B9%BF%E5%85%B4%E6%BA%90%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9B%E6%84%8F%E5%9B%ADC%E6%A0%8B509&=&=&="
-              ></iframe>
-            </div>
-
+              <div style="height: 300px">
+                <iframe
+                  width="100%"
+                  height="300"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                  src="https://lbs.amap.com/tools/showmap?1_560_440_113.87345_22.564725&=%E6%B7%B1%E5%9C%B3%E7%9D%BF%E6%80%9D%E7%A7%91%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&=%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%AE%9D%E5%AE%89%E5%8C%BA%E5%85%B4%E4%B8%9A%E8%B7%AF2005%E5%8F%B7%E5%B9%BF%E5%85%B4%E6%BA%90%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9B%E6%84%8F%E5%9B%ADC%E6%A0%8B509&=&=&="
+                ></iframe>
+              </div>
             </b-col>
             <b-col lg="6" class="desc">
               <p>地址： 深圳市宝安区兴业路2005号广兴源互联网创意园C栋509</p>
@@ -70,9 +68,7 @@
             </b-col>
           </b-row>
         </template>
-        <template>
-
-        </template>
+        <template> </template>
       </article>
     </div>
   </section>
@@ -80,18 +76,15 @@
 
 <script>
 import { mapState, mapMutations } from "vuex";
-import TimeLine from "@/components/About/timeline.vue"
-
+import TimeLine from "@/components/About/timeline.vue";
 
 if (process.browser) {
   // 在这里根据环境引入wow.js
   var { WOW } = require("wowjs");
-
 }
 
 export default {
-  components:{TimeLine},
-  // scrollToTop:true,
+  components: { TimeLine },
   data() {
     return {
       topList: [],
@@ -107,7 +100,7 @@ export default {
         },
         {
           title: "发展历程",
-          timeLine:true
+          timeLine: true,
         },
         {
           title: "企业文化",
@@ -129,14 +122,13 @@ export default {
         // },
         {
           title: "联系我们",
-          timeLine:false
+          timeLine: false,
         },
       ],
     };
   },
   watch: {
     subNavIndex(newVal, oldVal) {
-
       this.active = newVal - 1;
       setTimeout(() => {
         this.handleNavClick(this.active);
@@ -152,29 +144,24 @@ export default {
     ...mapState(["headerHeight", "subNavIndex"]),
   },
   mounted() {
-
     if (process.browser) {
       // 在页面mounted生命周期里面 根据环境实例化WOW
       new WOW({}).init();
     }
 
-
-
     this.getTitleHeight();
-    this.active = 0
-
-
 
     this.active = this.subNavIndex == 0 ? 0 : this.subNavIndex - 1;
     if (this.active != 0) {
       setTimeout(() => {
         this.handleNavClick(this.active);
-      }, 500);
+      }, 0);
     }
 
 
-    window.addEventListener("scroll", this.handleWindowScroll);
-    window.addEventListener("resize", this.handleWindowResize);
+      window.addEventListener("scroll", this.handleWindowScroll);
+      window.addEventListener("resize", this.handleWindowResize);
+
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleWindowScroll);
@@ -239,8 +226,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .header-content {
   background: url("~/static/img/banner/inside-banner1.jpeg") center center
     no-repeat;

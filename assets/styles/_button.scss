@@ -9,6 +9,7 @@
     min-width: 140px;
     border-color: transparent;
     cursor: pointer;
+    position: relative;
 
     &-primary {
         // background-color: $primary-color;
@@ -22,8 +23,50 @@
     }
 
     &:hover {
-        background-color: $secondary-color;
+        background-color: $mask-color;
         border-color: transparent;
         color: $white;
     }
+}
+
+// .btn{
+//   position: relative;
+//   width: auto;
+//   min-width: 120px;
+//   padding: 10px;
+//   text-align: center;
+//   color: #fff;
+//   background: #00d463;
+//   cursor: pointer;
+//   border-radius: 4px;
+//   border: none;
+// }
+
+.btn:after,.btn:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: $theme-color;
+  z-index:-2;
+}
+
+.btn:hover{
+  z-index:1;
+  background:transparent;
+}
+
+.btn:before {
+  transition: .6s;
+  // background: #14ae5c;
+  z-index:-1;
+  background-color: $mask-color;
+  border-color: transparent;
+  color: $white;
+}
+
+.btn:hover:after,.btn:hover:before {
+  width: 100%;
 }

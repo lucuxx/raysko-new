@@ -2,7 +2,7 @@
   <section :class="{ bgColor: showBgColor }">
     <div class="container wrapper">
       <h3
-        class="title mb-3 text-center wow fadeInUp"
+        class="herder mb-3 text-center wow fadeInUp"
         :class="{ fontColor: showFontColor }"
         data-wow-delay="0.2s"
       >
@@ -56,14 +56,14 @@ export default {
 
 .wrapper {
   padding: 70px 0;
-  .title {
-    font-family: "Quicksand", "Source Sans Pro", -apple-system,
-      BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-      sans-serif; /* 1 */
-    display: block;
+  .herder {
+    // font-family: "Quicksand", "Source Sans Pro", -apple-system,
+    //   BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    //   sans-serif; /* 1 */
+    // display: block;
     // font-weight: 600;
-    font-size: 24px;
-    letter-spacing: 1px;
+    font-size: $font-size-large;
+    // letter-spacing: 1px;
     color: $white;
   }
   .title-icon {

@@ -154,13 +154,13 @@ export default {
   }
 }
 .wrapper {
-  background: #f2f2f2;
+  // background: #f2f2f2;
 }
 .card {
-  border: none;
+  // border: none;
 }
 ::v-deep .list-group-item {
-  border-color: transparent;
+  // border-color: transparent;
   border-radius: 0;
 }
 ::v-deep .list-group-item.active {

@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <div id="loader-wrapper">
+    <!-- <div id="loader-wrapper">
       <div id="loader"></div>
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
@@ -8,7 +8,7 @@
         加载中...
         <br />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -46,9 +46,16 @@ export default {
 html,
 body,
 .app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  z-index: 999999;
+  background: url("~/static/img/global/welcome.jpeg") center center
+    no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .chromeframe {
   margin: 0.2em 0;
