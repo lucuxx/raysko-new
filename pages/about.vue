@@ -1,5 +1,6 @@
 <template>
   <section>
+    <div style="height: 72.4px" class="d-block d-md-none"></div>
     <div class="header-content spin-content">
       <div style="height: 100%">
         <div class="flex">
@@ -158,10 +159,8 @@ export default {
       }, 0);
     }
 
-
-      window.addEventListener("scroll", this.handleWindowScroll);
-      window.addEventListener("resize", this.handleWindowResize);
-
+    window.addEventListener("scroll", this.handleWindowScroll);
+    window.addEventListener("resize", this.handleWindowResize);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleWindowScroll);

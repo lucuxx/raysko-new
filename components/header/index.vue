@@ -69,10 +69,14 @@ export default {
       showDrop: false,
       navBarList: [
         { nav: "网站首页", link: "/", children: [] },
-        {nav: '产品中心', link: '/product' , children: [
-          // {nav: '云计算', link: '/product', children: []},
-          // {nav: '大数据', link: '/product', children: []}
-        ]},
+        {
+          nav: "产品中心",
+          link: "/product",
+          children: [
+            // {nav: '云计算', link: '/product', children: []},
+            // {nav: '大数据', link: '/product', children: []}
+          ],
+        },
         // {nav: '解决方案', link: '/business' , children: [
         //   {nav: '互联网+政务', link: '/business/1', children: []},
         //   {nav: '互联网+企业', link: '/business/2', children: []},
@@ -152,7 +156,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 #header {
   position: fixed;
   top: 0;
@@ -172,8 +175,8 @@ export default {
   color: $theme-color !important;
 }
 
-::v-deep.nav-item{
-  margin-right:10px;
+::v-deep.nav-item {
+  margin-right: 10px;
 }
 
 ::v-deep.nav-item::after {
@@ -338,7 +341,7 @@ export default {
 .dropdown-menu {
   border-radius: 0 !important;
 }
-::v-deep.nav-link.dropdown-toggle::after {
-  display: none !important;
-}
+// ::v-deep.nav-link.dropdown-toggle::after {
+//   display: none !important;
+// }
 </style>

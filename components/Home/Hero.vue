@@ -5,7 +5,7 @@
 
     <!-- <b-img fluid :src="current.icon"> </b-img> -->
     <b-carousel
-      style="text-shadow: 0px 0px 2px #000;"
+      style="text-shadow: 0px 0px 2px #000"
       fade
       indicators
       :interval="4000"
@@ -20,35 +20,41 @@
       <b-carousel-slide caption="">
         <template slot="img">
           <!-- <parallax> -->
-            <div class="banner-img">
-              <img src="~/static/img/home/home.gif" alt="" height="100%" />
+          <div class="banner-img1">
+            <div class="hero-text text-center">
+              <Heading :level="3" class="wow zoomIn" data-wow-duration="2s"
+                >Hey</Heading
+              >
+
+              <Heading :level="2" class="wow zoomIn" data-wow-duration="2s"
+                >welcome</Heading
+              >
             </div>
+          </div>
           <!-- </parallax> -->
         </template>
       </b-carousel-slide>
-      <b-carousel-slide caption="">
+      <!-- <b-carousel-slide caption="">
         <template slot="img">
-          <!-- <parallax> -->
-            <div class="banner-img">
-              <img
-                src="~/static/img/home/home6.png"
-                alt=""
-                height="100%"
-              />
-              </div>
-          <!-- </parallax> -->
+          <div class="banner-img2">
+            <img
+              :src="require('~/static/img/home/home6.png')"
+              alt=""
+              height="100%"
+            />
+          </div>
         </template>
-      </b-carousel-slide>
+      </b-carousel-slide> -->
       <b-carousel-slide caption="">
         <template slot="img">
           <!-- <parallax> -->
-            <div class="banner-img">
-              <img
-                src="~/static/img/home/home5.jpeg"
-                alt=""
-                height="100%"
-              />
-              </div>
+          <div class="banner-img2">
+            <!-- <img
+              :src="require('~/static/img/home/home5.jpeg')"
+              alt=""
+              height="100%"
+            /> -->
+          </div>
           <!-- </parallax> -->
         </template>
       </b-carousel-slide>
@@ -152,57 +158,71 @@ export default {
 // }
 // }
 
+// .banner-img {
+//   height: 200px;
+//   width: 100vw;
+// }
 
-.banner-img{
-  height:200px;
-  width:100vh;
+.banner-img1 {
+  height: 100vh;
+  width: 100vw;
+  background: url("~/static/img/home/home.gif") center center no-repeat;
+  background-size: cover;
+  // background-attachment: fixed;
 }
-@media (min-width:385px) {
-	.banner-img{
-		height:300px;
-    width:100vh;
-	}
-}
-@media (min-width:576px) {
-	.banner-img{
-		height:385px;
-    width:100vh;
-	}
-}
-@media (min-width:768px) {
-	.banner-img{
-    height:460px;
-    width:100vh;
-	}
+.banner-img2 {
+  height: 100vh;
+  width: 100vw;
+  background: url("~/static/img/home/home8.jpg") center center no-repeat;
+  background-size: cover;
 }
 
-@media (min-width:824px) {
-	.banner-img{
-    height:500px;
-    width:100vh;
-	}
-}
+// /* 超小设备 (手机, 400px 以下屏幕设备) */
+// @media only screen and (max-width: 400px) {
+//   .banner-img {
+//     height: 200px;
+//     width: 100vw;
+//   }
+// }
+// /* 超小设备 (手机, 400px 以上屏幕设备) */
+// @media only screen and (min-width: 400px) {
+//   .banner-img {
+//     height: 300px;
+//     width: 100vw;
+//   }
+// }
 
-@media (min-width:992px) {
-	.banner-img{
-		height:100vh;
-    width:100vh;
-	}
-}
+// /* 小设备 (平板电脑和大型手机，600 像素及以上) */
+// @media only screen and (min-width: 600px) {
+//   .banner-img {
+//     height: 360px;
+//     width: 100vw;
+//   }
+// }
 
-@media (min-width:1200px) {
-	.banner-img{
-		height:100vh;
-    width:100vh;
-	}
-}
+// /* 中型设备（平板电脑，768 像素及以上） */
+// @media only screen and (min-width: 768px) {
+//   .banner-img {
+//     height: 400px;
+//     width: 100vw;
+//   }
+// }
 
-@media (min-width:1400px) {
-	.banner-img{
-		height:100vh;
-    width:100vh;
-	}
-}
+// /* 大型设备（笔记本电脑/台式机，992 像素及以上） */
+// @media only screen and (min-width: 992px) {
+//   .banner-img {
+//     height: 100vh;
+//     width: 100vw;
+//   }
+// }
+
+// /* 超大型设备（大型笔记本电脑和台式机，1200 像素及以上） */
+// @media only screen and (min-width: 1200px) {
+//   .banner-img {
+//     height: 100vh;
+//     width: 100vw;
+//   }
+// }
 
 .hero-text {
   position: absolute;
@@ -264,11 +284,10 @@ export default {
   height: 50px;
 
   @media screen and (max-width: 767px) {
-    top: 70%;
+    top: 84%;
   }
   @media screen and (min-width: 767px) {
     top: 92%;
   }
 }
-
 </style>
