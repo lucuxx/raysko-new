@@ -2,7 +2,7 @@
   <section>
     <div class="mobile-auto d-block d-md-none"></div>
     <!-- <div class="header-white"></div> -->
-    <div class="header-content spin-content">
+    <!-- <div class="header-content spin-content">
       <div style="height: 100%">
         <div class="flex">
           <div class="content">
@@ -11,20 +11,15 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="pb-5">
-      <div class="border-bottom mb-5 header-top">
+    <div style="border-bottom:1px solid gray;">
+      <!-- <div class="border-bottom mb-5 header-top">
         <div
           class="container d-flex justify-content-between align-items-center"
         >
           <h4 class="py-3">{{ info.title }}</h4>
           <div class="d-none d-md-block">
-            <!-- <b-breadcrumb class="bg-white m-0 p-0">
-              <b-breadcrumb-item to="/">网站首页</b-breadcrumb-item>
-              <b-breadcrumb-item to="/product">产品解决方案</b-breadcrumb-item>
-              <b-breadcrumb-item active>{{info.title}}</b-breadcrumb-item>
-            </b-breadcrumb> -->
             <b-button
               variant="link"
               class="text-decoration-none"
@@ -39,19 +34,19 @@
             >
           </div>
         </div>
-      </div>
+      </div> -->
       <div id="insmeter-img">
-        <b-img fluid :src="require('~/static/img/product/01.png')"></b-img>
-        <b-img fluid :src="require('~/static/img/product/02.png')"></b-img>
+        <b-img fluid :src="require('~/static/img/product/001.jpeg')"></b-img>
+        <!-- <b-img fluid :src="require('~/static/img/product/02.png')"></b-img>
         <b-img fluid :src="require('~/static/img/product/03.png')"></b-img>
         <b-img fluid :src="require('~/static/img/product/04.png')"></b-img>
         <b-img fluid :src="require('~/static/img/product/05.png')"></b-img>
-        <b-img fluid :src="require('~/static/img/product/06.png')"></b-img>
+        <b-img fluid :src="require('~/static/img/product/06.png')"></b-img> -->
       </div>
 
       <div id="insmeter-table" ref="tableRef">
-        <!-- <h4 class="wfont24">标准配置</h4> -->
-        <table>
+        <table class="container">
+          <h3 >标准配置</h3>
           <tbody>
             <tr>
               <td
@@ -59,7 +54,7 @@
                 style="
                   background-color: transparent;
                   padding: 20px 0;
-                  font-size: 20px;
+                  font-size: 16px;
                   color: #fff;
                 "
               >
@@ -183,7 +178,7 @@
                 style="
                   background-color: transparent;
                   padding: 20px 0;
-                  font-size: 20px;
+                  font-size: 16px;
                 "
               >
                 结构参数
@@ -205,7 +200,7 @@
                 style="
                   background-color: transparent;
                   padding: 20px 0;
-                  font-size: 20px;
+                  font-size: 16px;
                 "
               >
                 通讯传输
@@ -259,7 +254,7 @@
                 style="
                   background-color: transparent;
                   padding: 20px 0;
-                  font-size: 20px;
+                  font-size: 16px;
                 "
               >
                 环境参数
@@ -306,7 +301,7 @@
                 style="
                   background-color: transparent;
                   padding: 20px 0;
-                  font-size: 20px;
+                  font-size: 16px;
                 "
               >
                 扫描引擎
@@ -351,7 +346,7 @@
                 style="
                   background-color: transparent;
                   padding: 20px 0;
-                  font-size: 20px;
+                  font-size: 16px;
                 "
               >
                 通讯接口
@@ -375,7 +370,7 @@
                 style="
                   background-color: transparent;
                   padding: 20px 0;
-                  font-size: 20px;
+                  font-size: 16px;
                 "
               >
                 开发支持
@@ -404,7 +399,7 @@
                 style="
                   background-color: transparent;
                   padding: 20px 0;
-                  font-size: 20px;
+                  font-size: 16px;
                 "
               >
                 设备配件
@@ -428,7 +423,7 @@
                 style="
                   background-color: transparent;
                   padding: 20px 0;
-                  font-size: 20px;
+                  font-size: 16px;
                 "
               >
                 温馨提示
@@ -571,7 +566,7 @@ export default {
 
 #insmeter-table {
   color: #fff;
-  background: $mask-color;
+  background: #333;
   padding: 20px 40px;
 }
 table {

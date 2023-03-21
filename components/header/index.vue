@@ -4,111 +4,118 @@
     class="header"
     :class="{ 'active-header': showNavbarBg }"
   >
-    <div style="float: left">
-      <b-img height="50" :src="require('~/assets/img/logo2.png')" alt="" />
-    </div>
-
-    <!-- 导航 -->
-    <div class="custom-nav-bar">
-      <ul class="custom-nav">
-        <li v-for="(nav, index) in navList" :key="index">
-          <div
-            class="custom-nav-item"
-            :class="{ 'active-background': showNavbarBg }"
-          >
-            <div
-              class="custom-nav-item-title"
-              @click="handleNavbarClick()"
-              @mouseenter="handleNavbarEnter(nav, '', $event)"
-            >
-              <nuxt-link
-                :class="{ active: routePath == nav.link }"
-                :to="nav.link"
-                class="font-monospace"
+    <b-row class="container mx-auto">
+      <b-col cols="2" class="header-style">
+        <b-img height="50" :src="require('~/assets/img/logo2.png')" alt="" />
+      </b-col>
+      <b-col cols="8" class="mx-auto">
+        <!-- 导航 -->
+        <div class="custom-nav-bar ">
+          <ul class="custom-nav ">
+            <li v-for="(nav, index) in navList" :key="index">
+              <div
+                class="custom-nav-item"
+                :class="{ 'active-background': showNavbarBg }"
               >
-                {{ nav.name }}</nuxt-link
-              >
-            </div>
-            <!-- 下拉菜单 -->
-            <client-only>
-              <template v-if="isSubNav">
                 <div
-                  v-if="nav.children && nav.link !== '/category'"
-                  class="test-dropdown-content"
+                  class="custom-nav-item-title"
+                  @click="handleNavbarClick()"
+                  @mouseenter="handleNavbarEnter(nav, '', $event)"
                 >
-                  <div class="test-dropdown-menu">
-                    <div
-                      v-for="(navChildren, navChildrenIndex) in nav.children"
-                      class="test-menuItem"
-                      :key="navChildrenIndex"
-                      @click="
-                        handleSubNavbarClick(
-                          navChildren,
-                          navChildrenIndex,
-                          $event
-                        )
-                      "
-                    >
-                      <nuxt-link :to="navChildren.link" tag="li">{{
-                        navChildren.name
-                      }}</nuxt-link>
-                    </div>
-                  </div>
+                  <nuxt-link
+                    :class="{ active: routePath == nav.link }"
+                    :to="nav.link"
+                    class="font-monospace"
+                  >
+                    {{ nav.name }}</nuxt-link
+                  >
                 </div>
-              </template>
-            </client-only>
-          </div>
-        </li>
-      </ul>
-      <!-- 移动端 -->
-      <!-- <ul class="nav-m" :class="{ collapse: !isCollapse }">
+                <!-- 下拉菜单 -->
+                <client-only>
+                  <template v-if="isSubNav">
+                    <div
+                      v-if="nav.children && nav.link !== '/category'"
+                      class="test-dropdown-content"
+                    >
+                      <div class="test-dropdown-menu">
+                        <div
+                          v-for="(
+                            navChildren, navChildrenIndex
+                          ) in nav.children"
+                          class="test-menuItem"
+                          :key="navChildrenIndex"
+                          @click="
+                            handleSubNavbarClick(
+                              navChildren,
+                              navChildrenIndex,
+                              $event
+                            )
+                          "
+                        >
+                          <nuxt-link :to="navChildren.link" tag="li">{{
+                            navChildren.name
+                          }}</nuxt-link>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </client-only>
+              </div>
+            </li>
+          </ul>
+          <!-- 移动端 -->
+          <!-- <ul class="nav-m" :class="{ collapse: !isCollapse }">
         <li v-for="(nav, index) in navList" :key="index">
           <nuxt-link :class="{ active: routePath == nav.link }" :to="nav.link"
             >{{ nav.name }}
           </nuxt-link>
         </li>
       </ul> -->
-      <div class="custom-button" @click="handleToggleBtn()">三</div>
-      <div class="custom-site-nav" :class="{ active: isCollapse }">
-        <b-nav vertical v-for="(item, index) in navList" :key="index">
-          <b-nav-item
-            v-if="!item.children"
-            style="color: #fff"
-            @click="handleMobileNav(item)"
-          >
-            {{ item.name }}
-          </b-nav-item>
-
-          <b-nav-item-dropdown
-            v-else
-            :text="item.name"
-            toggle-class="nav-link-custom"
-            right
-            block
-          >
-            <template v-slot:button-content>
-              <span
-                @click="handleMobileNav(item)"
-                :class="{ active: $route.path.includes(item.link) }"
-                >{{ item.name }}</span
-              >
-            </template>
-            <b-dropdown-item
-              @click="handleMobileNav(i)"
-              v-for="(i, idx) in item.children"
-              :key="idx"
-              >{{ i.name }}</b-dropdown-item
+        </div>
+      </b-col>
+      <b-col cols="2">
+        <div class="custom-button" @click="handleToggleBtn()">三</div>
+        <div class="custom-site-nav" :class="{ active: isCollapse }">
+          <b-nav vertical v-for="(item, index) in navList" :key="index">
+            <b-nav-item
+              v-if="!item.children"
+              style="color: #fff"
+              @click="handleMobileNav(item)"
             >
-          </b-nav-item-dropdown>
-        </b-nav>
-      </div>
-    </div>
+              {{ item.name }}
+            </b-nav-item>
+
+            <b-nav-item-dropdown
+              v-else
+              :text="item.name"
+              toggle-class="nav-link-custom"
+              right
+              block
+            >
+              <template v-slot:button-content>
+                <span
+                  @click="handleMobileNav(item)"
+                  :class="{ active: $route.path.includes(item.link) }"
+                  >{{ item.name }}</span
+                >
+              </template>
+              <b-dropdown-item
+                @click="handleMobileNav(i)"
+                v-for="(i, idx) in item.children"
+                :key="idx"
+                >{{ i.name }}</b-dropdown-item
+              >
+            </b-nav-item-dropdown>
+          </b-nav>
+        </div>
+      </b-col>
+    </b-row>
 
     <!-- 下拉菜单 -->
     <client-only>
       <div
         v-if="currentChildren.length && isProduct"
-        class="custom-dropdown-content"
+        class="container custom-dropdown-content"
         @mouseleave="handleNavbarLeave()"
       >
         <b-row class="mx-0 custom-dropdown-menu">
@@ -132,10 +139,9 @@
               @click="handleToProductClick(item)"
             >
               <b-img
+               fluid
                 :src="require('~/static/img/product/product.png')"
-                height="30"
               ></b-img>
-              &nbsp;&nbsp;
               <div>{{ item.name }}</div>
             </div>
           </b-col>
@@ -313,12 +319,12 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   background-color: transparent;
   z-index: 999;
-  padding: 0 10%;
+  padding: 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -335,6 +341,9 @@ export default {
         color: #333;
       }
     }
+  }
+  .header-style{
+    line-height:$header-height;
   }
 }
 .header-white {
@@ -364,12 +373,12 @@ export default {
     // button {
 
     // }
-    .custom-button {
-      display: block !important;
-    }
-    .custom-site-nav {
-      display: block !important;
-    }
+  }
+  .custom-button {
+    display: block !important;
+  }
+  .custom-site-nav {
+    display: block !important;
   }
 }
 
@@ -388,10 +397,8 @@ export default {
 
 .custom-nav-bar {
   height: 100%;
-  overflow: hidden;
-  // display: flex;
-  // justify-content: flex-end;
-  // align-items: center;
+  // overflow: hidden;
+
   // overflow: hidden;
   .custom-nav-m {
     display: none;
@@ -400,20 +407,23 @@ export default {
   // button {
   //   display: none;
   // }
-  .custom-button {
-    display: none;
-  }
-  .custom-site-nav {
-    display: none;
-  }
+}
+.custom-button {
+  display: none;
+  text-align: right;
+}
+.custom-site-nav {
+  display: none;
 }
 
 .custom-nav {
-  display: flex;
   width: 100%;
   height: $header-height;
   line-height: $header-height;
   list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .custom-nav-item {
     margin: 0 20px;
@@ -436,7 +446,7 @@ export default {
 
       .active {
         color: $theme-color;
-        border-bottom: 2px solid $primary-color;
+        border-bottom: 3px solid $primary-color;
       }
 
       &::before {
@@ -446,7 +456,7 @@ export default {
         left: -5px;
         right: -5px;
         width: inherit;
-        height: 2px;
+        height: 3px;
         // width: 100%;
         background-color: $primary-color;
         transform: scale(0);
@@ -509,12 +519,12 @@ export default {
   left: 0; // 设置为0, 不然会直接定位到父元素下方
   // height: 500px; // 下拉初始高度
   right: 0;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   background-color: $white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
   .custom-dropdown-menu {
-    padding: 10px 50px;
+    padding: 6px 0;
     color: #fff;
     background-color: #fff;
     // border-radius: 4px;
@@ -523,7 +533,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
     .custom-menuItem {
       width: 100%;
       text-align: left;
@@ -542,14 +551,13 @@ export default {
       flex-wrap: wrap;
       justify-content: flex-start;
       align-items: center;
-
       height: inherit;
       .menuItem {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 200px;
-        height: 70px;
+        // display: flex;
+        // justify-content: flex-start;
+        // align-items: center;
+        width: 180px;
+        height: 240px;
         margin-bottom: 10px;
         margin-right: 10px;
         // text-align: left;
@@ -558,12 +566,13 @@ export default {
         font-weight: 400;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+        background:rgba(246, 242, 242, 0.5);
         img {
-          height: 100%;
+          width:180px;
         }
         div {
-          flex: 1;
-          width: 100px;
+          width: 100%;
+          text-align: center;
           white-space: wrap;
         }
         &:hover {
@@ -631,7 +640,7 @@ export default {
   display: none;
   font-size: 20px;
   font-weight: 800;
-  line-height:$header-height;
+  line-height: $header-height;
   cursor: pointer;
 }
 
