@@ -1,9 +1,9 @@
 <template>
   <div>
 
-    <no-ssr>
+    <clint-only>
       <Hero />
-    </no-ssr>
+    </clint-only>
     <GlobalParallax2 />
     <GlobalParallax3 />
     <GlobalParallax4 />
@@ -21,7 +21,6 @@ import GlobalParallax3 from '@/components/Home/GlobalParallax3.vue'
 import GlobalParallax4 from '@/components/Home/GlobalParallax4.vue'
 import Partner from '@/components/Home/partner.vue'
 
-import NoSSR from 'vue-no-ssr'
 
 if (process.browser) {
   // 在这里根据环境引入wow.js
@@ -40,7 +39,6 @@ export default {
     GlobalParallax3,
     GlobalParallax4,
     Partner,
-    'no-ssr': NoSSR
   },
   mounted(){
     if (process.browser) {

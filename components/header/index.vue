@@ -30,7 +30,7 @@
               >
             </div>
             <!-- 下拉菜单 -->
-            <no-ssr>
+            <client-only>
               <template v-if="isSubNav">
                 <div
                   v-if="nav.children && nav.link !== '/category'"
@@ -56,7 +56,7 @@
                   </div>
                 </div>
               </template>
-            </no-ssr>
+            </client-only>
           </div>
         </li>
       </ul>
@@ -105,7 +105,7 @@
     </div>
 
     <!-- 下拉菜单 -->
-    <no-ssr>
+    <client-only>
       <div
         v-if="currentChildren.length && isProduct"
         class="custom-dropdown-content"
@@ -141,7 +141,7 @@
           </b-col>
         </b-row>
       </div>
-    </no-ssr>
+    </client-only>
   </header>
 </template>
 
@@ -613,12 +613,14 @@ export default {
   right: 0;
   background-color: $white;
   width: 100vw;
+  height: 100vh;
   transform: translateX(100vw);
   padding-top: $header-height;
   z-index: -1;
   flex-direction: column;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
   list-style-type: none;
+  overflow-y: auto;
 
   &.active {
     transform: translateX(0px);

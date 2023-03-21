@@ -12,7 +12,7 @@
             >
           </div>
           <!-- 下拉菜单 -->
-          <no-ssr>
+          <client-only>
             <div v-if="nav.children" class="custom-dropdown-content">
               <div class="custom-dropdown-menu">
                 <div
@@ -26,7 +26,7 @@
                 </div>
               </div>
             </div>
-          </no-ssr>
+          </client-only>
         </div>
       </li>
     </ul>
