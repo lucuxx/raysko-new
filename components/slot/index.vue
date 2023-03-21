@@ -11,7 +11,7 @@
       <!-- <Heading :level="2" class="wow fadeInUp" data-wow-delay="0.2s">{{title}}</Heading> -->
       <div class="title-icon"></div>
       <p
-        class="desc mt-3 mb-4 mx-5 text-muted text-center wow fadeInDown"
+        class="desc mt-3 mb-4 mx-5 text-muted text-center wow fadeInUp"
         :class="{ descFontColor: showFontColor }"
         data-wow-delay="0.4s"
         v-if="desc"

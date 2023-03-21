@@ -4,7 +4,6 @@
     <Loading :hidden="!show2" />
     <!-- 内容 -->
     <my-header />
-
     <nuxt v-if="!show2" />
     <concat />
     <my-footer />

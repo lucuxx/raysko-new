@@ -1,7 +1,7 @@
 <template>
   <footer class="text-center py-2 bg-color">
     <a href="https://beian.miit.gov.cn" target="_blank">
-      Copyright © 深圳睿思科信息技术有限公司 ALL Rights Reserved.
+      版权所有 Copyright © ALL Rights Reserved.
       粤ICP备17007661号-3
     </a>
   </footer>

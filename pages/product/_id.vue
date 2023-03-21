@@ -1,6 +1,8 @@
 <template>
   <section>
-    <div class="header-content spin-content" >
+    <div class="mobile-auto d-block d-md-none"></div>
+    <!-- <div class="header-white"></div> -->
+    <div class="header-content spin-content">
       <div style="height: 100%">
         <div class="flex">
           <div class="content">
@@ -10,80 +12,526 @@
         </div>
       </div>
     </div>
+
     <div class="pb-5">
-    <div class="border-bottom mb-5">
-      <div class="container d-flex justify-content-between align-items-center">
-        <h4 class="py-3">{{info.title}}</h4>
-        <div class="d-none d-md-block">
-          <b-breadcrumb class="bg-white m-0 p-0">
-            <b-breadcrumb-item to="/">网站首页</b-breadcrumb-item>
-            <b-breadcrumb-item to="/product">产品解决方案</b-breadcrumb-item>
-            <b-breadcrumb-item active>{{info.title}}</b-breadcrumb-item>
-          </b-breadcrumb>
+      <div class="border-bottom mb-5 header-top">
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <h4 class="py-3">{{ info.title }}</h4>
+          <div class="d-none d-md-block">
+            <!-- <b-breadcrumb class="bg-white m-0 p-0">
+              <b-breadcrumb-item to="/">网站首页</b-breadcrumb-item>
+              <b-breadcrumb-item to="/product">产品解决方案</b-breadcrumb-item>
+              <b-breadcrumb-item active>{{info.title}}</b-breadcrumb-item>
+            </b-breadcrumb> -->
+            <b-button
+              variant="link"
+              class="text-decoration-none"
+              @click="handleToImg"
+              >概览</b-button
+            >
+            <b-button
+              variant="link"
+              class="text-decoration-none"
+              @click="handleToTable"
+              >产品参数</b-button
+            >
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container">
-      <h4 class="text-center mb-2" v-if="info.subtitle">{{info.subtitle}}</h4>
-      <b-row align-h="center" class="mb-5">
-        <b-col md="8"><b-img :src="info.picture" fluid alt="" /></b-col>
-      </b-row>
-      <h5 class="title mb-4">方案描述</h5>
-      <p class="detail mb-5 text-justify">{{info.desc}}</p>
-      <h5 class="title mb-4">方案特点</h5>
-      <p class="detail mb-5 text-justify" v-html="info.character"></p>
-      <h5 class="title mb-4">应用场景</h5>
-      <p class="detail mb-5 text-justify" v-html="info.apply"></p>
-      <template v-if="info.picture2">
-        <h4 class="text-center mb-4" v-if="info.subtitle2">{{info.subtitle2}}</h4>
-        <b-row align-h="center" class="mb-5">
-          <b-col md="8"><b-img :src="info.picture2" fluid alt="" /></b-col>
-        </b-row>
-        <h5 class="title mb-4">方案描述</h5>
-        <p class="detail mb-5 text-justify">{{info.desc2}}</p>
-        <h5 class="title mb-4">方案特点</h5>
-        <p class="detail mb-5 text-justify" v-html="info.character2"></p>
-        <h5 class="title mb-4">应用场景</h5>
-        <p class="detail mb-5 text-justify" v-html="info.apply2"></p>
-      </template>
-      <template v-if="info.picture3">
-        <h4 class="text-center mb-3" v-if="info.subtitle3">{{info.subtitle3}}</h4>
-        <b-row align-h="center" class="mb-5">
-          <b-col md="8"><b-img :src="info.picture3" fluid alt="" /></b-col>
-        </b-row>
-        <h5 class="title mb-4">方案描述</h5>
-        <p class="detail mb-5 text-justify">{{info.desc3}}</p>
-        <h5 class="title mb-4">方案特点</h5>
-        <p class="detail mb-5 text-justify" v-html="info.character3"></p>
-        <h5 class="title mb-4">应用场景</h5>
-        <p class="detail mb-5 text-justify" v-html="info.apply3"></p>
-      </template>
-    </div>
-  </div>
-  </section>
+      <div id="insmeter-img">
+        <b-img fluid :src="require('~/static/img/product/01.png')"></b-img>
+        <b-img fluid :src="require('~/static/img/product/02.png')"></b-img>
+        <b-img fluid :src="require('~/static/img/product/03.png')"></b-img>
+        <b-img fluid :src="require('~/static/img/product/04.png')"></b-img>
+        <b-img fluid :src="require('~/static/img/product/05.png')"></b-img>
+        <b-img fluid :src="require('~/static/img/product/06.png')"></b-img>
+      </div>
 
+      <div id="insmeter-table" ref="tableRef">
+        <!-- <h4 class="wfont24">标准配置</h4> -->
+        <table>
+          <tbody>
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: transparent;
+                  padding: 20px 0;
+                  font-size: 20px;
+                  color: #fff;
+                "
+              >
+                系统配置
+              </td>
+            </tr>
+            <tr>
+              <td>处理器</td>
+              <td>8核2.0GHz高性能处理器</td>
+            </tr>
+
+            <tr>
+              <td>操作系统</td>
+              <td>Android 11.0</td>
+            </tr>
+
+            <tr>
+              <td>内存（ROM+RAM）</td>
+              <td>5G：64GB+4GB（标配），128GB+6GB（选配）<br />4G：64GB+4GB</td>
+            </tr>
+
+            <tr>
+              <td>SIM</td>
+              <td>
+                三选二SIM卡槽，支持双卡双待<br />
+                *三选二卡槽：可同时放两张卡，nano&nbsp;SIM卡+nano&nbsp;SIM卡/nano&nbsp;SIM卡+TF卡<br />
+              </td>
+            </tr>
+
+            <tr>
+              <td>扩展插槽</td>
+              <td>
+                5G：Micro SD卡（最高支持1TB）<br />4G：Micro
+                SD卡（最高支持256GB）
+              </td>
+            </tr>
+
+            <tr>
+              <td>显示屏</td>
+              <td>
+                4G：6.21英寸，分辨率1520*720像素<br />5G：6.21英寸，分辨率1920*1080像素
+              </td>
+            </tr>
+
+            <tr>
+              <td>触控屏</td>
+              <td>工业级电容屏，支持湿手操作/手势操作/多点触控/手套模式</td>
+            </tr>
+
+            <tr>
+              <td>摄像头</td>
+              <td>
+                4G：后置1600万摄像头+30万副摄，前置500万像素，支持自动对焦<br />5G：后置1600万摄像头+30万副摄，前置800万像素，支持自动对焦
+              </td>
+            </tr>
+
+            <tr>
+              <td>闪光灯</td>
+              <td>800mA闪光灯</td>
+            </tr>
+
+            <tr>
+              <td>键盘</td>
+              <td>共5键，侧面扫描键*2，侧面电源键*1，侧面音量±键*2</td>
+            </tr>
+
+            <tr>
+              <td>电池</td>
+              <td>
+                锂电池3.85V供电，4600mAh，可拆卸（可选）<br />
+                锂电池3.85V供电，4200mAh，可拆卸，支持NFC，无线充电<br />
+                *执行标准：GB31241-2014<br />
+              </td>
+            </tr>
+
+            <tr>
+              <td>音频</td>
+              <td>内置双麦克风（降噪麦克风）</td>
+            </tr>
+
+            <tr>
+              <td>充电方式</td>
+              <td>Type-C充电及pin口充电，支持18W快充</td>
+            </tr>
+
+            <tr>
+              <td>提示</td>
+              <td>大功率喇叭/振动提示/LED提示/音频提示</td>
+            </tr>
+
+            <tr>
+              <td>指纹识别</td>
+              <td>支持背部指纹识别</td>
+            </tr>
+
+            <tr>
+              <td>震动马达</td>
+              <td>内置震动马达</td>
+            </tr>
+
+            <tr>
+              <td>传感器</td>
+              <td>
+                重力传感器（G-sensor）/接近传感器/光线传感器/地磁传感器/陀螺仪
+              </td>
+            </tr>
+
+            <tr>
+              <td>对讲功能（可选）</td>
+              <td>支持一键PTT呼叫</td>
+            </tr>
+
+            <tr>
+              <td>瞳孔灯（可选）</td>
+              <td>支持瞳孔灯功能（5G）</td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: transparent;
+                  padding: 20px 0;
+                  font-size: 20px;
+                "
+              >
+                结构参数
+              </td>
+            </tr>
+            <tr>
+              <td>尺寸（H*W*D）</td>
+              <td>168mm*79mm*13.7mm</td>
+            </tr>
+
+            <tr>
+              <td>重量</td>
+              <td>245g（含电池）</td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: transparent;
+                  padding: 20px 0;
+                  font-size: 20px;
+                "
+              >
+                通讯传输
+              </td>
+            </tr>
+            <tr>
+              <td>无线广域网络（网络频率）</td>
+              <td>
+                国内&amp;欧亚版:<br />
+                2G：B2/B3/B5/B8 <br />
+                3G：WCDMA：B1/B5/B8 ，CDMA BC0，TD-SCDMA：B34/B39 <br />
+                4G：FDD-LTE：B1/B3/B5/B7/B8/B20，TDD-LTE：B34/B38/B39/B40/B41
+                <br />
+                5G：N1/N3/N38/N41/N77/N78/N79（仅5G版本支持）<br />
+                美洲版：<br />
+                2G：B2/B3/B5<br />
+                3G：B1/B2/B4/B5， CDMA BC0/BC1（美国）<br />
+                4G：B1/B2/B3/B4/B5/B7/B12/B17/B28A/B28B/B41<br />
+                5G：N1/N3/N38/N41/N77/N78/N79（仅5G版本支持）<br />
+              </td>
+            </tr>
+
+            <tr>
+              <td>无线广域网络（数据业务）</td>
+              <td>
+                5G：GSM/GPRS/EDGE/CDMA/UMTS/HSPA/HSPA+/EVDO/WCDMA/TD-SCDMA/TDD-LTE/FDD-LTE/SA/NSA/Sub6<br />4G：GSM/GPRS/EDGE/CDMA/UMTS/HSPA/HSPA+/EVDO/WCDMA/TD-SCDMA/TDD-LTE/FDD-LTE
+              </td>
+            </tr>
+
+            <tr>
+              <td>WLAN功能</td>
+              <td>
+                Wi-Fi
+                802.11a/b/g/n/ac/d/e/h/i/j/k/r/v/w（2.4G+5G双频Wi-Fi），支持快速漫游
+              </td>
+            </tr>
+
+            <tr>
+              <td>蓝牙</td>
+              <td>5G：Bluetooth 5.1<br />4G：Bluetooth 5.0</td>
+            </tr>
+
+            <tr>
+              <td>GPS</td>
+              <td>GPS/AGPS/北斗/伽利略/GLONASS/QZSS/GNSS</td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: transparent;
+                  padding: 20px 0;
+                  font-size: 20px;
+                "
+              >
+                环境参数
+              </td>
+            </tr>
+            <tr>
+              <td>工作温度</td>
+              <td>-20℃~60℃ <br />*为安全考虑，请勿在低温环境下充电</td>
+            </tr>
+
+            <tr>
+              <td>存储温度</td>
+              <td>-40℃~70℃（不含电池）</td>
+            </tr>
+
+            <tr>
+              <td>湿度</td>
+              <td>0～95% （无结露）</td>
+            </tr>
+
+            <tr>
+              <td>跌落规格</td>
+              <td>1.5米水泥地多次跌落</td>
+            </tr>
+
+            <tr>
+              <td>滚筒跌落规格</td>
+              <td>1000次0.5米高处滚筒跌落</td>
+            </tr>
+
+            <tr>
+              <td>防护等级</td>
+              <td>IP67</td>
+            </tr>
+
+            <tr>
+              <td>静电放电</td>
+              <td>±15KV（空气放电），±8KV（接触放电）</td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: transparent;
+                  padding: 20px 0;
+                  font-size: 20px;
+                "
+              >
+                扫描引擎
+              </td>
+            </tr>
+            <tr>
+              <td>条码支持</td>
+              <td>支持一维/二维条码扫描</td>
+            </tr>
+
+            <tr>
+              <td>扫描精度</td>
+              <td>≥3.33mil</td>
+            </tr>
+
+            <tr>
+              <td>扫描角度</td>
+              <td>
+                水平33.5°，偏移视角公差±65.5°，倾斜视角公差±68°，旋转视角公差±360°
+              </td>
+            </tr>
+
+            <tr>
+              <td>运动容差</td>
+              <td>8m/s</td>
+            </tr>
+
+            <tr>
+              <td>扫描距离</td>
+              <td>
+                Code128（3.3mil）：10.0cm ~15.0cm <br />Code128（15mil）：5.5cm
+                ~ 71.0cm <br />QR Code（7.5mil）：11.0cm ~ 17.5cm <br />QR
+                Code（100mil）：12.0cm ~ 235cm
+                <br />PDF417（7.5mil）：7.0cm~33.5cm <br />Data
+                Matrix（10.8mil）：6.0cm~31.0cm
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: transparent;
+                  padding: 20px 0;
+                  font-size: 20px;
+                "
+              >
+                通讯接口
+              </td>
+            </tr>
+            <tr>
+              <td>USB接口</td>
+              <td>
+                5G：Type-C（带耳机功能）*1，USB 3.0<br />4G：Type-C（带耳机功能）*1
+              </td>
+            </tr>
+
+            <tr>
+              <td>OTG接口</td>
+              <td>支持</td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: transparent;
+                  padding: 20px 0;
+                  font-size: 20px;
+                "
+              >
+                开发支持
+              </td>
+            </tr>
+            <tr>
+              <td>开发语言</td>
+              <td>Java</td>
+            </tr>
+
+            <tr>
+              <td>开发API</td>
+              <td>
+                iScan&nbsp;API（扫描开发包），Device&nbsp;API（设备管理/配置开发包），Android标准接口
+              </td>
+            </tr>
+
+            <tr>
+              <td>开发工具</td>
+              <td>Eclipse/Android&nbsp;Studio</td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: transparent;
+                  padding: 20px 0;
+                  font-size: 20px;
+                "
+              >
+                设备配件
+              </td>
+            </tr>
+            <tr>
+              <td>标准配件</td>
+              <td>USB数据线*1，电源适配器*1，手绳*1，背带*1，电池*1</td>
+            </tr>
+
+            <tr>
+              <td>可选配件</td>
+              <td>
+                充电卡夹，单座充，主机四联充，电池四联充，腰包，保护膜，保护套
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                colspan="2"
+                style="
+                  background-color: transparent;
+                  padding: 20px 0;
+                  font-size: 20px;
+                "
+              >
+                温馨提示
+              </td>
+            </tr>
+            <tr>
+              <td>提示1</td>
+              <td>因产品线不定期更新，内容如有变更，恕不另行通知。</td>
+            </tr>
+
+            <tr>
+              <td>提示2</td>
+              <td>本产品包含4G/5G两个版本，详细产品参数可下载产品彩页了解。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <div class="container">
+        <h4 class="text-center mb-2" v-if="info.subtitle">{{info.subtitle}}</h4>
+        <b-row align-h="center" class="mb-5">
+          <b-col md="8"><b-img :src="info.picture" fluid alt="" /></b-col>
+        </b-row>
+        <h5 class="title mb-4">方案描述</h5>
+        <p class="detail mb-5 text-justify">{{info.desc}}</p>
+        <h5 class="title mb-4">方案特点</h5>
+        <p class="detail mb-5 text-justify" v-html="info.character"></p>
+        <h5 class="title mb-4">应用场景</h5>
+        <p class="detail mb-5 text-justify" v-html="info.apply"></p>
+        <template v-if="info.picture2">
+          <h4 class="text-center mb-4" v-if="info.subtitle2">{{info.subtitle2}}</h4>
+          <b-row align-h="center" class="mb-5">
+            <b-col md="8"><b-img :src="info.picture2" fluid alt="" /></b-col>
+          </b-row>
+          <h5 class="title mb-4">方案描述</h5>
+          <p class="detail mb-5 text-justify">{{info.desc2}}</p>
+          <h5 class="title mb-4">方案特点</h5>
+          <p class="detail mb-5 text-justify" v-html="info.character2"></p>
+          <h5 class="title mb-4">应用场景</h5>
+          <p class="detail mb-5 text-justify" v-html="info.apply2"></p>
+        </template>
+        <template v-if="info.picture3">
+          <h4 class="text-center mb-3" v-if="info.subtitle3">{{info.subtitle3}}</h4>
+          <b-row align-h="center" class="mb-5">
+            <b-col md="8"><b-img :src="info.picture3" fluid alt="" /></b-col>
+          </b-row>
+          <h5 class="title mb-4">方案描述</h5>
+          <p class="detail mb-5 text-justify">{{info.desc3}}</p>
+          <h5 class="title mb-4">方案特点</h5>
+          <p class="detail mb-5 text-justify" v-html="info.character3"></p>
+          <h5 class="title mb-4">应用场景</h5>
+          <p class="detail mb-5 text-justify" v-html="info.apply3"></p>
+        </template>
+      </div> -->
+    </div>
+  </section>
 </template>
 
 <script>
-import { product } from '@/utils/mock.js'
+import { product } from "@/utils/mock.js";
 
-if (process.browser) { // 在这里根据环境引入wow.js
-  var {WOW} = require('wowjs')
+if (process.browser) {
+  // 在这里根据环境引入wow.js
+  var { WOW } = require("wowjs");
 }
 
 export default {
+  data() {
+    return {
+      tableTop: "",
+    };
+  },
   computed: {
     info() {
-      const index = this.$route.params.id
-      return product[index - 1]
-    }
+      const index = this.$route.params.id;
+      return product[index - 1];
+    },
   },
   mounted() {
-    if (process.browser) {  // 在页面mounted生命周期里面 根据环境实例化WOW
-      new WOW({}).init()
+    if (process.browser) {
+      // 在页面mounted生命周期里面 根据环境实例化WOW
+      new WOW({}).init();
     }
-  }
-}
+    setTimeout(()=>{
+      this.tableTop = this.$refs.tableRef.offsetTop - 110;
+    },1000)
+  },
+  methods: {
+    handleToImg() {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
+    handleToTable() {
+      window.scrollTo({
+        top: this.tableTop,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -93,41 +541,19 @@ export default {
   background-size: cover;
   // background-attachment: fixed;
 }
-.spin-content {
-  height: 200px;
-  .flex {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    > div {
-      margin: auto;
-    }
-    h1 {
-      font-size: 24px;
-      color: #ffffff;
-      text-align: center;
-    }
-    p {
-      font-size: 14px;
-      color: #ffffff;
-    }
-  }
+.header-white {
+  position: sticky;
+  top: 0;
+  height: $header-height;
+  background-color: $mask-color;
 }
-
-@media screen and (min-width: 768px) {
-  // content-1居中大行
-  .spin-content {
-    height: 456px;
-    .flex {
-      h1 {
-        font-size: 48px;
-      }
-      p {
-        font-size: 16px;
-        line-height: 30px;
-      }
-    }
-  }
+.header-top {
+  position: sticky;
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(173, 166, 166, 0.5);
+  top: $header-height;
+  background-color: $white;
+  z-index: 10;
 }
 .title {
   font-size: 16px;
@@ -141,5 +567,32 @@ export default {
 }
 .breadcrumb a {
   color: $theme-color;
+}
+
+#insmeter-table {
+  color: #fff;
+  background: $mask-color;
+  padding: 20px 40px;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: initial;
+  border-color: gray;
+  width: 100%;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+table tr:nth-child(odd) {
+  background-color: rgba(245, 245, 245, 0.15);
+}
+table tr td {
+  word-break: break-all;
+  word-wrap: break-word;
+  font-size: 12px;
+  padding: 10px 30px;
 }
 </style>

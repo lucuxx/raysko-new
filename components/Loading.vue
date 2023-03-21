@@ -49,8 +49,9 @@ body,
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 999999;
   background: url("~/static/img/global/welcome.jpeg") center center
     no-repeat;

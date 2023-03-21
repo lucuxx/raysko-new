@@ -1,7 +1,7 @@
-.btn {
+.custom-btn {
     font-weight: 500;
     color: $white;
-    padding: 0 20px;
+    padding: 10px 20px;
     font-size: 1rem;
     height: 52px;
     line-height: 53px;
@@ -10,6 +10,7 @@
     border-color: transparent;
     cursor: pointer;
     position: relative;
+
 
     &-primary {
         // background-color: $primary-color;
@@ -42,7 +43,7 @@
 //   border: none;
 // }
 
-.btn:after,.btn:before {
+.custom-btn:after,.custom-btn:before {
   content: '';
   position: absolute;
   left: 0;
@@ -53,12 +54,12 @@
   z-index:-2;
 }
 
-.btn:hover{
+.custom-btn:hover{
   z-index:1;
   background:transparent;
 }
 
-.btn:before {
+.custom-btn:before {
   transition: .6s;
   // background: #14ae5c;
   z-index:-1;
@@ -67,6 +68,6 @@
   color: $white;
 }
 
-.btn:hover:after,.btn:hover:before {
+.custom-btn:hover:after,.custom-btn:hover:before {
   width: 100%;
 }

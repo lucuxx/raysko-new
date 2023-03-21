@@ -16,7 +16,8 @@ import {
   ListGroupPlugin,
   BreadcrumbPlugin,
   TabsPlugin,
-  ToastPlugin
+  ToastPlugin,
+  TooltipPlugin
 } from 'bootstrap-vue'
 
 export default () => {
@@ -36,4 +37,5 @@ export default () => {
   Vue.use(BreadcrumbPlugin)
   Vue.use(TabsPlugin)
   Vue.use(ToastPlugin)
+  Vue.use(TooltipPlugin)
 }

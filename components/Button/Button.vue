@@ -1,5 +1,5 @@
 <template>
-  <component :is="type" :to="to" :href="href" class="btn btn-primary">
+  <component :is="type" :to="to" :href="href" class="custom-btn custom-btn-primary">
     <slot/>
   </component>
 </template>

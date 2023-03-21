@@ -1,5 +1,6 @@
 <template>
   <section>
+    <div class="mobile-auto d-block d-md-none"></div>
     <div class="header-content spin-content">
       <div style="height: 100%">
         <div class="flex">
@@ -68,26 +69,6 @@ export default {
     no-repeat;
   background-size: cover;
   // background-attachment: fixed;
-}
-.spin-content {
-  height: 200px;
-  .flex {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    > div {
-      margin: auto;
-    }
-    h1 {
-      font-size: 24px;
-      color: #ffffff;
-      text-align: center;
-    }
-    p {
-      font-size: 14px;
-      color: #ffffff;
-    }
-  }
 }
 
 @media screen and (min-width: 768px) {

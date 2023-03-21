@@ -67,7 +67,7 @@
       data-wow-delay="1.5s"
     >
       下拉<br />
-      <font-awesome-icon size="lg" :icon="['fas', 'chevron-down']" />
+      <font-awesome-icon size="lg" :icon="['fas', 'angle-double-down']" />
     </div>
     <!-- <div class="hero-text text-center"> -->
     <!-- <Heading :level="3" class="wow zoomIn" data-wow-duration="2s"
@@ -122,25 +122,8 @@ export default {
       // 在页面mounted生命周期里面 根据环境实例化WOW
       new WOW({}).init();
     }
-    this.current = this.bannerList[0];
-    this.changeBanner();
   },
-  methods: {
-    changeBanner() {
-      this.timer = setInterval(() => {
-        if (this.currentIndex < this.bannerList.length - 1) {
-          this.currentIndex += 1;
-        } else {
-          this.currentIndex = 0;
-        }
-        this.current = this.bannerList[this.currentIndex];
-        console.log(this.current, "this.current");
-      }, 3000);
-    },
-  },
-  beforeDestroy() {
-    this.timer = null;
-  },
+
 };
 </script>
 

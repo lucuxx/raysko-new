@@ -214,42 +214,6 @@ export default {
   background-size: cover;
   // background-attachment: fixed;
 }
-.spin-content {
-  height: 200px;
-  .flex {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    > div {
-      margin: auto;
-    }
-    h1 {
-      font-size: 24px;
-      color: #ffffff;
-      text-align: center;
-    }
-    p {
-      font-size: 14px;
-      color: #ffffff;
-    }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  // content-1居中大行
-  .spin-content {
-    height: 456px;
-    .flex {
-      h1 {
-        font-size: 48px;
-      }
-      p {
-        font-size: 16px;
-        line-height: 30px;
-      }
-    }
-  }
-}
 
 ::v-deep .nav-tabs {
   padding: 15px 0;

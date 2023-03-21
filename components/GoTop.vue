@@ -1,10 +1,30 @@
 <template>
-  <div id="GoTop" @click="GoTop()" v-show="flag">
-    <!-- <span class="glyphicon glyphicon-chevron-up"></span> -->
-    <b-img
-      :src="require('~/static/img/global/go.png')"
-      height="30"
-    ></b-img>
+  <div id="GoTop">
+    <div class="msg" id="button-1" variant="outline-success">
+      <font-awesome-icon size="lg" :icon="['fas', 'qrcode']" />
+    </div>
+
+    <b-tooltip target="button-1" placement="left">
+      <div>
+        <b-img
+          :src="require('~/static/img/footer/lianxi.jpg')"
+          height="100"
+        ></b-img>
+      </div>
+      <strong class="font-strong">关注我们</strong>
+    </b-tooltip>
+    <div class="mobel" id="button-2" variant="outline-success">
+      <font-awesome-icon size="lg" :icon="['fas', 'phone']" />
+    </div>
+
+    <b-tooltip target="button-2" placement="left">
+      <strong class="font-strong">
+        联系我们 13798209586
+      </strong>
+    </b-tooltip>
+    <div class="Rtop" @click="GoTop()" v-show="flag">
+      <font-awesome-icon size="lg" :icon="['fas', 'angle-double-up']" />
+    </div>
   </div>
 </template>
 <script>
@@ -12,7 +32,7 @@ export default {
   name: "GoTop",
   data() {
     return {
-      flag: false
+      flag: false,
     };
   },
   mounted() {
@@ -44,23 +64,71 @@ export default {
           window.scrollTo(0, currentScroll - currentScroll / 10);
         }
       })();
-    }
-  }
+    },
+  },
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 #GoTop {
-  width: 50px;
-  height: 50px;
   position: fixed;
-  right: 10px;
-  bottom: 20px;
-  z-index: 99999999;
-  cursor: pointer;
+  top: 40%;
+  right: 0;
+  // padding-top: 18px;
+  // width: 4pc;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-weight: 700;
+  font-size: 1pc;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .msg {
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    text-align: center;
+    padding:10px;
+    :hover {
+      cursor: pointer;
+      color: $theme-color;
+    }
+  }
+  .mobel {
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    text-align: center;
+    padding:10px;
+    :hover {
+      cursor: pointer;
+      color: $theme-color;
+    }
+  }
+  .Rtop {
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    text-align: center;
+    padding:10px;
+    :hover {
+      cursor: pointer;
+      color: $theme-color;
+    }
+  }
 }
-#GoTop > span {
+
+.font-strong{
+  font-size:16px;
+  font-weight: 600;
+}
+/* #GoTop > span {
   display: block;
   width: 100%;
   height: 100%;
-}
+} */
 </style>

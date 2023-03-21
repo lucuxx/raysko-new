@@ -19,7 +19,7 @@ import Hero from '@/components/Home/Hero.vue'
 import GlobalParallax2 from '@/components/Home/GlobalParallax2.vue'
 import GlobalParallax3 from '@/components/Home/GlobalParallax3.vue'
 import GlobalParallax4 from '@/components/Home/GlobalParallax4.vue'
-import Partner from '@/components/index/partner'
+import Partner from '@/components/Home/partner.vue'
 
 import NoSSR from 'vue-no-ssr'
 

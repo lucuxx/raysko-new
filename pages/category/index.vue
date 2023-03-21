@@ -1,11 +1,11 @@
-<!-- <template>
+<template>
   <section>
-    <div style="height: 72.4px" class="d-block d-md-none"></div>
+    <div class="mobile-auto d-block d-md-none"></div>
     <div class="header-content spin-content">
       <div style="height: 100%">
         <div class="flex">
           <div class="content">
-            <h1 class="wow slideInLeft">产品</h1>
+            <h1 class="wow slideInLeft">产品中心</h1>
             <p class="wow slideInRight">先进产品，贴心服务</p>
           </div>
         </div>
@@ -14,34 +14,56 @@
 
     <div class="container py-5 wrapper">
       <b-row>
-        <b-col md="3" order="0" order-md="0" class="mb-4 wow fadeInUp">
-          <b-list-group>
+        <b-col
+          md="3"
+          order="0"
+          order-md="0"
+          class="mb-4  wow fadeInUp"
+        >
+          <b-list-group class="left-menu">
             <b-list-group-item
-              class="bg-muted"
+              class="bg-muted "
               v-for="(item, index) of tabList"
               :key="index"
               :active="active == index"
-              @click="handleTabClick(index)"
-              >{{ item }}</b-list-group-item
+              @click="handleTabClick(item,index)"
+              >{{ item.name }}
+
+              </b-list-group-item
             >
           </b-list-group>
         </b-col>
         <b-col md="9" order="1" order-md="1" class="">
-          <b-card
-            class="mb-3 wow fadeInUp"
-            :data-wow-delay="index * 0.2 + 's'"
-            v-for="(item, index) of list"
-            :key="index"
-          >
-            <b-card-title>{{ item.title }}</b-card-title>
-            <b-card-text class="text-muted">{{ item.desc }}</b-card-text>
-            <b-button
-              variant="primary"
-              class="d-block ml-auto"
-              @click="handleDetail(item.id)"
-              >查看详情</b-button
+          <b-row class="mx-0">
+            <b-col
+              lg="4"
+              md="6"
+              sm="12"
+              v-for="(item, ind) of productList"
+              :key="ind"
+              class="wow fadeInUp"
+              :data-wow-delay="0.2 * ind + 's'"
             >
-          </b-card>
+              <b-card img-top class="mb-3">
+                <b-card-img
+                  class="mx-auto d-block rounded thumbnail"
+                  :src="item.icon"
+                ></b-card-img>
+                <b-card-title class="mx-auto mt-2 text-truncate">{{
+                  item.title
+                }}</b-card-title>
+                <b-card-text class="mx-auto card-body-text text-muted">{{
+                  item.desc
+                }}</b-card-text>
+                <b-button
+                  variant="primary"
+                  class="mx-auto d-block my-btn"
+                  @click="$router.push('/product/' + item.id)"
+                  >查看详情</b-button
+                >
+              </b-card>
+            </b-col>
+          </b-row>
         </b-col>
       </b-row>
     </div>
@@ -49,9 +71,8 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 if (process.browser) {
+  // 在这里根据环境引入wow.js
   var { WOW } = require("wowjs");
 }
 
@@ -59,8 +80,16 @@ export default {
   data() {
     return {
       active: null,
-      list: [],
-      tabList: ["全部", "云计算", "大数据"],
+      tabList: [
+        { id: 99999, name: "全部" },
+        { id: 1, name: "智能手持终端" },
+        { id: 2, name: "手持打印终端" },
+        { id: 3, name: "人脸门禁/车载终端" },
+        { id: 4, name: "单/双屏人脸访客终端" },
+        { id: 5, name: "PCBA公版" },
+        { id: 6, name: "智能通道闸" },
+        { id: 7, name: "手持警务终端" },
+      ],
       productList: [
         {
           id: 1,
@@ -95,42 +124,25 @@ export default {
       ],
     };
   },
-  watch: {
-    subNavIndex(newVal, oldVal) {
-      this.active = newVal;
-      this.getList();
-    },
-  },
-  computed: {
-    ...mapState(["subNavIndex"]),
-  },
   mounted() {
-    this.active = this.subNavIndex;
+    this.active = 0;
     this.getList();
   },
   methods: {
+    // 筛选列表
     getList() {
-      switch (Number(this.active)) {
-        case 0:
-          this.list = this.productList;
-          break;
-        case 1:
-          this.list = this.productList.slice(0, 2);
-          break;
-        case 2:
-          this.list = this.productList.slice(2);
-      }
+      // TODO 请求所有分类数据
       this.$nextTick(() => {
         if (process.browser) {
           new WOW({}).init();
         }
       });
     },
-    handleTabClick(index) {
-      this.$store.commit("setSubNavIndex", index);
-    },
-    handleDetail(id) {
-      this.$router.push(`/product/${id}`);
+    // 点击筛选
+    handleTabClick(item,index) {
+      if(index !== 0){
+        this.$router.push(`/category/${item.id}`)
+      }
     },
   },
 };
@@ -141,12 +153,39 @@ export default {
   background: url("~/static/img/banner/inside-banner3.jpeg") center center
     no-repeat;
   background-size: cover;
+  // background-attachment: fixed;
+}
+
+.left-menu {
+  position: sticky !important;
+  top:calc( $header-height + 20px);
 }
 .wrapper {
+  // background: #f2f2f2;
 }
+
 .card {
+  border: none;
+
+}
+.card ::v-deep .card-body {
+    padding: 4px !important;
+  }
+
+.card:hover {
+  // background: #F1F1F1;
+  box-shadow: 0 0 10px #ccc;
+}
+.card-body-text {
+  max-height: 102px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
 ::v-deep .list-group-item {
+  // border-color: transparent;
   border-radius: 0;
 }
 ::v-deep .list-group-item.active {
@@ -155,4 +194,4 @@ export default {
 ::v-deep .list-group-item:hover {
   cursor: pointer;
 }
-</style> -->
+</style>

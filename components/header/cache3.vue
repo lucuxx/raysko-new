@@ -4,27 +4,24 @@
     class="header"
     :class="{ 'active-header': showNavbarBg }"
   >
-    <div style="float: left">
+    <div>
       <b-img height="50" :src="require('~/assets/img/logo2.png')" alt="" />
     </div>
 
     <!-- 导航 -->
-    <div class="custom-nav-bar">
-      <ul class="custom-nav">
+    <nav class="nav-bar">
+      <ul class="nav">
         <li v-for="(nav, index) in navList" :key="index">
-          <div
-            class="custom-nav-item"
-            :class="{ 'active-background': showNavbarBg }"
-          >
+          <div class="nav-item" :class="{ 'active-background': showNavbarBg }">
             <div
-              class="custom-nav-item-title"
+              class="nav-item-title"
               @click="handleNavbarClick()"
               @mouseenter="handleNavbarEnter(nav, '', $event)"
             >
               <nuxt-link
                 :class="{ active: routePath == nav.link }"
                 :to="nav.link"
-                class="font-monospace"
+                class= "font-monospace"
               >
                 {{ nav.name }}</nuxt-link
               >
@@ -32,77 +29,40 @@
             <!-- 下拉菜单 -->
             <no-ssr>
               <template v-if="isSubNav">
-                <div
-                  v-if="nav.children && nav.link !== '/category'"
-                  class="test-dropdown-content"
-                >
-                  <div class="test-dropdown-menu">
-                    <div
-                      v-for="(navChildren, navChildrenIndex) in nav.children"
-                      class="test-menuItem"
-                      :key="navChildrenIndex"
-                      @click="
-                        handleSubNavbarClick(
-                          navChildren,
-                          navChildrenIndex,
-                          $event
-                        )
-                      "
-                    >
-                      <nuxt-link :to="navChildren.link" tag="li">{{
-                        navChildren.name
-                      }}</nuxt-link>
-                    </div>
+              <div
+                v-if="nav.children && nav.link !== '/product'"
+                class="test-dropdown-content"
+              >
+                <div class="test-dropdown-menu">
+                  <div
+                    v-for="(navChildren, navChildrenIndex) in nav.children"
+                    class="test-menuItem"
+                    :key="navChildrenIndex"
+                    @click="handleSubNavbarClick(navChildren,navChildrenIndex,$event)"
+                  >
+                    <nuxt-link :to="navChildren.link" tag="li">{{
+                      navChildren.name
+                    }}</nuxt-link>
                   </div>
                 </div>
-              </template>
+              </div>
+            </template>
             </no-ssr>
           </div>
         </li>
       </ul>
       <!-- 移动端 -->
-      <!-- <ul class="nav-m" :class="{ collapse: !isCollapse }">
+      <ul class="nav-m" :class="{ collapse: isCollapse }">
         <li v-for="(nav, index) in navList" :key="index">
           <nuxt-link :class="{ active: routePath == nav.link }" :to="nav.link"
             >{{ nav.name }}
           </nuxt-link>
         </li>
-      </ul> -->
-      <div class="custom-button" @click="handleToggleBtn()">三</div>
-      <div class="custom-site-nav" :class="{ active: isCollapse }">
-        <b-nav vertical v-for="(item, index) in navList" :key="index">
-          <b-nav-item
-            v-if="!item.children"
-            style="color: #fff"
-            @click="handleMobileNav(item)"
-          >
-            {{ item.name }}
-          </b-nav-item>
-
-          <b-nav-item-dropdown
-            v-else
-            :text="item.name"
-            toggle-class="nav-link-custom"
-            right
-            block
-          >
-            <template v-slot:button-content>
-              <span
-                @click="handleMobileNav(item)"
-                :class="{ active: $route.path.includes(item.link) }"
-                >{{ item.name }}</span
-              >
-            </template>
-            <b-dropdown-item
-              @click="handleMobileNav(i)"
-              v-for="(i, idx) in item.children"
-              :key="idx"
-              >{{ i.name }}</b-dropdown-item
-            >
-          </b-nav-item-dropdown>
-        </b-nav>
-      </div>
-    </div>
+      </ul>
+      <button @click="isCollapse ? (isCollapse = false) : (isCollapse = true)">
+        三
+      </button>
+    </nav>
 
     <!-- 下拉菜单 -->
     <no-ssr>
@@ -111,35 +71,27 @@
         class="custom-dropdown-content"
         @mouseleave="handleNavbarLeave()"
       >
-        <b-row class="mx-0 custom-dropdown-menu">
-          <b-col lg="3" md="3" sm="3">
-            <b-list-group>
-              <b-list-group-item
-                v-for="(navChildren, navChildrenIndex) of currentChildren"
-                :key="navChildrenIndex"
-                :active="submenuIndex == navChildrenIndex"
-                @mouseenter="handleTabEnter(navChildren, navChildrenIndex)"
-                >{{ navChildren.name }}
-              </b-list-group-item>
-            </b-list-group>
-          </b-col>
-
-          <b-col class="wrap-menuItem">
-            <div
-              v-for="(item, index) in currentChildren[submenuIndex].children"
-              :key="index"
-              class="menuItem"
-              @click="handleToProductClick(item)"
-            >
-              <b-img
-                :src="require('~/static/img/product/product.png')"
-                height="30"
-              ></b-img>
-              &nbsp;&nbsp;
-              <div>{{ item.name }}</div>
+        <div class="custom-dropdown-menu">
+          <div
+            v-for="(navChildren, navChildrenIndex) in currentChildren"
+            :key="navChildrenIndex"
+            class="custom-menuItem"
+          >
+            <nuxt-link :to="navChildren.link" tag="li">{{
+              navChildren.name
+            }}</nuxt-link>
+            <br />
+            <div v-for="(children, index) in navChildren.children" :key="index">
+              <div class="menuItem">
+                <b-img
+                  :src="require('~/static/img/product/product.png')"
+                  height="30"
+                ></b-img>
+                &nbsp;&nbsp;{{ children.name }}
+              </div>
             </div>
-          </b-col>
-        </b-row>
+          </div>
+        </div>
       </div>
     </no-ssr>
   </header>
@@ -156,53 +108,47 @@ export default {
       showNavbarBg: false,
       navList: [
         { name: "首页", link: "/" },
-        // { name: "产品", link: "/category" },
+        { name: "产品", link: "/category" },
         {
           name: "产品中心",
-          link: "/category",
+          link: "/product",
           children: [
             {
               name: "手持终端",
-              link: "/category/1",
+              link: "/solution/bank",
               children: [
-                { id: 1, name: "R366" },
-                { id: 1, name: "R366A（大电池厚款）" },
-                { id: 1, name: "R366C（UHF）" },
-                { id: 1, name: "R350C" },
-                { id: 1, name: "R606" },
-                { id: 1, name: "R530C" },
+                { name: "R366" },
+                { name: "R366A（大电池厚款）" },
+                { name: "R366C（UHF）" },
+                { name: "R350C" },
+                { name: "R606" },
+                { name: "R530C" },
               ],
             },
             {
               name: "手持打印终端",
-              link: "/category/1",
-              children: [{ id: 1, name: "R800C" }],
+              link: "/solution/bank",
+              children: [{ name: "R800C" }],
             },
             {
               name: "人脸门禁/车载终端",
-              link: "/category/1",
-              children: [{ id: 1, name: "R900C" }],
+              link: "/solution/bank",
+              children: [{ name: "R900C" }],
             },
             {
               name: "PCBA公版",
-              link: "/category/1",
-              children: [
-                { id: 1, name: "R450" },
-                { id: 1, name: "R290B" },
-              ],
+              link: "/solution/bank",
+              children: [{ name: "R450" }, { name: "R290B" }],
             },
             {
               name: "双屏/单屏人脸访客终端",
-              link: "/category/1",
-              children: [
-                { id: 1, name: "R8" },
-                { id: 1, name: "R7" },
-              ],
+              link: "/solution/bank",
+              children: [{ name: "R8" }, { name: "R7" }],
             },
             {
               name: "双屏/壁挂机",
-              link: "/category/1",
-              children: [{ id: 1, name: "R6" }],
+              link: "/solution/bank",
+              children: [{ name: "R6" }],
             },
           ],
         },
@@ -220,11 +166,10 @@ export default {
         },
       ],
       routePath: "",
-      isCollapse: false,
+      isCollapse: true,
       currentChildren: [],
       isProduct: false,
-      isSubNav: false,
-      submenuIndex: 0,
+      isSubNav: false
     };
   },
   watch: {
@@ -251,47 +196,24 @@ export default {
     handleNavbarClick() {
       this.currentChildren = [];
       this.showNavbarBg = false;
-      this.isSubNav = false;
+      this.isSubNav = false
     },
     handleSubNavbarClick(item, index, bvEvt) {
       this.$store.commit("setSubNavIndex", index + 1);
-      this.isSubNav = false;
+      this.isSubNav = false
     },
     handleNavbarEnter(item, index, bvEvt) {
-      if (item.link === "/category") {
+      if (item.link === "/product") {
         this.currentChildren = item?.children ?? [];
         this.isProduct = true;
       } else {
         this.currentChildren = [];
         this.isProduct = false;
       }
-      this.submenuIndex = 0;
-      this.isSubNav = true;
+      this.isSubNav = true
     },
     handleNavbarLeave() {
       this.currentChildren = [];
-    },
-    handleTabEnter(item, index) {
-      this.submenuIndex = index;
-    },
-    handleToProductClick(item) {
-      this.currentChildren = [];
-      this.$router.push(`/product/${item.id}`);
-    },
-    handleToggleBtn() {
-      this.isCollapse = !this.isCollapse;
-      console.log(this.isCollapse, "this.isCollapse");
-      if (this.isCollapse) {
-        document.body.style.position = "fixed";
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "scroll";
-        document.body.style.position = "relative";
-      }
-    },
-    handleMobileNav(item) {
-      this.$router.push(item.link);
-      this.handleToggleBtn();
     },
     // 监听窗口滚动，改变导航背景色
     handleWindowScroll(e) {
@@ -324,12 +246,11 @@ export default {
   left: 0;
   width: 100%;
   height: $header-height;
-  color: $theme-color;
   &:hover {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
     transition: all 0.3s;
-    .custom-nav-item {
+    .nav-item {
       a {
         display: block;
         color: #333;
@@ -351,71 +272,59 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-@media (max-width: 768px) {
-  .custom-nav-bar {
-    .custom-nav {
+@media (max-width: 576px) {
+  .nav-bar {
+    .nav {
       display: none !important;
     }
 
-    // .nav-m {
-    //   display: block !important;
-    // }
-
-    // button {
-
-    // }
-    .custom-button {
+    .nav-m {
       display: block !important;
     }
-    .custom-site-nav {
+
+    button {
       display: block !important;
     }
   }
 }
 
-// .nav-m {
-//   position: fixed;
-//   z-index: 1000;
-//   background-color: #fff;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   top: 0;
-// }
-// .collapse {
-//   z-index: -100;
-// }
-
-.custom-nav-bar {
-  height: 100%;
+.nav-m {
+  position: absolute;
+  z-index: 99;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  top: $header-height;
+  padding: 1rem;
   overflow: hidden;
-  // display: flex;
-  // justify-content: flex-end;
-  // align-items: center;
-  // overflow: hidden;
-  .custom-nav-m {
+  list-style-type: none;
+  a {
+    padding: 0.8rem 1rem;
+    display: inline-block;
+  }
+
+  .active {
+    color: $primary-color;
+  }
+}
+
+.nav-bar {
+  .nav-m {
     display: none;
   }
 
-  // button {
-  //   display: none;
-  // }
-  .custom-button {
-    display: none;
-  }
-  .custom-site-nav {
+  button {
     display: none;
   }
 }
 
-.custom-nav {
+.nav {
   display: flex;
   width: 100%;
   height: $header-height;
   line-height: $header-height;
-  list-style-type: none;
 
-  .custom-nav-item {
+  .nav-item {
     margin: 0 20px;
     cursor: pointer;
     position: relative;
@@ -427,7 +336,7 @@ export default {
       height: $header-height;
     }
 
-    .custom-nav-item-title {
+    .nav-item-title {
       display: block;
       // height: inherit;
       margin-bottom: 4px;
@@ -485,7 +394,6 @@ export default {
 
       .test-menuItem {
         width: 100%;
-        text-align: center;
         white-space: nowrap;
         padding: 0 16px;
         font-size: 14px;
@@ -535,40 +443,18 @@ export default {
       font-weight: 600;
       padding-left: 10px;
       // border-right:1px solid rgba(173, 166, 166, 0.5);
-    }
-
-    .wrap-menuItem {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: center;
-
-      height: inherit;
       .menuItem {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 200px;
-        height: 70px;
+        width: 100%;
+        text-align: left;
+        line-height: 30px;
         margin-bottom: 10px;
-        margin-right: 10px;
-        // text-align: left;
-        // white-space: wrap;
+        white-space: nowrap;
         color: #333;
         font-weight: 400;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
-        img {
-          height: 100%;
-        }
-        div {
-          flex: 1;
-          width: 100px;
-          white-space: wrap;
-        }
         &:hover {
           color: $theme-color;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
           // background-color: #ccc;
         }
       }
@@ -576,7 +462,7 @@ export default {
   }
 }
 
-.custom-nav .active-background {
+.nav .active-background {
   // .nav .nav-item .nav-item-title .active
   a {
     color: #333;
@@ -584,83 +470,5 @@ export default {
   .active {
     color: $theme-color !important;
   }
-}
-
-::v-deep .list-group-item {
-  border: none;
-  color: #333;
-  border-right: 1px solid rgba(173, 166, 166, 0.5);
-  border-radius: 0 !important;
-}
-::v-deep .list-group-item.active {
-  background: transparent;
-  color: $theme-color;
-  border-right: 2px solid $theme-color;
-  border-radius: 0;
-}
-::v-deep .list-group-item:hover {
-  cursor: pointer;
-  color: $theme-color;
-  border-right: 2px solid $theme-color;
-  border-radius: 0;
-}
-</style>
-<style lang="scss" scoped>
-.custom-site-nav {
-  position: fixed;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  background-color: $white;
-  width: 100vw;
-  transform: translateX(100vw);
-  padding-top: $header-height;
-  z-index: -1;
-  flex-direction: column;
-  transition: 0.5s ease-in-out;
-  list-style-type: none;
-
-  &.active {
-    transform: translateX(0px);
-  }
-}
-
-.custom-button {
-  display: none;
-  font-size: 20px;
-  font-weight: 800;
-  line-height:$header-height;
-  cursor: pointer;
-}
-
-::v-deep .dropdown-menu {
-  width: 100%;
-  border-radius: 0;
-  color: #333 !important;
-  position: absolute;
-  left: 0;
-  right: 0;
-  transform: translate3d(0px, 39px, 0px) !important;
-  background: rgb(241, 238, 238);
-}
-
-::v-deep .dropdown-item {
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-::v-deep .nav-link,
-.nav-link-custom {
-  color: #333;
-}
-
-::v-deep .dropdown-toggle:after {
-  float: right;
-  padding-top: 4px;
-  margin-top: 10px;
-}
-
-::v-deep .nav-item {
-  border-top: 1px solid rgba(173, 166, 166, 0.5);
-  padding: 4px 6px;
 }
 </style>

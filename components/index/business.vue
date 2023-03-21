@@ -12,7 +12,8 @@
           <b-card-title class="w-75 mx-auto mt-2 text-truncate">{{item.title}}</b-card-title>
           <b-card-text class="w-75 mx-auto card-body-text text-muted">{{item.desc}}</b-card-text>
           <b-button
-            variant="primary"
+            variant="outline-secondary"
+            squared
             class="mx-auto d-block my-btn"
             @click="$router.push('/business/' + item.id)"
           >了解更多</b-button>
