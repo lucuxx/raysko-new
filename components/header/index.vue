@@ -10,8 +10,8 @@
       </b-col>
       <b-col cols="8" class="mx-auto">
         <!-- 导航 -->
-        <div class="custom-nav-bar ">
-          <ul class="custom-nav ">
+        <div class="custom-nav-bar">
+          <ul class="custom-nav">
             <li v-for="(nav, index) in navList" :key="index">
               <div
                 class="custom-nav-item"
@@ -118,7 +118,7 @@
         class="container custom-dropdown-content"
         @mouseleave="handleNavbarLeave()"
       >
-        <b-row class="mx-0 custom-dropdown-menu">
+        <b-row class="row custom-dropdown-menu">
           <b-col lg="3" md="3" sm="3">
             <b-list-group>
               <b-list-group-item
@@ -139,7 +139,7 @@
               @click="handleToProductClick(item)"
             >
               <b-img
-               fluid
+                fluid
                 :src="require('~/static/img/product/product.png')"
               ></b-img>
               <div>{{ item.name }}</div>
@@ -342,8 +342,8 @@ export default {
       }
     }
   }
-  .header-style{
-    line-height:$header-height;
+  .header-style {
+    line-height: $header-height;
   }
 }
 .header-white {
@@ -417,13 +417,14 @@ export default {
 }
 
 .custom-nav {
-  width: 100%;
+  // width: 100%;
   height: $header-height;
   line-height: $header-height;
   list-style-type: none;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding:0 !important;
+  // align-items: center;
 
   .custom-nav-item {
     margin: 0 20px;
@@ -566,9 +567,9 @@ export default {
         font-weight: 400;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
-        background:rgba(246, 242, 242, 0.5);
+        background: rgba(246, 242, 242, 0.5);
         img {
-          width:180px;
+          width: 180px;
         }
         div {
           width: 100%;
