@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <!-- <div id="loader-wrapper">
+    <div id="loader-wrapper">
       <div id="loader"></div>
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
@@ -8,16 +8,14 @@
         加载中...
         <br />
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
-
 
 <script>
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     start() {},
@@ -29,8 +27,7 @@ export default {
     fail() {
       this.open();
     },
-    increase(num) {
-    },
+    increase(num) {},
   },
   mounted() {
     this.$nextTick(() => {
@@ -40,7 +37,6 @@ export default {
   },
 };
 </script>
-
 
 <style lang="scss" scoped>
 html,
@@ -53,10 +49,10 @@ body,
   width: 100%;
   height: 100vh;
   z-index: 999999;
-  background: url("~/static/img/global/welcome.jpeg") center center
-    no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  // background: url("~/static/img/global/welcome.jpeg") center center
+  //   no-repeat;
+  // background-size: cover;
+  // background-attachment: fixed;
 }
 .chromeframe {
   margin: 0.2em 0;
@@ -85,7 +81,8 @@ body,
   border-radius: 50%;
   border: 3px solid transparent;
   /* COLOR 1 */
-  border-top-color: #fff;
+  // border-top-color: #fff;
+  border-top-color: $theme-color;
   -webkit-animation: spin 2s linear infinite;
   /* Chrome, Opera 15+, Safari 5+ */
   -ms-animation: spin 2s linear infinite;
@@ -109,7 +106,8 @@ body,
   border-radius: 50%;
   border: 3px solid transparent;
   /* COLOR 2 */
-  border-top-color: #fff;
+  // border-top-color: #fff;
+  border-top-color: $theme-color;
   -webkit-animation: spin 3s linear infinite;
   /* Chrome, Opera 15+, Safari 5+ */
   -moz-animation: spin 3s linear infinite;
@@ -131,7 +129,8 @@ body,
   bottom: 15px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #fff;
+  // border-top-color: #fff;
+  border-top-color: $theme-color;
   /* COLOR 3 */
   -moz-animation: spin 1.5s linear infinite;
   /* Chrome, Opera 15+, Safari 5+ */
@@ -188,7 +187,8 @@ body,
   top: 0;
   width: 51%;
   height: 100%;
-  background: #7171c6;
+  // background: #7171c6;
+  background: $white;
   /* Old browsers */
   z-index: 1000;
   -webkit-transform: translateX(0);
@@ -261,7 +261,8 @@ body,
 
 #loader-wrapper .load_title {
   font-family: "Open Sans";
-  color: #fff;
+  // color: #fff;
+  color: $theme-color;
   font-size: 19px;
   width: 100%;
   text-align: center;
@@ -276,7 +277,8 @@ body,
   font-weight: normal;
   font-style: italic;
   font-size: 13px;
-  color: #fff;
+  // color: #fff;
+  color: $theme-color;
   opacity: 0.5;
 }
 </style>
