@@ -1,7 +1,7 @@
 <template>
   <section>
     <SectionHeading :heading="title" content="" />
-    <b-container class="homeabout">
+    <b-container>
       <!-- <b-row class="align-items-center py-5 wow fadeInUp" v-for="(items, index) in homeabout" :key="index">
         <b-col cols="12" sm="6">
           <p>{{ items.desc1 }}</p>
@@ -13,7 +13,7 @@
           </div>
         </b-col>
       </b-row> -->
-      <TimeLine />
+      <TimeLine class="wow fadeInUp"/>
   </b-container>
   </section>
 </template>
@@ -34,10 +34,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.article-style{
-  font-size:16px;
-  line-height: 32px;
-}
-</style>

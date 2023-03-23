@@ -25,7 +25,7 @@
         </nuxt-link>
       </div>
     </div>
-    <div class="container py-5">
+    <div class="container py-2">
       <nuxt-child />
     </div>
   </section>

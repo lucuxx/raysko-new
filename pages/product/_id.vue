@@ -566,7 +566,7 @@ export default {
 
 #insmeter-table {
   color: #fff;
-  background: #333;
+  background: #131313;
   padding: 20px 40px;
 }
 table {
