@@ -1,8 +1,8 @@
 <template>
   <div>
-    <b-container class="text-center">
+    <div class="text-center">
       <div class="content-wrap">
-        <section class="timeline wrapper grid ">
+        <section class="timeline wrapper grid">
           <div class="">
             <div class="timeline__item timeline__item--0">
               <div class="timeline__item__station"></div>
@@ -125,7 +125,7 @@
           </div>
         </section>
       </div>
-    </b-container>
+    </div>
   </div>
 </template>
 
@@ -153,7 +153,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 // .global-parallax {
 //   background: url("~static/img/home/home1.jpg") center center no-repeat;
 //   background-size: cover;
@@ -178,7 +177,7 @@ export default {
   // padding: 20px;
   // background: #333;
   border-radius: 10px;
-  padding-bottom:20px;
+  padding-bottom: 20px;
 
   /* _wrapper.css */
   .wrapper {
@@ -193,9 +192,8 @@ export default {
   .timeline {
     position: relative;
     margin: 10px auto;
-    margin-top:0;
-    padding: 0px 0;
-
+    // margin-top: 0;
+    // padding: 0px 0;
   }
 
   .timeline::before {
@@ -206,7 +204,7 @@ export default {
     width: 2px;
     height: 100%;
     // background-color: rgba(255, 255, 255, 0.35);
-    background:$color-heading;
+    background: $color-heading;
   }
 
   @media (min-width: 768px) {
@@ -240,7 +238,7 @@ export default {
   .timeline__item:nth-child(2n) .timeline__item__content {
     float: right;
     // background: #8287a9;
-    background: $theme-color;
+    background: $white;
   }
 
   .timeline__item:nth-child(2n) .timeline__item__content::before {
@@ -255,7 +253,7 @@ export default {
     .timeline__item:nth-child(2n) .timeline__item__content::before {
       left: inherit;
       // background: #8287a9;
-      background:  $theme-color;;
+      background: $white;
     }
   }
   @media (min-width: 576px) {
@@ -271,7 +269,8 @@ export default {
   }
 
   .timeline__item:nth-child(2n) .timeline__item__content__description {
-    color: #fff;
+    // color: #fff;
+    color: $color-text-dark;
   }
 
   .timeline__item:last-child {
@@ -349,9 +348,11 @@ export default {
     width: 80%;
     // background: rgba(255, 255, 255, 0.1);
     // background:#8287a9;
-    background: $theme-color;
+    background: $white;
+    // border: 1px solid rgba(173, 166, 166, 0.5);
+    border: 1px solid $color-blue;
     padding: 20px 30px;
-    border-radius: 8px;
+    // border-radius: 8px;
     float: right;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
@@ -412,7 +413,9 @@ export default {
     font-size: 18px;
     margin-bottom: 10px;
     /*background-color: #65adb7;*/
-    color: #ffffff;
+    // color: #ffffff;
+    color: $color-text;
+    font-size: $base-font-size;
     display: inline-block;
     /*border-radius: 8px;*/
     /*border: 2px solid #fff;*/
@@ -424,7 +427,8 @@ export default {
     font-size: 14px;
     line-height: 24px;
     font-weight: 400;
-    color: #fff;
+    // color: #fff;
+    color: $color-text-dark;
   }
 
   @media (min-width: 768px) {

@@ -228,6 +228,15 @@ a.nuxt-link-exact-active {
   }
 }
 
+.spin-sort-hr{
+  display: inline-block;
+  height: 4px;
+  width:40px;
+  border-radius: 2px;
+  background-color: $white;
+  margin:20px auto;
+}
+
 .mobile-auto{
   height:$header-height;
 }

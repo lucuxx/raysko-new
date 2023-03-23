@@ -5,7 +5,7 @@
     <!-- 内容 -->
     <my-header />
     <nuxt v-if="!show2" />
-    <concat />
+    <concat  />
     <my-footer />
     <go-top />
   </div>
@@ -36,6 +36,7 @@ export default {
   data() {
     return {
       show2: true,
+      footBarHeight:200
     };
   },
   created() {
@@ -57,6 +58,7 @@ export default {
   },
 };
 </script>
+
 <!--
 <style lang="scss">
 @import "@/assets/styles/normalize.css";

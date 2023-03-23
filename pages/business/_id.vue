@@ -18,13 +18,13 @@
           class="container d-flex justify-content-between align-items-center"
         >
           <h4 class="py-3">{{ info.title }}</h4>
-          <div class="d-none d-md-block">
+          <!-- <div class="d-none d-md-block">
             <b-breadcrumb class="bg-white m-0 p-0">
               <b-breadcrumb-item to="/">网站首页</b-breadcrumb-item>
               <b-breadcrumb-item to="/business">行业解决方案</b-breadcrumb-item>
               <b-breadcrumb-item active>{{ info.title }}</b-breadcrumb-item>
             </b-breadcrumb>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="container">

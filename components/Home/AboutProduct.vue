@@ -44,7 +44,7 @@ import SectionHeading from '~/components/SectionHeading'
           <Heading :level="3">{{ items.heading }}</Heading>
           <p>{{ items.desc1 }}</p>
           <p>{{ items.desc2 }}</p>
-          <Btn to="/about">查看更多</Btn>
+          <Btn to="/category">查看更多</Btn>
         </b-col>
         <b-col cols="12" sm="6">
           <div class="side-image-wrapper">
