@@ -1,9 +1,8 @@
 <template>
   <div>
-
-    <clint-only>
+    <client-only>
       <Hero />
-    </clint-only>
+    </client-only>
     <GlobalParallax2 />
     <GlobalParallax3 />
     <GlobalParallax4 />

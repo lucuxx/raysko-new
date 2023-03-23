@@ -88,35 +88,32 @@ export default {
   justify-content: center;
   align-items: center;
   .msg {
-    height: 50px;
-    width: 50px;
+    line-height: 50px;
+    width: 40px;
     color: #fff;
     text-align: center;
-    padding:10px;
+    cursor: pointer;
     :hover {
-      cursor: pointer;
       color: $theme-color;
     }
   }
   .mobel {
-    height: 50px;
-    width: 50px;
+    line-height: 50px;
+    width: 40px;
     color: #fff;
     text-align: center;
-    padding:10px;
+    cursor: pointer;
     :hover {
-      cursor: pointer;
       color: $theme-color;
     }
   }
   .Rtop {
-    height: 50px;
-    width: 50px;
+    line-height: 50px;
+    width: 40px;
     color: #fff;
     text-align: center;
-    padding:10px;
+    cursor: pointer;
     :hover {
-      cursor: pointer;
       color: $theme-color;
     }
   }

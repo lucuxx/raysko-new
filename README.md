@@ -21,3 +21,8 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+
+  "@fortawesome/fontawesome-svg-core": "1.2.20",
+    "@fortawesome/free-brands-svg-icons": "5.10.0",
+    "@fortawesome/free-solid-svg-icons": "5.10.0",
+    "@fortawesome/vue-fontawesome": "0.1.6",

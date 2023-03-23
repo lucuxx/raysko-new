@@ -5,10 +5,6 @@
 </template>
 
 <script>
-// if (process.browser) {
-//   // 在这里根据环境引入wow.js
-//   var { WOW } = require("wowjs");
-// }
 
 export default {
   props: {

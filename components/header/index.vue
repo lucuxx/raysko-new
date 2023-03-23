@@ -114,11 +114,11 @@
     <!-- 下拉菜单 -->
     <client-only>
       <div
-        v-if="currentChildren.length && isProduct"
+        v-show="currentChildren.length && isProduct"
         class="container custom-dropdown-content"
         @mouseleave="handleNavbarLeave()"
       >
-        <b-row class="row custom-dropdown-menu">
+        <b-row class="row custom-dropdown-menu" v-if="currentChildren.length">
           <b-col lg="3" md="3" sm="3">
             <b-list-group>
               <b-list-group-item
@@ -216,12 +216,12 @@ export default {
         { name: "解决方案", link: "/business" },
         {
           name: "关于我们",
-          link: "/about",
+          link: "/about/company",
           children: [
-            { name: "公司介绍", link: "/about" },
-            { name: "发展历程", link: "/about" },
-            { name: "企业文化", link: "/about" },
-            { name: "联系我们", link: "/about" },
+            { name: "公司介绍", link: "/about/company" },
+            { name: "发展历程", link: "/about/course" },
+            { name: "企业文化", link: "/about/culture" },
+            { name: "联系我们", link: "/about/contact" },
           ],
         },
       ],
@@ -286,7 +286,7 @@ export default {
     },
     handleToggleBtn() {
       this.isCollapse = !this.isCollapse;
-      console.log(this.isCollapse, "this.isCollapse");
+      // console.log(this.isCollapse, "this.isCollapse");
       if (this.isCollapse) {
         document.body.style.position = "fixed";
         document.body.style.overflow = "hidden";
@@ -334,7 +334,7 @@ export default {
   &:hover {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s;
+    transition: all 0.5s;
     .custom-nav-item {
       a {
         display: block;
@@ -485,7 +485,7 @@ export default {
     right: -30px;
     // height: 0; // 下拉初始高度
     overflow: hidden;
-    transition: 0.4s;
+    // transition: 0.4s;
     background-color: $white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 
@@ -513,12 +513,12 @@ export default {
     }
   }
 }
+
 .custom-dropdown-content {
-  position: fixed;
-  display: block;
+  position: absolute;
   top: $header-height; // 为导航栏高度
   left: 0; // 设置为0, 不然会直接定位到父元素下方
-  // height: 500px; // 下拉初始高度
+  // height: 0px; // 下拉初始高度
   right: 0;
   width: 100%;
   overflow: hidden;
@@ -585,6 +585,8 @@ export default {
     }
   }
 }
+
+
 
 .custom-nav .active-background {
   // .nav .nav-item .nav-item-title .active

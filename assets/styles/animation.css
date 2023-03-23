@@ -7,3 +7,14 @@
   opacity: .5;
 }
 
+.nav-enter-active, nav-leave-active{
+  opacity: 1;
+  transform: translateY(200px);
+  transition: all 1.2s;
+}
+
+.nav-enter, nav-leave-active{
+  transform: translateY(0px);
+  /* opacity: .5; */
+}
+
