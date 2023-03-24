@@ -150,7 +150,7 @@
             >
               <b-img
                 fluid
-                :src="require('~/static/img/product/product.png')"
+                :src="`img/categorys/${item.image}`"
               ></b-img>
               <div>{{ item.name }}</div>
             </div>
@@ -181,44 +181,60 @@ export default {
               name: "手持终端",
               link: "/category/1",
               children: [
-                { id: 1, name: "R366" },
-                { id: 1, name: "R366A（大电池厚款）" },
-                { id: 1, name: "R366C（UHF）" },
-                { id: 1, name: "R350C" },
-                { id: 1, name: "R606" },
-                { id: 1, name: "R530C" },
+                { id: 1, name: "R366",image:"R366.jpg" },
+                { id: 1, name: "R366A（大电池厚款）",image:"R366A.jpg"},
+                { id: 1, name: "R350C",image:"R350.jpg" },
+                { id: 1, name: "R606" ,image:"go.png"},
+                { id: 1, name: "R530C" ,image:"R530C.jpg"},
               ],
             },
             {
-              name: "手持打印终端",
+              name: "打印手持终端",
               link: "/category/1",
-              children: [{ id: 1, name: "R800C" }],
+              children: [{ id: 1, name: "R800C",image:"R800C.jpg" }],
             },
             {
-              name: "人脸门禁/车载终端",
+              name: "UHF RFID手持终端",
               link: "/category/1",
-              children: [{ id: 1, name: "R900C" }],
-            },
-            {
-              name: "PCBA公版",
-              link: "/category/1",
-              children: [
-                { id: 1, name: "R450" },
-                { id: 1, name: "R290B" },
-              ],
+              children: [{ id: 1, name: "R366C（UHF）",image:"R366C.jpg" }],
             },
             {
               name: "双屏/单屏人脸访客终端",
               link: "/category/1",
               children: [
-                { id: 1, name: "R8" },
-                { id: 1, name: "R7" },
+                { id: 1, name: "R900P" ,image:"go.png"},
+                { id: 1, name: "R8" ,image:"R8.jpg"},
+                { id: 1, name: "R7" ,image:"R7.jpg"},
+                { id: 1, name: "R6" ,image:"R6挂壁.jpg"},
               ],
             },
             {
-              name: "双屏/壁挂机",
+              name: "PCBA主版",
               link: "/category/1",
-              children: [{ id: 1, name: "R6" }],
+              children: [
+                { id: 1, name: "R450",image:"R450.jpg" },
+                { id: 1, name: "R229" ,image:"go.png"},
+              ],
+            },
+            {
+              name: "智能通道闸",
+              link: "/category/1",
+              children: [
+                { id: 1, name: "铝合金速通门",image:"go.png" },
+                { id: 1, name: "铝合金小摆闸" ,image:"go.png"},
+              ],
+            },
+            {
+              name: "警务通终端",
+              link: "/category/1",
+              children: [{ id: 1, name: "P7",image:"go.png" }],
+            },
+           
+           
+            {
+              name: "ETC智能终端",
+              link: "/category/1",
+              children: [{ id: 1, name: "R366ETC",image:"go.png" },{ id: 1, name: "R800CETC",image:"R800CETC.jpg" }],
             },
           ],
         },
@@ -631,7 +647,7 @@ export default {
         // justify-content: flex-start;
         // align-items: center;
         width: 180px;
-        height: 240px;
+        height: 220px;
         margin-bottom: 10px;
         margin-right: 10px;
         // text-align: left;

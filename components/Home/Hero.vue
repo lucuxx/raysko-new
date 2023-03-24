@@ -11,55 +11,21 @@
       :interval="4000"
       no-hover-pause
     >
-      <!-- <parallax>
-      <img src="~/static/img/home/home.gif" alt="" height="800"/>
-      </parallax>
-      <parallax>
-      <img src="~/static/img/banner/banner02_big.jpg" alt="" height="800"/>
-      </parallax> -->
       <b-carousel-slide caption="">
         <template slot="img">
-          <!-- <parallax> -->
           <div class="banner-img1">
-            <div class="hero-text text-center">
-              <Heading :level="3" class="wow zoomIn" data-wow-duration="2s"
-                >Hey</Heading
-              >
-
-              <Heading :level="2" class="wow zoomIn" data-wow-duration="2s"
-                >welcome</Heading
-              >
-            </div>
+           
           </div>
-          <!-- </parallax> -->
         </template>
       </b-carousel-slide>
-      <!-- <b-carousel-slide caption="">
-        <template slot="img">
-          <div class="banner-img2">
-            <img
-              :src="require('~/static/img/home/home6.png')"
-              alt=""
-              height="100%"
-            />
-          </div>
-        </template>
-      </b-carousel-slide> -->
       <b-carousel-slide caption="">
         <template slot="img">
-          <!-- <parallax> -->
           <div class="banner-img2">
-            <!-- <img
-              :src="require('~/static/img/home/home5.jpeg')"
-              alt=""
-              height="100%"
-            /> -->
+           
           </div>
-          <!-- </parallax> -->
         </template>
       </b-carousel-slide>
     </b-carousel>
-    <!-- </parallax> -->
     <div
       class="masthead_btn wow fadeOutDown"
       data-wow-iteration="infinite"
@@ -69,15 +35,6 @@
       下拉<br />
       <font-awesome-icon size="lg" :icon="['fas', 'angle-double-down']" />
     </div>
-    <!-- <div class="hero-text text-center"> -->
-    <!-- <Heading :level="3" class="wow zoomIn" data-wow-duration="2s"
-        >Hey</Heading
-      >
-
-      <Heading :level="2" class="wow zoomIn" data-wow-duration="2s"
-        >welcome</Heading
-      > -->
-    <!-- </div> -->
   </div>
 </template>
 
@@ -149,14 +106,14 @@ export default {
 .banner-img1 {
   height: 100vh;
   width: 100vw;
-  background: url("~/static/img/home/home.gif") center center no-repeat;
+  background: url("~/static/img/banner/R350C.jpg") center center no-repeat;
   background-size: cover;
   // background-attachment: fixed;
 }
 .banner-img2 {
   height: 100vh;
   width: 100vw;
-  background: url("~/static/img/home/home8.jpg") center center no-repeat;
+  background: url("~/static/img/banner/R366C.jpg") center center no-repeat;
   background-size: cover;
 }
 
