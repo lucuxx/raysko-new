@@ -1,130 +1,124 @@
 <template>
   <div>
-    <div class="text-center">
-      <div class="content-wrap">
-        <section class="timeline wrapper grid">
-          <div class="">
-            <div class="timeline__item timeline__item--0">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2013.12</h2>
-                <p class="timeline__item__content__description">公司成立</p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--1">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2014</h2>
-                <p class="timeline__item__content__description">
-                  公司取得商用密码产品销售许可证
-                </p>
-                <p class="timeline__item__content__description">
-                  公司通过ISO9000质量体系认证
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--2">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2015.03</h2>
-                <p class="timeline__item__content__description">
-                  公司发布国内第一个web安全输入控件
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--3">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2015.08</h2>
-                <p class="timeline__item__content__description">
-                  公司发布Venus UI 1.0前端开发平台
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--4">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2015.10</h2>
-                <p class="timeline__item__content__description">
-                  公司发布Athena 2.0分布式微服务平台
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--5">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2015.11</h2>
-                <p class="timeline__item__content__description">
-                  公司被评为高新技术企业
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--6">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2015.12</h2>
-                <p class="timeline__item__content__description">
-                  公司与昆山农商行银行签署战略合作伙伴
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--7">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2016.06</h2>
-                <p class="timeline__item__content__description">
-                  公司与昆山农商银行合作打造的KAAP平台通过验收，标志着公司为中国银行业提供专业应用开发平台的能力成熟
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--8">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2017.01</h2>
-                <p class="timeline__item__content__description">
-                  公司发布国内第一个支持微信小程序的Web安全输入控件
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--9">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2017.07</h2>
-                <p class="timeline__item__content__description">
-                  宁波分公司成立
-                </p>
-                <p class="timeline__item__content__description">
-                  鄞州银行企业网银上线，标志着公司重新定义了中国网银客户端
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--10">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2017.12</h2>
-                <p class="timeline__item__content__description">
-                  武汉分公司成立
-                </p>
-                <p class="timeline__item__content__description">
-                  公司发布Venus UI 2.0前端开发平台
-                </p>
-                <p class="timeline__item__content__description">
-                  公司UX团队独立承接合同成功，标志着市场对公司UX的认可
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--11">
-              <div class="timeline__item__station"></div>
-              <div class="timeline__item__content">
-                <h2 class="timeline__item__content__date">2018</h2>
-                <p class="timeline__item__content__description">
-                  不忘初心，砥砺奋进
-                </p>
-              </div>
+    <div class="content-wrap">
+      <section class="timeline wrapper grid">
+        <div class="">
+          <div class="timeline__item timeline__item--0">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2013.12</h2>
+              <p class="timeline__item__content__description">公司成立</p>
             </div>
           </div>
-        </section>
-      </div>
+          <div class="timeline__item timeline__item--1">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2014</h2>
+              <p class="timeline__item__content__description">
+                公司取得商用密码产品销售许可证
+              </p>
+              <p class="timeline__item__content__description">
+                公司通过ISO9000质量体系认证
+              </p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--2">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2015.03</h2>
+              <p class="timeline__item__content__description">
+                公司发布国内第一个web安全输入控件
+              </p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--3">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2015.08</h2>
+              <p class="timeline__item__content__description">
+                公司发布Venus UI 1.0前端开发平台
+              </p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--4">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2015.10</h2>
+              <p class="timeline__item__content__description">
+                公司发布Athena 2.0分布式微服务平台
+              </p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--5">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2015.11</h2>
+              <p class="timeline__item__content__description">
+                公司被评为高新技术企业
+              </p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--6">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2015.12</h2>
+              <p class="timeline__item__content__description">
+                公司与昆山农商行银行签署战略合作伙伴
+              </p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--7">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2016.06</h2>
+              <p class="timeline__item__content__description">
+                公司与昆山农商银行合作打造的KAAP平台通过验收，标志着公司为中国银行业提供专业应用开发平台的能力成熟
+              </p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--8">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2017.01</h2>
+              <p class="timeline__item__content__description">
+                公司发布国内第一个支持微信小程序的Web安全输入控件
+              </p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--9">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2017.07</h2>
+              <p class="timeline__item__content__description">宁波分公司成立</p>
+              <p class="timeline__item__content__description">
+                鄞州银行企业网银上线，标志着公司重新定义了中国网银客户端
+              </p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--10">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2017.12</h2>
+              <p class="timeline__item__content__description">武汉分公司成立</p>
+              <p class="timeline__item__content__description">
+                公司发布Venus UI 2.0前端开发平台
+              </p>
+              <p class="timeline__item__content__description">
+                公司UX团队独立承接合同成功，标志着市场对公司UX的认可
+              </p>
+            </div>
+          </div>
+          <div class="timeline__item timeline__item--11">
+            <div class="timeline__item__station"></div>
+            <div class="timeline__item__content">
+              <h2 class="timeline__item__content__date">2018</h2>
+              <p class="timeline__item__content__description">
+                不忘初心，砥砺奋进
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -181,8 +175,8 @@ export default {
 
   /* _wrapper.css */
   .wrapper {
-    padding-left: 18px;
-    padding-right: 18px;
+    // padding-left: 18px;
+    // padding-right: 18px;
     max-width: 1236px;
     margin-left: auto;
     margin-right: auto;

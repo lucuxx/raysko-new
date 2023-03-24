@@ -74,8 +74,20 @@
         </div>
       </b-col>
       <b-col cols="2">
-        <div class="custom-button" @click="handleToggleBtn()">三</div>
-        <div class="custom-site-nav" :class="{ active: isCollapse }">
+        <div class="custom-button" @click="handleToggleBtn()">
+          <div class="mobnav-btn" :class="{ open: isCollapse }">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+      </b-col>
+    </b-row>
+
+
+    <!-- 适配手机导航 -->
+    <div class="custom-site-nav" :class="{ active: isCollapse }">
           <b-nav vertical v-for="(item, index) in navList" :key="index">
             <b-nav-item
               v-if="!item.children"
@@ -107,9 +119,7 @@
               >
             </b-nav-item-dropdown>
           </b-nav>
-        </div>
-      </b-col>
-    </b-row>
+    </div>
 
     <!-- 下拉菜单 -->
     <client-only>
@@ -408,13 +418,13 @@ export default {
   //   display: none;
   // }
 }
-.custom-button {
-  display: none;
-  text-align: right;
-}
-.custom-site-nav {
-  display: none;
-}
+// .custom-button {
+//   display: none;
+//   text-align: right;
+// }
+// .custom-site-nav {
+//   display: none;
+// }
 
 .custom-nav {
   // width: 100%;
@@ -423,7 +433,7 @@ export default {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  padding:0 !important;
+  padding: 0 !important;
   // align-items: center;
 
   .custom-nav-item {
@@ -514,6 +524,69 @@ export default {
   }
 }
 
+
+// 手机导航按钮
+.mobnav-btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 26px;
+  height: 44px;
+  position: relative;
+  margin-left: 10px;
+  span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: $theme-color;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+  span:first-child {
+    top: 12px;
+    left: 3px;
+    right: 3px;
+    width: auto;
+  }
+  span:nth-child(2) {
+    top: 50%;
+    margin-top: -1px;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+  }
+  span:last-child {
+    bottom: 12px;
+    left: 3px;
+    right: 3px;
+    width: auto;
+  }
+}
+.open {
+  span:first-child {
+    top: 20px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  span:nth-child(2) {
+    opacity: 0;
+  }
+  span:last-child {
+    bottom: 21px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
+// 产品下拉框
 .custom-dropdown-content {
   position: absolute;
   top: $header-height; // 为导航栏高度
@@ -586,8 +659,7 @@ export default {
   }
 }
 
-
-
+// 导航栏激活样式
 .custom-nav .active-background {
   // .nav .nav-item .nav-item-title .active
   a {
@@ -616,9 +688,11 @@ export default {
   border-right: 2px solid $theme-color;
   border-radius: 0;
 }
+
 </style>
 <style lang="scss" scoped>
 .custom-site-nav {
+  display: none;
   position: fixed;
   bottom: 0;
   top: 0;
@@ -626,7 +700,7 @@ export default {
   background-color: $white;
   width: 100vw;
   height: 100vh;
-  transform: translateX(100vw);
+  transform: translateY(-100vh);
   padding-top: $header-height;
   z-index: -1;
   flex-direction: column;
@@ -635,14 +709,12 @@ export default {
   overflow-y: auto;
 
   &.active {
-    transform: translateX(0px);
+    transform: translateY(0px);
   }
 }
 
 .custom-button {
   display: none;
-  font-size: 20px;
-  font-weight: 800;
   line-height: $header-height;
   cursor: pointer;
 }
