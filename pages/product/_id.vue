@@ -36,7 +36,7 @@
         </div>
       </div> -->
       <div id="insmeter-img">
-        <b-img fluid :src="require('~/static/img/product/001.jpeg')"></b-img>
+        <b-img fluid :src="require('~/static/img/banner/R350C.jpg')"></b-img>
         <!-- <b-img fluid :src="require('~/static/img/product/02.png')"></b-img>
         <b-img fluid :src="require('~/static/img/product/03.png')"></b-img>
         <b-img fluid :src="require('~/static/img/product/04.png')"></b-img>

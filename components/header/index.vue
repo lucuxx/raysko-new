@@ -125,10 +125,10 @@
     <client-only>
       <div
         v-show="currentChildren.length && isProduct"
-        class="container custom-dropdown-content"
+        class="custom-dropdown-content "
         @mouseleave="handleNavbarLeave()"
-      >
-        <b-row class="row custom-dropdown-menu" v-if="currentChildren.length">
+        >
+        <b-row class="container mx-auto  row custom-dropdown-menu" v-if="currentChildren.length">
           <b-col lg="3" md="3" sm="3">
             <b-list-group>
               <b-list-group-item
@@ -150,7 +150,7 @@
             >
               <b-img
                 fluid
-                :src="`img/categorys/${item.image}`"
+                :src="item.image"
               ></b-img>
               <div>{{ item.name }}</div>
             </div>
@@ -181,60 +181,62 @@ export default {
               name: "手持终端",
               link: "/category/1",
               children: [
-                { id: 1, name: "R366",image:"R366.jpg" },
-                { id: 1, name: "R366A（大电池厚款）",image:"R366A.jpg"},
-                { id: 1, name: "R350C",image:"R350.jpg" },
-                { id: 1, name: "R606" ,image:"go.png"},
-                { id: 1, name: "R530C" ,image:"R530C.jpg"},
+                { id: 1, name: "R366",image:require('~/static/img/categorys/R366.jpg')},
+                { id: 1, name: "R366A（大电池厚款）",image:require('~/static/img/categorys/R366A.jpg') },
+                { id: 1, name: "R350C",image:require('~/static/img/categorys/R350.jpg') },
+                { id: 1, name: "R606" ,image:require('~/static/img/categorys/go.png') },
+                { id: 1, name: "R530C" ,image:require('~/static/img/categorys/R530C.jpg')},
               ],
             },
             {
               name: "打印手持终端",
               link: "/category/1",
-              children: [{ id: 1, name: "R800C",image:"R800C.jpg" }],
+              children: [{ id: 1, name: "R800C",image:require('~/static/img/categorys/R800C.jpg') }],
             },
             {
               name: "UHF RFID手持终端",
               link: "/category/1",
-              children: [{ id: 1, name: "R366C（UHF）",image:"R366C.jpg" }],
+              children: [{ id: 1, name: "R366C（UHF）",image:require('~/static/img/categorys/R366C.jpg') }],
             },
             {
               name: "双屏/单屏人脸访客终端",
               link: "/category/1",
               children: [
-                { id: 1, name: "R900P" ,image:"go.png"},
-                { id: 1, name: "R8" ,image:"R8.jpg"},
-                { id: 1, name: "R7" ,image:"R7.jpg"},
-                { id: 1, name: "R6" ,image:"R6挂壁.jpg"},
+                { id: 1, name: "R900P" ,image:require('~/static/img/categorys/go.png')},
+                { id: 1, name: "R8" ,image:require('~/static/img/categorys/R8.jpg')},
+                { id: 1, name: "R7" ,image:require('~/static/img/categorys/R7.jpg')},
+                { id: 1, name: "R6" ,image:require('~/static/img/categorys/R6挂壁.jpg')},
               ],
             },
             {
               name: "PCBA主版",
               link: "/category/1",
               children: [
-                { id: 1, name: "R450",image:"R450.jpg" },
-                { id: 1, name: "R229" ,image:"go.png"},
+                { id: 1, name: "R450",image: require('~/static/img/categorys/R450.jpg')},
+                { id: 1, name: "R229" ,image:require('~/static/img/categorys/go.png')},
               ],
             },
             {
               name: "智能通道闸",
               link: "/category/1",
               children: [
-                { id: 1, name: "铝合金速通门",image:"go.png" },
-                { id: 1, name: "铝合金小摆闸" ,image:"go.png"},
+                { id: 1, name: "铝合金速通门",image:require('~/static/img/categorys/go.png') },
+                { id: 1, name: "铝合金小摆闸" ,image:require('~/static/img/categorys/go.png')},
               ],
             },
             {
               name: "警务通终端",
               link: "/category/1",
-              children: [{ id: 1, name: "P7",image:"go.png" }],
+              children: [{ id: 1, name: "P7",image:require('~/static/img/categorys/go.png') }],
             },
            
            
             {
               name: "ETC智能终端",
               link: "/category/1",
-              children: [{ id: 1, name: "R366ETC",image:"go.png" },{ id: 1, name: "R800CETC",image:"R800CETC.jpg" }],
+              children: [
+                { id: 1, name: "R366ETC",image:require('~/static/img/categorys/go.png') },
+              { id: 1, name: "R800CETC",image:require('~/static/img/categorys/R800CETC.jpg') }],
             },
           ],
         },
@@ -357,6 +359,7 @@ export default {
   width: 100%;
   height: $header-height;
   color: $theme-color;
+  font-size:16px;
   &:hover {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
@@ -613,12 +616,16 @@ export default {
   overflow: hidden;
   background-color: $white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  border-top: 1px solid rgba(173, 166, 166, 0.5);
   .custom-dropdown-menu {
     padding: 6px 0;
     color: #fff;
     background-color: #fff;
     // border-radius: 4px;
-    border-top: 1px solid rgba(173, 166, 166, 0.5);
+  
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -646,10 +653,10 @@ export default {
         // display: flex;
         // justify-content: flex-start;
         // align-items: center;
-        width: 180px;
-        height: 220px;
-        margin-bottom: 10px;
-        margin-right: 10px;
+        width: 200px;
+        height: 230px;
+        margin-bottom: 20px;
+        margin-right: 20px;
         // text-align: left;
         // white-space: wrap;
         color: #333;
@@ -658,10 +665,11 @@ export default {
         transition: all 0.3s ease-in-out;
         background: rgba(246, 242, 242, 0.5);
         img {
-          width: 180px;
+          width: 200px;
         }
         div {
           width: 100%;
+          font-size: 16px;
           text-align: center;
           white-space: wrap;
         }
