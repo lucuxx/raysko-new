@@ -25,6 +25,27 @@
           </div>
         </template>
       </b-carousel-slide>
+      <b-carousel-slide caption="">
+        <template slot="img">
+          <div class="banner-img3">
+           
+          </div>
+        </template>
+      </b-carousel-slide>
+      <b-carousel-slide caption="">
+        <template slot="img">
+          <div class="banner-img4">
+           
+          </div>
+        </template>
+      </b-carousel-slide>
+      <b-carousel-slide caption="">
+        <template slot="img">
+          <div class="banner-img5">
+           
+          </div>
+        </template>
+      </b-carousel-slide>
     </b-carousel>
     <div
       class="masthead_btn wow fadeOutDown"
@@ -114,6 +135,26 @@ export default {
   height: 100vh;
   width: 100vw;
   background: url("~/static/img/banner/R366C.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+
+.banner-img3 {
+  height: 100vh;
+  width: 100vw;
+  background: url("~/static/img/banner/R530C.jpg") center center no-repeat;
+  background-size: cover;
+}
+.banner-img4 {
+  height: 100vh;
+  width: 100vw;
+  background: url("~/static/img/banner/R800C.jpg") center center no-repeat;
+  background-size: cover;
+}
+.banner-img5 {
+  height: 100vh;
+  width: 100vw;
+  background: url("~/static/img/banner/R系列访客机.jpg") center center no-repeat;
   background-size: cover;
 }
 

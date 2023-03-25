@@ -1,27 +1,37 @@
 <template>
-  <!-- <div class="global-parallax py-5"> -->
-     <b-container class="text-center">
-      <AboutProduct />
-       <!-- <Btn to="/about">更多</Btn> -->
-     </b-container>
-   <!-- </div> -->
+  <div>
+    <b-container>
+      <!-- <AboutProduct /> -->
+      <!-- <b-img fluid :src="require()" ></b-img> -->
+      <SectionHeading heading="定制服务" content="" style="padding: 20px 0" />
+      <b-img fluid :src="require('~/static/img/banner/定制板块.jpg')"></b-img>
+      <SectionHeading heading="热门产品" content="" style="padding: 20px 0" />
+      <b-img fluid :src="require('~/static/img/banner/R366系列.jpg')"></b-img>
+      <SectionHeading heading="" content="" style="padding: 20px 0" />
+      <b-img fluid :src="require('~/static/img/banner/R8.jpg')"></b-img>
+      <SectionHeading heading="" content="" style="padding: 20px 0" />
+
+      <!-- <Btn to="/about">更多</Btn> -->
+    </b-container>
+  </div>
 </template>
 
 <script>
-import Heading from '~/components/Heading.vue'
-import Btn from '~/components/Button/Button.vue'
-import AboutProduct from '~/components/Home/AboutProduct.vue'
+import Heading from "~/components/Heading.vue";
+import Btn from "~/components/Button/Button.vue";
+import AboutProduct from "~/components/Home/AboutProduct.vue";
+import SectionHeading from "~/components/SectionHeading";
 export default {
-    components: {
-        Heading,
-        Btn,
-        AboutProduct
-    }
-}
+  components: {
+    Heading,
+    Btn,
+    AboutProduct,
+    SectionHeading,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 // .global-parallax {
 //     background: url("~static/img/home/home2.png") center center no-repeat;
 //     background-size: cover;

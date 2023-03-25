@@ -1,7 +1,13 @@
 <template>
   <div>
     <client-only>
-      <Hero />
+      <div class="d-none d-lg-block">
+
+        <Hero />
+      </div>
+      <div class="d-block d-lg-none">
+        <MHero />
+      </div>
     </client-only>
     <GlobalParallax2 />
     <GlobalParallax3 />
@@ -14,6 +20,7 @@
 
 <script>
 import Hero from '@/components/Home/Hero.vue'
+import MHero from '@/components/Home/MHero.vue'
 // import GlobalParallax from '@/components/Home/GlobalParallax.vue'
 import GlobalParallax2 from '@/components/Home/GlobalParallax2.vue'
 import GlobalParallax3 from '@/components/Home/GlobalParallax3.vue'
@@ -33,6 +40,7 @@ if (process.browser) {
 export default {
   components: {
     Hero,
+    MHero,
     // GlobalParallax,
     GlobalParallax2,
     GlobalParallax3,

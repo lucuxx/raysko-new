@@ -245,6 +245,12 @@ a.nuxt-link-exact-active {
   border-radius: 0;
 }
 
+@media (min-width: 1200px){
+  .container {
+      max-width: 1300px !important;
+  }
+}
+
 
 
 

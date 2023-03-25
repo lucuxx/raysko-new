@@ -14,7 +14,7 @@
 <script>
 import MyHeader from "@/components/header/index";
 import Carousel from "@/components/index/carousel";
-import Concat from "@/components/index/concat";
+import Concat from "@/components/footer/concat";
 import MyFooter from "@/components/footer/index";
 import Loading from "~/components/Loading.vue";
 import GoTop from "~/components/GoTop.vue";

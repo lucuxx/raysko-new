@@ -21,7 +21,7 @@
           </div>
         </b-col>
       </b-row>
-      <div  class="px-auto" style="height:300px;">
+      <!-- <div  class="px-auto" style="height:300px;"> -->
         <!-- <iframe
           id="myiframe"
           width="800"
@@ -32,7 +32,7 @@
           marginwidth="0"
           src="https://lbs.amap.com/tools/showmap?1_560_440_113.87345_22.564725&=%E6%B7%B1%E5%9C%B3%E7%9D%BF%E6%80%9D%E7%A7%91%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&=%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%AE%9D%E5%AE%89%E5%8C%BA%E5%85%B4%E4%B8%9A%E8%B7%AF2005%E5%8F%B7%E5%B9%BF%E5%85%B4%E6%BA%90%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9B%E6%84%8F%E5%9B%ADC%E6%A0%8B509&=&=&="
         ></iframe> -->
-      </div>
+      <!-- </div> -->
     </article>
   </section>
 </template>

@@ -5,7 +5,7 @@
     :class="{ 'active-header': showNavbarBg }"
   >
     <b-row class="container mx-auto">
-      <b-col cols="2" class="header-style">
+      <b-col cols="2" class="row header-style">
         <b-img height="50" :src="require('~/assets/img/logo2.png')" alt="" />
       </b-col>
       <b-col cols="8" class="mx-auto">
@@ -128,8 +128,8 @@
         class="custom-dropdown-content "
         @mouseleave="handleNavbarLeave()"
         >
-        <b-row class="container mx-auto  row custom-dropdown-menu" v-if="currentChildren.length">
-          <b-col lg="3" md="3" sm="3">
+        <b-row class="container mx-auto  custom-dropdown-menu" v-if="currentChildren.length">
+          <b-col lg="3" md="3" sm="3" class="row">
             <b-list-group>
               <b-list-group-item
                 v-for="(navChildren, navChildrenIndex) of currentChildren"
@@ -141,7 +141,7 @@
             </b-list-group>
           </b-col>
 
-          <b-col class="wrap-menuItem">
+          <b-col class="row wrap-menuItem">
             <div
               v-for="(item, index) in currentChildren[submenuIndex].children"
               :key="index"
@@ -202,7 +202,7 @@ export default {
               name: "双屏/单屏人脸访客终端",
               link: "/category/1",
               children: [
-                { id: 1, name: "R900P" ,image:require('~/static/img/categorys/go.png')},
+                { id: 1, name: "R900P" ,image:require('~/static/img/categorys/R900P.jpg')},
                 { id: 1, name: "R8" ,image:require('~/static/img/categorys/R8.jpg')},
                 { id: 1, name: "R7" ,image:require('~/static/img/categorys/R7.jpg')},
                 { id: 1, name: "R6" ,image:require('~/static/img/categorys/R6挂壁.jpg')},
@@ -213,29 +213,27 @@ export default {
               link: "/category/1",
               children: [
                 { id: 1, name: "R450",image: require('~/static/img/categorys/R450.jpg')},
-                { id: 1, name: "R229" ,image:require('~/static/img/categorys/go.png')},
+                { id: 1, name: "R229" ,image:require('~/static/img/categorys/R229.jpg')},
               ],
             },
             {
               name: "智能通道闸",
               link: "/category/1",
               children: [
-                { id: 1, name: "铝合金速通门",image:require('~/static/img/categorys/go.png') },
-                { id: 1, name: "铝合金小摆闸" ,image:require('~/static/img/categorys/go.png')},
+                { id: 1, name: "铝合金速通门",image:require('~/static/img/categorys/铝合金速通门.jpg') },
+                { id: 1, name: "铝合金小摆闸" ,image:require('~/static/img/categorys/铝合金小摆闸.jpg')},
               ],
             },
             {
               name: "警务通终端",
               link: "/category/1",
-              children: [{ id: 1, name: "P7",image:require('~/static/img/categorys/go.png') }],
+              children: [{ id: 1, name: "P7",image:require('~/static/img/categorys/P7警务终端.jpg') }],
             },
-           
-           
             {
               name: "ETC智能终端",
               link: "/category/1",
               children: [
-                { id: 1, name: "R366ETC",image:require('~/static/img/categorys/go.png') },
+                { id: 1, name: "R366ETC",image:require('~/static/img/categorys/R366ETC.jpg') },
               { id: 1, name: "R800CETC",image:require('~/static/img/categorys/R800CETC.jpg') }],
             },
           ],
@@ -357,9 +355,9 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: $header-height;
+  height: $header-height !important;
   color: $theme-color;
-  font-size:16px;
+  font-size:14px;
   &:hover {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
@@ -372,7 +370,11 @@ export default {
     }
   }
   .header-style {
-    line-height: $header-height;
+    // line-height: $header-height;
+    height:$header-height;
+    display:flex;
+    justify-content: flex-start;
+    align-items:center;
   }
 }
 .header-white {
@@ -425,7 +427,10 @@ export default {
 // }
 
 .custom-nav-bar {
-  height: 100%;
+  height: $header-height;
+  ul{
+    margin:0;
+  }
   // overflow: hidden;
 
   // overflow: hidden;
@@ -445,6 +450,7 @@ export default {
 //   display: none;
 // }
 
+
 .custom-nav {
   // width: 100%;
   height: $header-height;
@@ -456,7 +462,7 @@ export default {
   // align-items: center;
 
   .custom-nav-item {
-    margin: 0 20px;
+    margin: 0 40px;
     cursor: pointer;
     position: relative;
 
@@ -472,7 +478,7 @@ export default {
       // height: inherit;
       margin-bottom: 4px;
       width: inherit;
-      font-weight: 600;
+      // font-weight: 600;
 
       .active {
         color: $theme-color;
@@ -655,8 +661,8 @@ export default {
         // align-items: center;
         width: 200px;
         height: 230px;
-        margin-bottom: 20px;
-        margin-right: 20px;
+        margin-bottom: 50px;
+        margin-right: 50px;
         // text-align: left;
         // white-space: wrap;
         color: #333;
@@ -664,11 +670,15 @@ export default {
         cursor: pointer;
         transition: all 0.3s ease-in-out;
         background: rgba(246, 242, 242, 0.5);
+        text-align: center;
+        padding:10px;
+        
         img {
-          width: 200px;
+          width: 180px;
         }
         div {
           width: 100%;
+          padding:10px 0;
           font-size: 16px;
           text-align: center;
           white-space: wrap;
@@ -697,6 +707,7 @@ export default {
 ::v-deep .list-group-item {
   border: none;
   color: #333;
+  font-size:16px;
   border-right: 1px solid rgba(173, 166, 166, 0.5);
   border-radius: 0 !important;
 }
@@ -731,10 +742,30 @@ export default {
   transition: 0.3s ease-in-out;
   list-style-type: none;
   overflow-y: auto;
+  padding-left:10px;
+  padding-right:20px;
 
   &.active {
     transform: translateY(0px);
   }
+  
+a,
+a:hover,
+a:active,
+a:visited,
+a:link,
+a:focus {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 1);
+  -webkit-tap-highlight-color: transparent;
+  // color: #ffffff99;
+  outline: none;
+  background: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 1);
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
+}
 }
 
 .custom-button {
@@ -753,6 +784,14 @@ export default {
   transform: translate3d(0px, 39px, 0px) !important;
   background: rgb(241, 238, 238);
 }
+::v-deep .dropdown-menu-right  {
+  border:none;
+  li{
+    border-left:3px solid $primary-color;
+    margin-bottom:8px;
+    margin-left:5px;
+  }
+}
 
 ::v-deep .dropdown-item {
   padding-top: 6px;
@@ -761,16 +800,24 @@ export default {
 ::v-deep .nav-link,
 .nav-link-custom {
   color: #333;
+  border-left:3px solid $primary-color;
 }
+
+
 
 ::v-deep .dropdown-toggle:after {
   float: right;
   padding-top: 4px;
   margin-top: 10px;
+  color:$theme-color;
+  font-size:20px;
 }
 
 ::v-deep .nav-item {
-  border-top: 1px solid rgba(173, 166, 166, 0.5);
+  // border-left: 
   padding: 4px 6px;
 }
+
+
+
 </style>
