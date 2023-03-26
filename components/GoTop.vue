@@ -1,6 +1,6 @@
 <template>
   <div id="GoTop">
-    <div class="msg" id="button-1" variant="outline-success">
+    <div class="msg d-none d-sm-block" id="button-1" variant="outline-success">
       <font-awesome-icon size="lg" :icon="['fas', 'qrcode']" />
     </div>
 
@@ -13,7 +13,7 @@
       </div>
       <strong class="font-strong">关注我们</strong>
     </b-tooltip>
-    <div class="mobel" id="button-2" variant="outline-success">
+    <div class="mobel d-none d-sm-block" id="button-2" variant="outline-success">
       <font-awesome-icon size="lg" :icon="['fas', 'phone']" />
     </div>
 
@@ -92,7 +92,7 @@ export default {
     width: 40px;
     color: #fff;
     text-align: center;
-    cursor: pointer;
+   
     :hover {
       color: $theme-color;
     }
@@ -102,7 +102,7 @@ export default {
     width: 40px;
     color: #fff;
     text-align: center;
-    cursor: pointer;
+   
     :hover {
       color: $theme-color;
     }

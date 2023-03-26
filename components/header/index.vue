@@ -391,7 +391,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .custom-nav-bar {
     .custom-nav {
       display: none !important;
@@ -735,7 +735,7 @@ export default {
   background-color: $white;
   width: 100vw;
   height: 100vh;
-  transform: translateY(-100vh);
+  transform: translateX(100vw);
   padding-top: $header-height;
   z-index: -1;
   flex-direction: column;
@@ -743,7 +743,7 @@ export default {
   list-style-type: none;
   overflow-y: auto;
   padding-left:10px;
-  padding-right:20px;
+  padding-right:10px;
 
   &.active {
     transform: translateY(0px);

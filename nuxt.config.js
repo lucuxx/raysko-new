@@ -72,6 +72,10 @@ module.exports = {
     { src: "@/plugins/vue-awesome-swiper", ssr: false },
     "@/plugins/bootstrap-vue",
     "~/plugins/fontawesome.js",
+    {
+      src: '@/plugins/vue-count-to',
+      ssr: true
+    }
   ],
   /**
    * 关闭遥感采集

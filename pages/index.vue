@@ -6,6 +6,7 @@
         <Hero />
       </div>
       <div class="d-block d-lg-none">
+        <div class="mobile-auto d-block"></div>
         <MHero />
       </div>
     </client-only>
