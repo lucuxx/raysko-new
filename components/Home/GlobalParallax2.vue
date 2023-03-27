@@ -4,7 +4,7 @@
       <!-- <AboutProduct /> -->
       <!-- <b-img fluid :src="require()" ></b-img> -->
       <SectionHeading heading="定制服务" content="" style="padding: 20px 0" />
-        <b-img fluid :src="require('~/static/img/banner/定制板块.jpg')"></b-img>
+        <b-img fluid :src="require('~/static/img/banner/定制.jpg')"></b-img>
       <SectionHeading heading="热门产品" content="" style="padding: 20px 0" />
       <b-img fluid :src="require('~/static/img/banner/R366系列.jpg')"></b-img>
       <SectionHeading heading="" content="" style="padding: 20px 0" />

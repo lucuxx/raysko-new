@@ -8,24 +8,24 @@
         no-hover-pause
       >
         <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R350C.jpg')">
-         
+
         </b-carousel-slide>
         <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R366C.jpg')">
-         
+
         </b-carousel-slide>
         <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R530C.jpg')">
-        
+
         </b-carousel-slide>
         <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R800C.jpg')">
-         
+
         </b-carousel-slide>
-        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R系列访客机.jpg')">
-         
+        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R系列.jpg')">
+
         </b-carousel-slide>
       </b-carousel>
     </div>
   </template>
-  
+
   <script>
   import Parallax from "vue-parallaxy";
   import Heading from "~/components/Heading.vue";
@@ -68,10 +68,10 @@
         new WOW({}).init();
       }
     },
-  
+
   };
   </script>
-  
+
   <style scoped lang="scss">
   // .Masthead {
   // &:after {
@@ -85,12 +85,12 @@
   //   z-index: 1;
   // }
   // }
-  
+
   // .banner-img {
   //   height: 200px;
   //   width: 100vw;
   // }
-  
+
   .banner-img1 {
     height: 100vh;
     width: 100vw;
@@ -104,7 +104,7 @@
     background: url("~/static/img/banner/R366C.jpg") center center no-repeat;
     background-size: cover;
   }
-  
+
   // /* 超小设备 (手机, 400px 以下屏幕设备) */
   // @media only screen and (max-width: 400px) {
   //   .banner-img {
@@ -119,7 +119,7 @@
   //     width: 100vw;
   //   }
   // }
-  
+
   // /* 小设备 (平板电脑和大型手机，600 像素及以上) */
   // @media only screen and (min-width: 600px) {
   //   .banner-img {
@@ -127,7 +127,7 @@
   //     width: 100vw;
   //   }
   // }
-  
+
   // /* 中型设备（平板电脑，768 像素及以上） */
   // @media only screen and (min-width: 768px) {
   //   .banner-img {
@@ -135,7 +135,7 @@
   //     width: 100vw;
   //   }
   // }
-  
+
   // /* 大型设备（笔记本电脑/台式机，992 像素及以上） */
   // @media only screen and (min-width: 992px) {
   //   .banner-img {
@@ -143,7 +143,7 @@
   //     width: 100vw;
   //   }
   // }
-  
+
   // /* 超大型设备（大型笔记本电脑和台式机，1200 像素及以上） */
   // @media only screen and (min-width: 1200px) {
   //   .banner-img {
@@ -151,7 +151,7 @@
   //     width: 100vw;
   //   }
   // }
-  
+
   .hero-text {
     position: absolute;
     left: 0;
@@ -198,7 +198,7 @@
       }
     }
   }
-  
+
   .masthead_btn {
     position: absolute;
     left: 0;
@@ -210,7 +210,7 @@
     width: 50px;
     text-align: center;
     height: 50px;
-  
+
     @media screen and (max-width: 767px) {
       top: 84%;
     }
@@ -219,4 +219,3 @@
     }
   }
   </style>
-  
