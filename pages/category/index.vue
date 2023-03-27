@@ -23,7 +23,7 @@
           <b-list-group class="left-menu">
             <b-list-group-item
               class="bg-muted "
-              v-for="(item, index) of tabList"
+              v-for="(item, index) of menu"
               :key="index"
               :active="active == index"
               @click="handleTabClick(item,index)"
@@ -39,28 +39,21 @@
               lg="4"
               md="6"
               sm="12"
-              v-for="(item, ind) of productList"
+              v-for="(item, ind) of products"
               :key="ind"
               class="wow fadeInUp"
-              :data-wow-delay="0.2 * ind + 's'"
-            >
-              <b-card img-top class="mb-3">
+              >
+              <!-- :data-wow-delay="0.2 * ind + 's'" -->
+              <b-card img-top class="mb-4" @click="$router.push('/product/' + item.id)">
                 <b-card-img
-                  class="mx-auto d-block rounded thumbnail"
-                  :src="item.icon"
+                  class="mx-auto "
+                  :src="item.image"
                 ></b-card-img>
-                <b-card-title class="mx-auto mt-2 text-truncate">{{
-                  item.title
+                <b-card-title class="mx-auto title-center align-center">{{
+                  item.name
                 }}</b-card-title>
-                <b-card-text class="mx-auto card-body-text text-muted">{{
-                  item.desc
-                }}</b-card-text>
-                <b-button
-                  variant="primary"
-                  class="mx-auto d-block my-btn"
-                  @click="$router.push('/product/' + item.id)"
-                  >查看详情</b-button
-                >
+
+                  <!-- @click="$router.push('/product/' + item.id)" -->
               </b-card>
             </b-col>
           </b-row>
@@ -79,59 +72,98 @@ if (process.browser) {
 export default {
   data() {
     return {
-      active: null,
+      active: 0,
       tabList: [
-        { id: 99999, name: "全部" },
-        { id: 1, name: "智能手持终端" },
-        { id: 2, name: "手持打印终端" },
-        { id: 3, name: "人脸门禁/车载终端" },
-        { id: 4, name: "单/双屏人脸访客终端" },
-        { id: 5, name: "PCBA公版" },
-        { id: 6, name: "智能通道闸" },
-        { id: 7, name: "手持警务终端" },
+            {
+              id: 1,
+              name: "手持终端",
+              link: "/category/1",
+              children: [
+                { id: 1, name: "R366",image:require('~/static/img/categorys/R366.jpg')},
+                { id: 1, name: "R366A（大电池厚款）",image:require('~/static/img/categorys/R366A.jpg') },
+                { id: 1, name: "R350C",image:require('~/static/img/categorys/R350.jpg') },
+                { id: 1, name: "R606" ,image:require('~/static/img/categorys/go.png') },
+                { id: 1, name: "R530C" ,image:require('~/static/img/categorys/R530C.jpg')},
+              ],
+            },
+            {
+              id: 2,
+              name: "打印手持终端",
+              link: "/category/1",
+              children: [{ id: 1, name: "R800C",image:require('~/static/img/categorys/R800C.jpg') }],
+            },
+            {
+              id: 3,
+              name: "UHF RFID手持终端",
+              link: "/category/1",
+              children: [{ id: 1, name: "R366C（UHF）",image:require('~/static/img/categorys/R366C.jpg') }],
+            },
+            {
+              id: 4,
+              name: "双屏/单屏人脸访客终端",
+              link: "/category/1",
+              children: [
+                { id: 1, name: "R900P" ,image:require('~/static/img/categorys/R900P.jpg')},
+                { id: 1, name: "R8" ,image:require('~/static/img/categorys/R8.jpg')},
+                { id: 1, name: "R7" ,image:require('~/static/img/categorys/R7.jpg')},
+                { id: 1, name: "R6" ,image:require('~/static/img/categorys/R6挂壁.jpg')},
+              ],
+            },
+            {
+              id: 5,
+              name: "PCBA主版",
+              link: "/category/1",
+              children: [
+                { id: 1, name: "R450",image: require('~/static/img/categorys/R450.jpg')},
+                { id: 1, name: "R229" ,image:require('~/static/img/categorys/R229.jpg')},
+              ],
+            },
+            {
+              id: 6,
+              name: "智能通道闸",
+              link: "/category/1",
+              children: [
+                { id: 1, name: "铝合金速通门",image:require('~/static/img/categorys/铝合金速通门.jpg') },
+                { id: 1, name: "铝合金小摆闸" ,image:require('~/static/img/categorys/铝合金小摆闸.jpg')},
+              ],
+            },
+            {
+              id: 7,
+              name: "警务通终端",
+              link: "/category/1",
+              children: [{ id: 1, name: "P7",image:require('~/static/img/categorys/P7警务终端.jpg') }],
+            },
+            {
+              id: 8,
+              name: "ETC智能终端",
+              link: "/category/1",
+              children: [
+                { id: 1, name: "R366ETC",image:require('~/static/img/categorys/R366ETC.jpg') },
+              { id: 1, name: "R800CETC",image:require('~/static/img/categorys/R800CETC.jpg') }],
+            },
       ],
-      productList: [
-        {
-          id: 1,
-          icon: require("~/static/img/product/product01.jpg"),
-          title: "专有云解决方案",
-          desc: "专有云解决方案依托于阿里云、数梦工场提供的云计算、大数据、中间件和云安全能力，为用户搭建企业级互联网架构。通过提供集计算、存储、网络于一身的IaaS层基础设施服务，云管理平台、数据、安全统一分布式处理平台，满足用户的中、大型专有云场景需求。",
-        },
-        {
-          id: 2,
-          icon: require("~/static/img/product/product02.jpg"),
-          title: "混合云解决方案",
-          desc: "深圳睿思科信息技术有限公司混合云解决方案深度融合阿里云，结合自身在政企云计算业务技术沉淀，打造出贯通公共云和专有云的解决方案。从业务视角出发，提供基础架构层、数据服务层、应用层、安全能力等多层次的跨云混合。数据服务混合、应用混合和安全能力混合补齐了业界常见的基础架构混合云方案的短板，为用户业务提供全栈混合云能力。",
-        },
-        {
-          id: 3,
-          icon: require("~/static/img/product/product03.jpg"),
-          title: "大数据解决方案",
-          desc: "睿思科大数据解决方案打造了易使用、高性能、低成本、高可靠的解决方案，帮助客户进行大数据运营，挖掘出蕴含在数据当中的价值。底层计算引擎提供海量数据存储和高速计算能力；中层大数据工作台为数据资产的开发、管理、挖掘、服务化提供工具；上层应用通过各种形式发挥数据的价值。",
-        },
-        {
-          id: 4,
-          icon: require("~/static/img/product/product04.jpg"),
-          title: "数据共享交换解决方案",
-          desc: "睿思科数据共享交换平台为用户提供了强大部署服务。平台在架构上基于分布式云架构。数据交换平台将分散建设的若干应用信息系统进行整合，通过构建数据共享交换平台，使若干个应用子系统信息/数据能够传输及共享，提高信息资源的利用率，保证分布异构系统之间互联互通，建立中心数据库，完成数据的抽取、集中、加载、展现，构造统一的数据处理和交换。数据共享交换平台帮助政府和企业打破部门间的数据孤岛，适应于大数据时代的数据交换场景。",
-        },
-        {
-          id: 5,
-          icon: require("~/static/img/product/product05.jpg"),
-          title: "大数据工作台",
-          desc: "数据治理平台帮助企业更好的管理数据资产，集合IT技术人员、系统运维人员、业务用户共同优化企业数据资产。数据治理覆盖整个数据生命周期：产生、流转、加工、使用、销毁，数据治理平台提供全链路的数据管理功能。",
-        },
-      ],
+      menu:[],
+      products:[]
+
     };
   },
   mounted() {
     this.active = 0;
     this.getList();
+
   },
   methods: {
     // 筛选列表
     getList() {
       // TODO 请求所有分类数据
+      this.menu = this.tabList.map(i =>{
+        return {id:i.id,name:i.name}
+      })
+      this.menu.unshift({id:0,name:"全部"})
+      this.products = []
+      this.tabList.forEach(i =>{
+        this.products = this.products.concat(i.children)
+      })
       this.$nextTick(() => {
         if (process.browser) {
           new WOW({}).init();
@@ -166,15 +198,20 @@ export default {
 
 .card {
   border: none;
-
+  background:#fcfcfc;
+  transition: all .4s;
 }
 .card ::v-deep .card-body {
     padding: 4px !important;
-  }
+}
 
 .card:hover {
   // background: #F1F1F1;
+  transform: scale(1.1,1.1);
+
   box-shadow: 0 0 10px #ccc;
+  color:$theme-color;
+
 }
 .card-body-text {
   max-height: 102px;
@@ -183,6 +220,9 @@ export default {
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+}
+.title-center{
+  text-align: center;
 }
 ::v-deep .list-group-item {
   // border-color: transparent;

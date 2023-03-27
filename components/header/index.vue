@@ -631,7 +631,7 @@ export default {
     color: #fff;
     background-color: #fff;
     // border-radius: 4px;
-  
+
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -672,12 +672,19 @@ export default {
         background: rgba(246, 242, 242, 0.5);
         text-align: center;
         padding:10px;
-        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+
         img {
           width: 180px;
         }
         div {
           width: 100%;
+          height:30px;
+          line-height: 30px;
           padding:10px 0;
           font-size: 16px;
           text-align: center;
@@ -748,7 +755,7 @@ export default {
   &.active {
     transform: translateY(0px);
   }
-  
+
 a,
 a:hover,
 a:active,
@@ -814,7 +821,7 @@ a:focus {
 }
 
 ::v-deep .nav-item {
-  // border-left: 
+  // border-left:
   padding: 4px 6px;
 }
 
