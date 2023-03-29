@@ -7,7 +7,7 @@
     <b-tooltip target="button-1" placement="left">
       <div>
         <b-img
-          :src="require('~/static/img/footer/lianxi.jpg')"
+          :src="require('~/static/img/footer/lianxi.jpeg')"
           height="100"
         ></b-img>
       </div>
@@ -92,7 +92,7 @@ export default {
     width: 40px;
     color: #fff;
     text-align: center;
-   
+
     :hover {
       color: $theme-color;
     }
@@ -102,7 +102,7 @@ export default {
     width: 40px;
     color: #fff;
     text-align: center;
-   
+
     :hover {
       color: $theme-color;
     }

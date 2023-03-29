@@ -60,7 +60,7 @@
             <dd></dd>
 
             <b-img
-              :src="require('~/static/img/footer/lianxi.jpg')"
+              :src="require('~/static/img/footer/lianxi.jpeg')"
               height="100"
             ></b-img>
 

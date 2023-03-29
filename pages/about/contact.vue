@@ -65,7 +65,7 @@ export default {
         {
           title: "公众号:",
           desc: "微信搜索：睿思科",
-          img: require("~/static/img/footer/lianxi.jpg"),
+          img: require("~/static/img/footer/lianxi.jpeg"),
         },
       ],
     };
