@@ -1,7 +1,7 @@
 <template>
   <div class="global-parallax py-5">
-    <b-container class="text-center wrap">
-      <b-row>
+    <b-container class="wrap">
+      <b-row no-gutters class="row">
         <b-col
           lg="3"
           md="6"
@@ -11,10 +11,8 @@
           class="pb-3 wow fadeInUp"
           :data-wow-delay="0.2 * ind + 's'"
         >
-          <div>
-            <div class="wrap-num">{{ item.num }}</div>
-            <div class="wrap-title">{{ item.title }}</div>
-          </div>
+          <div class="wrap-num">{{ item.num }}</div>
+          <div class="wrap-title">{{ item.title }}</div>
         </b-col>
       </b-row>
     </b-container>
@@ -80,9 +78,11 @@ export default {
     color: $white;
     font-size: 32px;
     font-weight: 800;
+    text-align: center;
   }
   &-title {
     color: $white;
+    text-align: center;
   }
 }
 </style>
