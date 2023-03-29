@@ -1,42 +1,13 @@
 <template>
   <section>
-    <div class="mobile-auto d-block d-md-none"></div>
-    <div class="header-content spin-content">
-      <div style="height: 100%">
-        <div class="flex">
-          <div class="content">
-            <h1 class="wow slideInLeft">产品中心</h1>
-            <p class="wow slideInRight">先进产品，定制服务</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <SectionHeading :heading="title" content="" />
+    <article>
+      <h3>规格书&产品素材</h3>
+      <div class="container py-5 wrapper">
 
-    <div class="container py-5 wrapper">
-      <b-row>
-        <b-col
-          md="3"
-          order="0"
-          order-md="0"
-          class="mb-4  wow fadeInUp"
-        >
-          <b-list-group class="left-menu">
-            <b-list-group-item
-              class="bg-muted "
-              v-for="(item, index) of menu"
-              :key="index"
-              :active="active == index"
-              @click="handleTabClick(item,index)"
-              >{{ item.name }}
-
-              </b-list-group-item
-            >
-          </b-list-group>
-        </b-col>
-        <b-col md="9" order="1" order-md="1" class="">
           <b-row class="mx-0">
             <b-col
-              lg="4"
+              lg="3"
               md="6"
               sm="12"
               v-for="(item, ind) of products"
@@ -44,12 +15,12 @@
               class="wow fadeInUp"
               >
               <!-- :data-wow-delay="0.2 * ind + 's'" -->
-              <b-card img-top class="mb-4" @click="$router.push('/product/' + item.id)">
+              <b-card img-top class="mb-4">
                 <b-card-img
                   class="mx-auto "
                   :src="item.image"
                 ></b-card-img>
-                <b-card-title class="mx-auto title-center align-center">{{
+                <b-card-title class="mx-auto title-center">{{
                   item.name
                 }}</b-card-title>
 
@@ -57,23 +28,25 @@
               </b-card>
             </b-col>
           </b-row>
-        </b-col>
-      </b-row>
     </div>
+    </article>
   </section>
 </template>
 
 <script>
+import SectionHeading from "~/components/SectionHeading";
 if (process.browser) {
   // 在这里根据环境引入wow.js
   var { WOW } = require("wowjs");
 }
-
 export default {
+  components: {
+    SectionHeading,
+  },
   data() {
     return {
-      active: 0,
-      tabList: [
+      title: "产品文档下载",
+    tabList: [
             {
               id: 1,
               name: "手持终端",
@@ -142,24 +115,18 @@ export default {
               { id: 1, name: "R800CETC",image:require('~/static/img/categorys/R800CETC.jpg') }],
             },
       ],
-      menu:[],
       products:[]
-
-    };
+  };
   },
   mounted() {
-    this.active = 0;
-    this.getList();
-
+    // if (process.browser) {
+    //   // 在页面mounted生命周期里面 根据环境实例化WOW
+    //   new WOW({}).init();
+    // }
+    this.getList()
   },
   methods: {
-    // 筛选列表
     getList() {
-      // TODO 请求所有分类数据
-      this.menu = this.tabList.map(i =>{
-        return {id:i.id,name:i.name}
-      })
-      this.menu.unshift({id:0,name:"全部"})
       this.products = []
       this.tabList.forEach(i =>{
         this.products = this.products.concat(i.children)
@@ -170,49 +137,31 @@ export default {
         }
       });
     },
-    // 点击筛选
-    handleTabClick(item,index) {
-      if(index !== 0){
-        this.$router.push(`/category/${item.id}`)
-      }
-    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.header-content {
-  background: url("~/static/img/banner/inside-banner3.jpeg") center center
-    no-repeat;
-  background-size: cover;
-  // background-attachment: fixed;
-}
 
-.left-menu {
-  position: sticky !important;
-  top:calc( $header-height + 20px);
-}
-.wrapper {
-  // background: #f2f2f2;
-}
 
 .card {
   border: none;
-  background:#fcfcfc;
-  transition: all .4s;
+  background:#f3f3f3;
+  // transition: all .4s;
+  cursor: pointer;
 }
 .card ::v-deep .card-body {
     padding: 4px !important;
 }
 
-.card:hover {
-  // background: #F1F1F1;
-  transform: scale(1.1,1.1);
+// .card:hover {
+//   // background: #F1F1F1;
+//   transform: scale(1.1,1.1);
 
-  box-shadow: 0 0 10px #ccc;
-  color:$theme-color;
+//   box-shadow: 0 0 10px #ccc;
+//   color:$theme-color;
 
-}
+// }
 .card-body-text {
   max-height: 102px;
   overflow: hidden;
@@ -224,14 +173,6 @@ export default {
 .title-center{
   text-align: center;
 }
-::v-deep .list-group-item {
-  // border-color: transparent;
-  border-radius: 0;
-}
-::v-deep .list-group-item.active {
-  background: $theme-color;
-}
-::v-deep .list-group-item:hover {
-  cursor: pointer;
-}
+
+
 </style>
