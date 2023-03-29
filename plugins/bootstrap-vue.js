@@ -17,7 +17,7 @@ import {
   BreadcrumbPlugin,
   TabsPlugin,
   ToastPlugin,
-  TooltipPlugin
+  TooltipPlugin,
 } from 'bootstrap-vue'
 
 export default () => {

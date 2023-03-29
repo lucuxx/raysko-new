@@ -6,7 +6,7 @@
         <div class="flex">
           <div class="content">
             <h1 class="wow slideInLeft">服务与支持</h1>
-            <p class="wow slideInRight">贴心的服务，及时的支持</p>
+            <p class="wow slideInRight">贴心的服务,让您没有后顾之忧</p>
           </div>
         </div>
       </div>

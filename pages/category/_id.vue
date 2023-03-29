@@ -14,24 +14,31 @@
 
     <div class="container py-5 wrapper">
       <b-row>
-        <b-col
-          md="3"
-          order="0"
-          order-md="0"
-          class="mb-4  wow fadeInUp"
-        >
-          <b-list-group class="left-menu">
-            <b-list-group-item
-              class="bg-muted "
-              v-for="(item, index) of menu"
-              :key="index"
-              :active="active == index"
-              @click="handleTabClick(item,index)"
-              >{{ item.name }}
-
-              </b-list-group-item
+        <b-col md="3" order="0" order-md="0" class="mb-4 wow fadeInUp">
+          <div class="d-none d-lg-block">
+            <b-list-group class="left-menu">
+              <b-list-group-item
+                class="bg-muted"
+                v-for="(item, index) of menu"
+                :key="index"
+                :active="active == index"
+                @click="handleTabClick(item, index)"
+                >{{ item.name }}
+              </b-list-group-item>
+            </b-list-group>
+          </div>
+          <div class="d-block d-lg-none">
+            <b-form-select
+              v-model="active"
+              required
+              :options="menu"
+              value-field="id"
+              text-field="name"
+              @change="handleChange"
+              size="lg"
             >
-          </b-list-group>
+            </b-form-select>
+          </div>
         </b-col>
         <b-col md="9" order="1" order-md="1" class="">
           <b-row class="mx-0">
@@ -42,18 +49,19 @@
               v-for="(item, ind) of products"
               :key="ind"
               class="wow fadeInUp"
-              >
+            >
               <!-- :data-wow-delay="0.2 * ind + 's'" -->
-              <b-card img-top class="mb-4" @click="$router.push('/product/' + item.id)">
-                <b-card-img
-                  class="mx-auto "
-                  :src="item.image"
-                ></b-card-img>
+              <b-card
+                img-top
+                class="mb-4"
+                @click="$router.push('/product/' + item.id)"
+              >
+                <b-card-img class="mx-auto" :src="item.image"></b-card-img>
                 <b-card-title class="mx-auto title-center align-center">{{
                   item.name
                 }}</b-card-title>
 
-                  <!-- @click="$router.push('/product/' + item.id)" -->
+                <!-- @click="$router.push('/product/' + item.id)" -->
               </b-card>
             </b-col>
           </b-row>
@@ -79,98 +87,175 @@ export default {
     return {
       active: null,
       tabList: [
+        {
+          id: 1,
+          name: "手持终端",
+          link: "/category/1",
+          children: [
             {
               id: 1,
-              name: "手持终端",
-              link: "/category/1",
-              children: [
-                { id: 1, name: "R366",image:require('~/static/img/categorys/R366.jpg')},
-                { id: 1, name: "R366A（大电池厚款）",image:require('~/static/img/categorys/R366A.jpg') },
-                { id: 1, name: "R350C",image:require('~/static/img/categorys/R350.jpg') },
-                { id: 1, name: "R606" ,image:require('~/static/img/categorys/go.png') },
-                { id: 1, name: "R530C" ,image:require('~/static/img/categorys/R530C.jpg')},
-              ],
+              name: "R366",
+              image: require("~/static/img/categorys/R366.jpg"),
             },
             {
-              id: 2,
-              name: "打印手持终端",
-              link: "/category/1",
-              children: [{ id: 1, name: "R800C",image:require('~/static/img/categorys/R800C.jpg') }],
+              id: 1,
+              name: "R366A（大电池厚款）",
+              image: require("~/static/img/categorys/R366A.jpg"),
             },
             {
-              id: 3,
-              name: "UHF RFID手持终端",
-              link: "/category/1",
-              children: [{ id: 1, name: "R366C（UHF）",image:require('~/static/img/categorys/R366C.jpg') }],
+              id: 1,
+              name: "R350C",
+              image: require("~/static/img/categorys/R350.jpg"),
             },
             {
-              id: 4,
-              name: "双屏/单屏人脸访客终端",
-              link: "/category/1",
-              children: [
-                { id: 1, name: "R900P" ,image:require('~/static/img/categorys/R900P.jpg')},
-                { id: 1, name: "R8" ,image:require('~/static/img/categorys/R8.jpg')},
-                { id: 1, name: "R7" ,image:require('~/static/img/categorys/R7.jpg')},
-                { id: 1, name: "R6" ,image:require('~/static/img/categorys/R6挂壁.jpg')},
-              ],
+              id: 1,
+              name: "R606",
+              image: require("~/static/img/categorys/go.png"),
             },
             {
-              id: 5,
-              name: "PCBA主版",
-              link: "/category/1",
-              children: [
-                { id: 1, name: "R450",image: require('~/static/img/categorys/R450.jpg')},
-                { id: 1, name: "R229" ,image:require('~/static/img/categorys/R229.jpg')},
-              ],
+              id: 1,
+              name: "R530C",
+              image: require("~/static/img/categorys/R530C.jpg"),
+            },
+          ],
+        },
+        {
+          id: 2,
+          name: "打印手持终端",
+          link: "/category/1",
+          children: [
+            {
+              id: 1,
+              name: "R800C",
+              image: require("~/static/img/categorys/R800C.jpg"),
+            },
+          ],
+        },
+        {
+          id: 3,
+          name: "UHF RFID手持终端",
+          link: "/category/1",
+          children: [
+            {
+              id: 1,
+              name: "R366C（UHF）",
+              image: require("~/static/img/categorys/R366C.jpg"),
+            },
+          ],
+        },
+        {
+          id: 4,
+          name: "双屏/单屏人脸访客终端",
+          link: "/category/1",
+          children: [
+            {
+              id: 1,
+              name: "R900P",
+              image: require("~/static/img/categorys/R900P.jpg"),
             },
             {
-              id: 6,
-              name: "智能通道闸",
-              link: "/category/1",
-              children: [
-                { id: 1, name: "铝合金速通门",image:require('~/static/img/categorys/铝合金速通门.jpg') },
-                { id: 1, name: "铝合金小摆闸" ,image:require('~/static/img/categorys/铝合金小摆闸.jpg')},
-              ],
+              id: 1,
+              name: "R8",
+              image: require("~/static/img/categorys/R8.jpg"),
             },
             {
-              id: 7,
-              name: "警务通终端",
-              link: "/category/1",
-              children: [{ id: 1, name: "P7",image:require('~/static/img/categorys/P7警务终端.jpg') }],
+              id: 1,
+              name: "R7",
+              image: require("~/static/img/categorys/R7.jpg"),
             },
             {
-              id: 8,
-              name: "ETC智能终端",
-              link: "/category/1",
-              children: [
-                { id: 1, name: "R366ETC",image:require('~/static/img/categorys/R366ETC.jpg') },
-              { id: 1, name: "R800CETC",image:require('~/static/img/categorys/R800CETC.jpg') }],
+              id: 1,
+              name: "R6",
+              image: require("~/static/img/categorys/R6挂壁.jpg"),
             },
+          ],
+        },
+        {
+          id: 5,
+          name: "PCBA主版",
+          link: "/category/1",
+          children: [
+            {
+              id: 1,
+              name: "R450",
+              image: require("~/static/img/categorys/R450.jpg"),
+            },
+            {
+              id: 1,
+              name: "R229",
+              image: require("~/static/img/categorys/R229.jpg"),
+            },
+          ],
+        },
+        {
+          id: 6,
+          name: "智能通道闸",
+          link: "/category/1",
+          children: [
+            {
+              id: 1,
+              name: "铝合金速通门",
+              image: require("~/static/img/categorys/铝合金速通门.jpg"),
+            },
+            {
+              id: 1,
+              name: "铝合金小摆闸",
+              image: require("~/static/img/categorys/铝合金小摆闸.jpg"),
+            },
+          ],
+        },
+        {
+          id: 7,
+          name: "警务通终端",
+          link: "/category/1",
+          children: [
+            {
+              id: 1,
+              name: "P7",
+              image: require("~/static/img/categorys/P7警务终端.jpg"),
+            },
+          ],
+        },
+        {
+          id: 8,
+          name: "ETC智能终端",
+          link: "/category/1",
+          children: [
+            {
+              id: 1,
+              name: "R366ETC",
+              image: require("~/static/img/categorys/R366ETC.jpg"),
+            },
+            {
+              id: 1,
+              name: "R800CETC",
+              image: require("~/static/img/categorys/R800CETC.jpg"),
+            },
+          ],
+        },
       ],
-      menu:[],
-      products:[]
-
+      menu: [],
+      products: [],
     };
   },
   mounted() {
     this.active = this.$route.params.id;
-    console.log()
     this.getList(this.active);
   },
   methods: {
     // 筛选列表
     getList(active) {
       // TODO 请求所有分类数据
-      this.menu = this.tabList.map(i =>{
-        return {id:i.id,name:i.name}
-      })
-      this.menu.unshift({id:0,name:"全部"})
-      this.products = []
-      this.tabList.forEach(i =>{
-        if(i.id == this.active){
-          this.products = i.children
+      this.menu = this.tabList.map((i) => {
+        return { id: i.id, name: i.name };
+      });
+      this.menu.unshift({ id: 0, name: "全部" });
+      this.products = [];
+      this.tabList.forEach((i) => {
+        if (i.id == this.active) {
+          this.products = i.children;
         }
-      })
+      });
       this.$nextTick(() => {
         if (process.browser) {
           new WOW({}).init();
@@ -182,7 +267,15 @@ export default {
       if (index == 0) {
         this.$router.push({ path: "/category" });
       } else if (this.$route.params.id != item.id) {
-        this.$router.push( `/category/${item.id}`);
+        this.$router.push(`/category/${item.id}`);
+      }
+    },
+    handleChange() {
+      console.log(this.active);
+      if (this.active !== 0) {
+        this.$router.push(`/category/${this.active}`);
+      } else {
+        this.$router.push({ path: "/category" });
       }
     },
   },
@@ -207,20 +300,19 @@ export default {
 
 .card {
   border: none;
-  background:#fcfcfc;
-  transition: all .4s;
+  background: #fcfcfc;
+  transition: all 0.4s;
 }
 .card ::v-deep .card-body {
-    padding: 4px !important;
+  padding: 4px !important;
 }
 
 .card:hover {
   // background: #F1F1F1;
-  transform: scale(1.1,1.1);
+  transform: scale(1.1, 1.1);
 
   box-shadow: 0 0 10px #ccc;
-  color:$theme-color;
-
+  color: $theme-color;
 }
 .card-body-text {
   max-height: 102px;
@@ -230,7 +322,7 @@ export default {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
-.title-center{
+.title-center {
   text-align: center;
 }
 ::v-deep .list-group-item {
