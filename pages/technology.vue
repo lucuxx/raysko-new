@@ -1,5 +1,7 @@
 <template>
   <section class="technology">
+    <div class="mobile-auto d-block d-md-none"></div>
+
     <div class="header-content spin-content" >
       <div style="height: 100%">
         <div class="flex">
