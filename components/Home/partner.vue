@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       title: '合作伙伴',
-      desc: '睿思科信息技术与战略合作伙伴通过双方资源投入、优势互补、技术协同，共同推进面向政企行业的云计算和大数据业务发展。',
+      desc: '睿思科信息技术与战略合作伙伴通过双方资源投入、优势互补、技术协同，共同推进手持终端设备业务发展。',
       partnerList: [
         {icon: require('~/static/img/partner/shumeng.png')},
         {icon: require('~/static/img/partner/aliyun.png')},

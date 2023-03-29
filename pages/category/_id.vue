@@ -6,7 +6,7 @@
         <div class="flex">
           <div class="content">
             <h1 class="wow slideInLeft">产品</h1>
-            <p class="wow slideInRight">先进产品，贴心服务</p>
+            <p class="wow slideInRight">先进产品，定制服务</p>
           </div>
         </div>
       </div>

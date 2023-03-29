@@ -8,7 +8,7 @@
           sm="12"
           v-for="(item, ind) of list"
           :key="ind"
-          class="wow fadeInUp"
+          class="pb-3 wow fadeInUp"
           :data-wow-delay="0.2 * ind + 's'"
         >
           <div>

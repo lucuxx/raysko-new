@@ -81,54 +81,56 @@
             <span></span>
           </div>
         </div>
-
       </b-col>
     </b-row>
 
-
     <!-- 适配手机导航 -->
     <div class="custom-site-nav" :class="{ active: isCollapse }">
-          <b-nav vertical v-for="(item, index) in navList" :key="index">
-            <b-nav-item
-              v-if="!item.children"
-              style="color: #fff"
-              @click="handleMobileNav(item)"
-            >
-              {{ item.name }}
-            </b-nav-item>
+      <b-nav vertical v-for="(item, index) in navList" :key="index">
+        <b-nav-item
+          v-if="!item.children"
+          style="color: #fff"
+          @click="handleMobileNav(item)"
+        >
+          {{ item.name }}
+        </b-nav-item>
 
-            <b-nav-item-dropdown
-              v-else
-              :text="item.name"
-              toggle-class="nav-link-custom"
-              right
-              block
+        <b-nav-item-dropdown
+          v-else
+          :text="item.name"
+          toggle-class="nav-link-custom"
+          right
+          block
+          router-tag="li"
+        >
+          <template v-slot:button-content>
+            <span
+              @click="handleMobileNav(item)"
+              :class="{ active: $route.path.includes(item.link) }"
+              >{{ item.name }}</span
             >
-              <template v-slot:button-content>
-                <span
-                  @click="handleMobileNav(item)"
-                  :class="{ active: $route.path.includes(item.link) }"
-                  >{{ item.name }}</span
-                >
-              </template>
-              <b-dropdown-item
-                @click="handleMobileNav(i)"
-                v-for="(i, idx) in item.children"
-                :key="idx"
-                >{{ i.name }}</b-dropdown-item
-              >
-            </b-nav-item-dropdown>
-          </b-nav>
+          </template>
+          <b-dropdown-item
+            @click="handleMobileNav(i)"
+            v-for="(i, idx) in item.children"
+            :key="idx"
+            >{{ i.name }}</b-dropdown-item
+          >
+        </b-nav-item-dropdown>
+      </b-nav>
     </div>
 
     <!-- 下拉菜单 -->
     <client-only>
       <div
         v-show="currentChildren.length && isProduct"
-        class="custom-dropdown-content "
+        class="custom-dropdown-content"
         @mouseleave="handleNavbarLeave()"
+      >
+        <b-row
+          class="container mx-auto custom-dropdown-menu"
+          v-if="currentChildren.length"
         >
-        <b-row class="container mx-auto  custom-dropdown-menu" v-if="currentChildren.length">
           <b-col lg="3" md="3" sm="3" class="row">
             <b-list-group>
               <b-list-group-item
@@ -148,10 +150,7 @@
               class="menuItem"
               @click="handleToProductClick(item)"
             >
-              <b-img
-                fluid
-                :src="item.image"
-              ></b-img>
+              <b-img fluid :src="item.image"></b-img>
               <div>{{ item.name }}</div>
             </div>
           </b-col>
@@ -181,65 +180,144 @@ export default {
               name: "手持终端",
               link: "/category/1",
               children: [
-                { id: 1, name: "R366",image:require('~/static/img/categorys/R366.jpg')},
-                { id: 1, name: "R366A（大电池厚款）",image:require('~/static/img/categorys/R366A.jpg') },
-                { id: 1, name: "R350C",image:require('~/static/img/categorys/R350.jpg') },
-                { id: 1, name: "R606" ,image:require('~/static/img/categorys/go.png') },
-                { id: 1, name: "R530C" ,image:require('~/static/img/categorys/R530C.jpg')},
+                {
+                  id: 1,
+                  name: "R366",
+                  image: require("~/static/img/categorys/R366.jpg"),
+                },
+                {
+                  id: 1,
+                  name: "R366A（大电池厚款）",
+                  image: require("~/static/img/categorys/R366A.jpg"),
+                },
+                {
+                  id: 1,
+                  name: "R350C",
+                  image: require("~/static/img/categorys/R350.jpg"),
+                },
+                {
+                  id: 1,
+                  name: "R606",
+                  image: require("~/static/img/categorys/go.png"),
+                },
+                {
+                  id: 1,
+                  name: "R530C",
+                  image: require("~/static/img/categorys/R530C.jpg"),
+                },
               ],
             },
             {
               name: "打印手持终端",
-              link: "/category/1",
-              children: [{ id: 1, name: "R800C",image:require('~/static/img/categorys/R800C.jpg') }],
+              link: "/category/2",
+              children: [
+                {
+                  id: 1,
+                  name: "R800C",
+                  image: require("~/static/img/categorys/R800C.jpg"),
+                },
+              ],
             },
             {
               name: "UHF RFID手持终端",
-              link: "/category/1",
-              children: [{ id: 1, name: "R366C（UHF）",image:require('~/static/img/categorys/R366C.jpg') }],
+              link: "/category/3",
+              children: [
+                {
+                  id: 1,
+                  name: "R366C（UHF）",
+                  image: require("~/static/img/categorys/R366C.jpg"),
+                },
+              ],
             },
             {
               name: "双屏/单屏人脸访客终端",
-              link: "/category/1",
+              link: "/category/4",
               children: [
-                { id: 1, name: "R900P" ,image:require('~/static/img/categorys/R900P.jpg')},
-                { id: 1, name: "R8" ,image:require('~/static/img/categorys/R8.jpg')},
-                { id: 1, name: "R7" ,image:require('~/static/img/categorys/R7.jpg')},
-                { id: 1, name: "R6" ,image:require('~/static/img/categorys/R6挂壁.jpg')},
+                {
+                  id: 1,
+                  name: "R900P",
+                  image: require("~/static/img/categorys/R900P.jpg"),
+                },
+                {
+                  id: 1,
+                  name: "R8",
+                  image: require("~/static/img/categorys/R8.jpg"),
+                },
+                {
+                  id: 1,
+                  name: "R7",
+                  image: require("~/static/img/categorys/R7.jpg"),
+                },
+                {
+                  id: 1,
+                  name: "R6",
+                  image: require("~/static/img/categorys/R6挂壁.jpg"),
+                },
               ],
             },
             {
               name: "PCBA主版",
-              link: "/category/1",
+              link: "/category/5",
               children: [
-                { id: 1, name: "R450",image: require('~/static/img/categorys/R450.jpg')},
-                { id: 1, name: "R229" ,image:require('~/static/img/categorys/R229.jpg')},
+                {
+                  id: 1,
+                  name: "R450",
+                  image: require("~/static/img/categorys/R450.jpg"),
+                },
+                {
+                  id: 1,
+                  name: "R229",
+                  image: require("~/static/img/categorys/R229.jpg"),
+                },
               ],
             },
             {
               name: "智能通道闸",
-              link: "/category/1",
+              link: "/category/6",
               children: [
-                { id: 1, name: "铝合金速通门",image:require('~/static/img/categorys/铝合金速通门.jpg') },
-                { id: 1, name: "铝合金小摆闸" ,image:require('~/static/img/categorys/铝合金小摆闸.jpg')},
+                {
+                  id: 1,
+                  name: "铝合金速通门",
+                  image: require("~/static/img/categorys/铝合金速通门.jpg"),
+                },
+                {
+                  id: 1,
+                  name: "铝合金小摆闸",
+                  image: require("~/static/img/categorys/铝合金小摆闸.jpg"),
+                },
               ],
             },
             {
               name: "警务通终端",
-              link: "/category/1",
-              children: [{ id: 1, name: "P7",image:require('~/static/img/categorys/P7警务终端.jpg') }],
+              link: "/category/7",
+              children: [
+                {
+                  id: 1,
+                  name: "P7",
+                  image: require("~/static/img/categorys/P7警务终端.jpg"),
+                },
+              ],
             },
             {
               name: "ETC智能终端",
-              link: "/category/1",
+              link: "/category/8",
               children: [
-                { id: 1, name: "R366ETC",image:require('~/static/img/categorys/R366ETC.jpg') },
-              { id: 1, name: "R800CETC",image:require('~/static/img/categorys/R800CETC.jpg') }],
+                {
+                  id: 1,
+                  name: "R366ETC",
+                  image: require("~/static/img/categorys/R366ETC.jpg"),
+                },
+                {
+                  id: 1,
+                  name: "R800CETC",
+                  image: require("~/static/img/categorys/R800CETC.jpg"),
+                },
+              ],
             },
           ],
         },
         // { name: "用户案例", link: "/example" },
-        { name: "解决方案", link: "/business" },
+        { name: "服务与支持", link: "/service/repair" },
         {
           name: "关于我们",
           link: "/about/company",
@@ -357,7 +435,7 @@ export default {
   width: 100%;
   height: $header-height !important;
   color: $theme-color;
-  font-size:14px;
+  font-size: 14px;
   &:hover {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
@@ -371,10 +449,10 @@ export default {
   }
   .header-style {
     // line-height: $header-height;
-    height:$header-height;
-    display:flex;
+    height: $header-height;
+    display: flex;
     justify-content: flex-start;
-    align-items:center;
+    align-items: center;
   }
 }
 .header-white {
@@ -428,8 +506,8 @@ export default {
 
 .custom-nav-bar {
   height: $header-height;
-  ul{
-    margin:0;
+  ul {
+    margin: 0;
   }
   // overflow: hidden;
 
@@ -449,7 +527,6 @@ export default {
 // .custom-site-nav {
 //   display: none;
 // }
-
 
 .custom-nav {
   // width: 100%;
@@ -549,7 +626,6 @@ export default {
   }
 }
 
-
 // 手机导航按钮
 .mobnav-btn {
   display: inline-block;
@@ -624,7 +700,7 @@ export default {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   border-top: 1px solid rgba(173, 166, 166, 0.5);
   .custom-dropdown-menu {
     padding: 6px 0;
@@ -671,21 +747,20 @@ export default {
         transition: all 0.3s ease-in-out;
         background: rgba(246, 242, 242, 0.5);
         text-align: center;
-        padding:10px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-
 
         img {
           width: 180px;
         }
         div {
           width: 100%;
-          height:30px;
+          height: 30px;
           line-height: 30px;
-          padding:10px 0;
+          padding: 10px 0;
           font-size: 16px;
           text-align: center;
           white-space: wrap;
@@ -714,7 +789,7 @@ export default {
 ::v-deep .list-group-item {
   border: none;
   color: #333;
-  font-size:16px;
+  font-size: 16px;
   border-right: 1px solid rgba(173, 166, 166, 0.5);
   border-radius: 0 !important;
 }
@@ -730,7 +805,6 @@ export default {
   border-right: 2px solid $theme-color;
   border-radius: 0;
 }
-
 </style>
 <style lang="scss" scoped>
 .custom-site-nav {
@@ -749,30 +823,30 @@ export default {
   transition: 0.3s ease-in-out;
   list-style-type: none;
   overflow-y: auto;
-  padding-left:10px;
-  padding-right:10px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   &.active {
     transform: translateY(0px);
   }
 
-a,
-a:hover,
-a:active,
-a:visited,
-a:link,
-a:focus {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 1);
-  -webkit-tap-highlight-color: transparent;
-  // color: #ffffff99;
-  outline: none;
-  background: none;
-  text-decoration: none;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 1);
-  -webkit-user-select: none;
-  -moz-user-focus: none;
-  -moz-user-select: none;
-}
+  a,
+  a:hover,
+  a:active,
+  a:visited,
+  a:link,
+  a:focus {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 1);
+    -webkit-tap-highlight-color: transparent;
+    // color: #ffffff99;
+    outline: none;
+    background: none;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 1);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+  }
 }
 
 .custom-button {
@@ -786,38 +860,49 @@ a:focus {
   border-radius: 0;
   color: #333 !important;
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 10px;
+  right: 10px;
   transform: translate3d(0px, 39px, 0px) !important;
-  background: rgb(241, 238, 238);
+  // background: rgb(241, 238, 238);
+  background-color: #f3f3f3;
 }
-::v-deep .dropdown-menu-right  {
-  border:none;
-  li{
-    border-left:3px solid $primary-color;
-    margin-bottom:8px;
-    margin-left:5px;
+::v-deep .dropdown-menu-right {
+  border: none;
+  li {
+    // border-left: 3px solid $primary-color;
+    // margin-bottom: 8px;
+    // margin-left: 5px;
+    line-height: 30px;
+    a {
+      &::before {
+        width: 8px;
+        height: 8px;
+        content: "";
+        display: inline-block;
+        margin-right:8px;
+        background: $theme-color;
+      }
+    }
   }
 }
 
-::v-deep .dropdown-item {
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
+// ::v-deep .dropdown-item {
+//   padding-top: 6px;
+//   padding-bottom: 6px;
+// }
 ::v-deep .nav-link,
 .nav-link-custom {
   color: #333;
-  border-left:3px solid $primary-color;
+  border-left: 3px solid $primary-color;
+  background-color: #f3f3f3;
 }
-
-
 
 ::v-deep .dropdown-toggle:after {
   float: right;
   padding-top: 4px;
   margin-top: 10px;
-  color:$theme-color;
-  font-size:20px;
+  color: $theme-color;
+  font-size: 20px;
 }
 
 ::v-deep .nav-item {
@@ -825,6 +910,16 @@ a:focus {
   padding: 4px 6px;
 }
 
-
-
+::v-deep .b-nav-dropdown a {
+  // -webkit-tap-highlight-color: rgba(255, 255, 255, 1);
+  // -webkit-tap-highlight-color: transparent;
+  // // color: #ffffff99;
+  outline: none;
+  // background: none;
+  // text-decoration: none;
+  // -webkit-tap-highlight-color: rgba(255, 255, 255, 1);
+  // -webkit-user-select: none;
+  // -moz-user-focus: none;
+  // -moz-user-select: none;
+}
 </style>

@@ -5,8 +5,8 @@
       <div style="height: 100%">
         <div class="flex">
           <div class="content">
-            <h1 class="wow slideInLeft">关于我们</h1>
-            <p class="wow slideInRight">值得信赖的伙伴，为您提供优质的服务</p>
+            <h1 class="wow slideInLeft">服务与支持</h1>
+            <p class="wow slideInRight">贴心的服务，及时的支持</p>
           </div>
         </div>
       </div>
@@ -38,10 +38,8 @@ export default {
     return {
       active: 0,
       list: [
-        { link: "/about/company", name: "公司简介" },
-        { link: "/about/course", name: "发展历程" },
-        { link: "/about/culture", name: "企业文化" },
-        { link: "/about/contact", name: "联系我们" },
+        { link: "/service/repair", name: "维修服务" },
+        { link: "/service/document", name: "产品资料" },
       ],
     };
   },
@@ -51,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 .header-content {
-  background: url("~/static/img/banner/inside-banner1.jpeg") center center
+  background: url("~/static/img/banner/banner02_big.jpg") center center
     no-repeat;
   background-size: cover;
   // background-attachment: fixed;
