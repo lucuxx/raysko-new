@@ -39,7 +39,7 @@ export default {
       active: 0,
       list: [
         { link: "/service/repair", name: "维修服务" },
-        { link: "/service/document", name: "产品资料" },
+        { link: "/service/document", name: "产品文档" },
       ],
     };
   },

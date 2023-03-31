@@ -95,17 +95,17 @@ export default {
             {
               id: 1,
               name: "R366",
-              image: require("~/static/img/categorys/R366.jpg"),
+              image: require("~/static/img/products/R366.jpg"),
             },
             {
               id: 1,
               name: "R366A（大电池厚款）",
-              image: require("~/static/img/categorys/R366A.jpg"),
+              image: require("~/static/img/products/R366A.jpg"),
             },
             {
               id: 1,
               name: "R350C",
-              image: require("~/static/img/categorys/R350.jpg"),
+              image: require("~/static/img/products/R350.jpg"),
             },
             {
               id: 1,
@@ -115,7 +115,7 @@ export default {
             {
               id: 1,
               name: "R530C",
-              image: require("~/static/img/categorys/R530C.jpg"),
+              image: require("~/static/img/products/R530C.jpg"),
             },
           ],
         },
@@ -127,7 +127,7 @@ export default {
             {
               id: 1,
               name: "R800C",
-              image: require("~/static/img/categorys/R800C.jpg"),
+              image: require("~/static/img/products/R800C.jpg"),
             },
           ],
         },
@@ -139,7 +139,7 @@ export default {
             {
               id: 1,
               name: "R366C（UHF）",
-              image: require("~/static/img/categorys/R366C.jpg"),
+              image: require("~/static/img/products/R366C.jpg"),
             },
           ],
         },
@@ -151,22 +151,22 @@ export default {
             {
               id: 1,
               name: "R900P",
-              image: require("~/static/img/categorys/R900P.jpg"),
+              image: require("~/static/img/products/R900P.jpg"),
             },
             {
               id: 1,
               name: "R8",
-              image: require("~/static/img/categorys/R8.jpg"),
+              image: require("~/static/img/products/R8.jpg"),
             },
             {
               id: 1,
               name: "R7",
-              image: require("~/static/img/categorys/R7.jpg"),
+              image: require("~/static/img/products/R7.jpg"),
             },
             {
               id: 1,
               name: "R6",
-              image: require("~/static/img/categorys/R6挂壁.jpg"),
+              image: require("~/static/img/products/R6挂壁.jpg"),
             },
           ],
         },
@@ -178,12 +178,12 @@ export default {
             {
               id: 1,
               name: "R450",
-              image: require("~/static/img/categorys/R450.jpg"),
+              image: require("~/static/img/products/R450.jpg"),
             },
             {
               id: 1,
               name: "R229",
-              image: require("~/static/img/categorys/R229.jpg"),
+              image: require("~/static/img/products/R229.jpg"),
             },
           ],
         },
@@ -195,12 +195,12 @@ export default {
             {
               id: 1,
               name: "铝合金速通门",
-              image: require("~/static/img/categorys/铝合金速通门.jpg"),
+              image: require("~/static/img/products/铝合金速通门.jpg"),
             },
             {
               id: 1,
               name: "铝合金小摆闸",
-              image: require("~/static/img/categorys/铝合金小摆闸.jpg"),
+              image: require("~/static/img/products/铝合金小摆闸.jpg"),
             },
           ],
         },
@@ -212,7 +212,7 @@ export default {
             {
               id: 1,
               name: "P7",
-              image: require("~/static/img/categorys/P7警务终端.jpg"),
+              image: require("~/static/img/products/P7警务终端.jpg"),
             },
           ],
         },
@@ -224,12 +224,12 @@ export default {
             {
               id: 1,
               name: "R366ETC",
-              image: require("~/static/img/categorys/R366ETC.jpg"),
+              image: require("~/static/img/products/R366ETC.jpg"),
             },
             {
               id: 1,
               name: "R800CETC",
-              image: require("~/static/img/categorys/R800CETC.jpg"),
+              image: require("~/static/img/products/R800CETC.jpg"),
             },
           ],
         },

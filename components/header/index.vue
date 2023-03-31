@@ -317,7 +317,10 @@ export default {
           ],
         },
         // { name: "用户案例", link: "/example" },
-        { name: "服务与支持", link: "/service/repair" },
+        { name: "服务与支持", link: "/service/repair",children:[
+          { name: "维修服务", link: "/service/repair" },
+          { name: "产品文档", link: "/service/document" },
+        ] },
         {
           name: "关于我们",
           link: "/about/company",
