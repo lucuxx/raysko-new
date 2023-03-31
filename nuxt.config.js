@@ -1,4 +1,5 @@
 const CompressionPlugin = require("compression-webpack-plugin");
+// const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true });
 module.exports = {
   mode: "universal",
   /*
@@ -7,6 +8,7 @@ module.exports = {
   head: {
     htmlAttrs: {
       lang: "zh-CN",
+      // ...i18nHead.htmlAttrs,
     },
     title: "深圳睿思科信息技术有限公司",
     meta: [
@@ -25,12 +27,22 @@ module.exports = {
         name: "keywords",
         content: "手持终端，人脸识别，RK3399及RK3288 主板",
       },
+      // ...i18nHead.meta,
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+
+      // ...i18nHead.link,
+    ],
+
     // script: [
     //   { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js' }
     // ]
   },
+  // router: {
+  //   middleware: 'i18n'
+  // },
+
   // server: {
   //   port: 3001,
   //   host: '0.0.0.0'
@@ -40,14 +52,14 @@ module.exports = {
    */
   // loading: { color: '#FF0000' },
   loading: {
-    color: "blue", // 进度条的颜色
-    failedColor: "red", // 页面加载失败时的颜色（ 当 data 或 fetch 方法返回错误时）
-    height: "20px", // 进度条的高度(在进度条元素的 style 属性上体现)
-    throttle: 200, // 在 ms 中， 在显示进度条之前等待指定的时间。 用于防止条形闪烁
-    duration: 5000, // 进度条的最大显示时长， 单位毫秒。 Nuxt.js 假设页面在该时长内加载完毕
-    continuous: false, // 当加载时间超过duration时， 保持动画进度条
-    css: true, // 设置为 false 以删除默认进度条样式（ 并添加自己的样式）
-    rtl: false, // 从右到左设置进度条的方向
+    // color: "blue", // 进度条的颜色
+    // failedColor: "red", // 页面加载失败时的颜色（ 当 data 或 fetch 方法返回错误时）
+    // height: "20px", // 进度条的高度(在进度条元素的 style 属性上体现)
+    // throttle: 200, // 在 ms 中， 在显示进度条之前等待指定的时间。 用于防止条形闪烁
+    // duration: 5000, // 进度条的最大显示时长， 单位毫秒。 Nuxt.js 假设页面在该时长内加载完毕
+    // continuous: false, // 当加载时间超过duration时， 保持动画进度条
+    // css: true, // 设置为 false 以删除默认进度条样式（ 并添加自己的样式）
+    // rtl: false, // 从右到左设置进度条的方向
   },
   /*
    ** Global CSS
@@ -65,6 +77,7 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
+    '~/plugins/i18n.js',
     {
       src: "~/plugins/axios",
       ssr: true, // 开启服务端渲染
@@ -73,9 +86,9 @@ module.exports = {
     "@/plugins/bootstrap-vue",
     "~/plugins/fontawesome.js",
     {
-      src: '@/plugins/vue-count-to',
-      ssr: true
-    }
+      src: "@/plugins/vue-count-to",
+      ssr: true,
+    },
   ],
   /**
    * 关闭遥感采集
@@ -89,6 +102,7 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
+    "@nuxtjs/i18n",
     // Doc: https://bootstrap-vue.js.org
     // 'bootstrap-vue/nuxt',
     // css 变量解析器
@@ -100,6 +114,40 @@ module.exports = {
 
     "nuxt-precompress",
   ],
+  i18n: {
+    locales: [
+      {
+        code: "en",
+        iso: "en-US",
+        name: "English",
+        file: "en-US.js",
+      },
+      {
+        code: "zh",
+        iso: "zh-CN",
+        name: "中文",
+        file: "zh-CN.js",
+      },
+    ],
+    defaultLocale: "zh",
+    lazy: true,
+    langDir: "~/lang/",
+    vueI18n: {
+      fallbackLocale: "zh",
+    },
+    // 浏览器语言检测
+    detectBrowserLanguage: {
+      alwaysRedirect: false,
+      fallbackLocale: "",
+      redirectOn: "root",
+      useCookie: true, // 缓存浏览器语言，如果需要每次打开浏览器都重新获取，就为false
+      cookieAge: 365,
+      cookieCrossOrigin: false,
+      cookieDomain: null,
+      cookieKey: "i18n_redirected",
+      cookieSecure: false,
+    },
+  },
 
   nuxtPrecompress: {
     gzip: {
@@ -166,7 +214,7 @@ module.exports = {
     // vendor: ['axios'],
 
     extend(config, ctx) {},
-    analyze: process.env.NODE_ENV = "production"? false:true,
+    analyze: (process.env.NODE_ENV = "production" ? false : true),
     productionSourceMap: false,
     // extractCSS: {
     //   allChunks: true

@@ -46,7 +46,7 @@
               <b-card
                 img-top
                 class="mb-4"
-                @click="$router.push('/product/' + item.id)"
+                @click="$router.push(localeLocation('/product/' + item.id))"
               >
                 <b-card-img class="mx-auto" :src="item.image"></b-card-img>
                 <b-card-title class="mx-auto title-center align-center">{{
@@ -250,13 +250,13 @@ export default {
     // 点击筛选
     handleTabClick(item, index) {
       if (index !== 0) {
-        this.$router.push(`/category/${item.id}`);
+        this.$router.push(this.localeLocation(`/category/${item.id}`));
       }
     },
     handleChange(){
       console.log(this.active)
       if (this.active !== 0) {
-        this.$router.push(`/category/${this.active}`);
+        this.$router.push(this.localeLocation(`/category/${this.active}`));
       }
     }
   },

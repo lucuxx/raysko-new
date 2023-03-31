@@ -36,7 +36,7 @@ export default {
     ...mapMutations(['setSubNavIndex']),
     handleAboutClick() {
       this.setSubNavIndex(0)
-      this.$router.push('/about')
+      this.$router.push(this.localeLocation('/about'))
     }
   }
 }

@@ -19,9 +19,9 @@
           v-for="(item, index) of list"
           :key="index"
           :class="{ active: item.link === $route.path }"
-          :to="item.link"
+          :to="localePath(item.link)"
         >
-          {{ item.name }}
+          {{ $t(item.name) }}
         </nuxt-link>
       </div>
     </div>
@@ -38,10 +38,10 @@ export default {
     return {
       active: 0,
       list: [
-        { link: "/about/company", name: "公司简介" },
-        { link: "/about/course", name: "发展历程" },
-        { link: "/about/culture", name: "企业文化" },
-        { link: "/about/contact", name: "联系我们" },
+        { link: "/about/company", name: "menu.company" },
+        { link: "/about/course", name: "menu.course" },
+        { link: "/about/culture", name: "menu.culture" },
+        { link: "/about/contact", name: "menu.contact" },
       ],
     };
   },

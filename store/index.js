@@ -1,6 +1,9 @@
 export const state = () => ({
   headerHeight: 0,
-  subNavIndex: 0
+  subNavIndex: 0,
+  locales: ["en", "zh"],
+  locale: "zh"
+
 })
 
 
@@ -11,5 +14,10 @@ export const mutations = {
   setSubNavIndex(state, index) {
     state.subNavIndex = index
   },
+  SET_LANG(state, locale) {
+    if (state.locales.includes(locale)) {
+      state.locale = locale;
+    }
+  }
 }
 

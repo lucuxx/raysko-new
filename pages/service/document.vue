@@ -2,7 +2,7 @@
   <section>
     <SectionHeading :heading="title" content="" />
     <article>
-      <h3>规格书&产品素材</h3>
+      <!-- <h3>规格书&产品素材</h3> -->
       <div class="container py-5 wrapper">
 
           <b-row class="mx-0">

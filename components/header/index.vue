@@ -24,10 +24,10 @@
                 >
                   <nuxt-link
                     :class="{ active: routePath == nav.link }"
-                    :to="nav.link"
+                    :to="localePath(nav.link)"
                     class="font-monospace"
                   >
-                    {{ nav.name }}</nuxt-link
+                    {{ $t(`${nav.name}`) }}</nuxt-link
                   >
                 </div>
                 <!-- 下拉菜单 -->
@@ -52,9 +52,11 @@
                             )
                           "
                         >
-                          <nuxt-link :to="navChildren.link" tag="li">{{
-                            navChildren.name
-                          }}</nuxt-link>
+                          <nuxt-link
+                            :to="localePath(navChildren.link)"
+                            tag="li"
+                            >{{ $t(navChildren.name) }}</nuxt-link
+                          >
                         </div>
                       </div>
                     </div>
@@ -74,11 +76,49 @@
         </div>
       </b-col>
       <b-col cols="2">
-        <div class="custom-button" @click="handleToggleBtn()">
-          <div class="mobnav-btn" :class="{ open: isCollapse }">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div
+          style="display: flex; justify-content: flex-end; align-items: center"
+        >
+          <div style="line-height: 64px">
+            <!-- <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
+            |
+            <nuxt-link :to="switchLocalePath('zh')">中文</nuxt-link> -->
+            <b-dropdown
+              size="lg"
+              variant="link"
+              toggle-class="text-decoration-none"
+              no-caret
+            >
+              <template v-slot:button-content>
+                <!-- &#x1f50d;<span class="sr-only">Search</span> -->
+                <span class="language d-none d-lg-block"
+                  ><font-awesome-icon
+                    size="sm"
+                    pull="left"
+                    :icon="['fas', 'globe']"
+                /></span>
+                <span class="languageMob d-block d-lg-none "
+                  ><font-awesome-icon
+                    size="sm"
+                    pull="left"
+                    :icon="['fas', 'globe']"
+                /></span>
+              </template>
+              <b-dropdown-item :to="switchLocalePath('en')"
+                >English
+              </b-dropdown-item>
+              <b-dropdown-item :to="switchLocalePath('zh')"
+                >中文</b-dropdown-item
+              >
+            </b-dropdown>
+          </div>
+
+          <div class="custom-button" @click="handleToggleBtn()">
+            <div class="mobnav-btn" :class="{ open: isCollapse }">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
       </b-col>
@@ -92,12 +132,11 @@
           style="color: #fff"
           @click="handleMobileNav(item)"
         >
-          {{ item.name }}
+          {{ $t(item.name) }}
         </b-nav-item>
 
         <b-nav-item-dropdown
           v-else
-          :text="item.name"
           toggle-class="nav-link-custom"
           right
           block
@@ -107,7 +146,7 @@
             <span
               @click="handleMobileNav(item)"
               :class="{ active: $route.path.includes(item.link) }"
-              >{{ item.name }}</span
+              >{{ $t(item.name) }}</span
             >
           </template>
           <b-dropdown-item
@@ -170,10 +209,10 @@ export default {
       navIndex: 0,
       showNavbarBg: false,
       navList: [
-        { name: "首页", link: "/" },
+        { name: "menu.home", link: "/" },
         // { name: "产品", link: "/category" },
         {
-          name: "产品中心",
+          name: "menu.products",
           link: "/category",
           children: [
             {
@@ -317,15 +356,15 @@ export default {
           ],
         },
         // { name: "用户案例", link: "/example" },
-        { name: "服务与支持", link: "/service/repair" },
+        { name: "menu.server", link: "/service/repair" },
         {
-          name: "关于我们",
+          name: "menu.about",
           link: "/about/company",
           children: [
-            { name: "公司介绍", link: "/about/company" },
-            { name: "发展历程", link: "/about/course" },
-            { name: "企业文化", link: "/about/culture" },
-            { name: "联系我们", link: "/about/contact" },
+            { name: "menu.company", link: "/about/company" },
+            { name: "menu.course", link: "/about/course" },
+            { name: "menu.culture", link: "/about/culture" },
+            { name: "menu.contact", link: "/about/contact" },
           ],
         },
       ],
@@ -386,7 +425,7 @@ export default {
     },
     handleToProductClick(item) {
       this.currentChildren = [];
-      this.$router.push(`/product/${item.id}`);
+      this.$router.push(this.localeLocation({ path: `/product/${item.id}` }));
     },
     handleToggleBtn() {
       this.isCollapse = !this.isCollapse;
@@ -400,7 +439,7 @@ export default {
       }
     },
     handleMobileNav(item) {
-      this.$router.push(item.link);
+      this.$router.push(this.localeLocation({path:item.link}));
       this.handleToggleBtn();
     },
     // 监听窗口滚动，改变导航背景色
@@ -416,6 +455,20 @@ export default {
     getHeaderHeight() {
       const headerHeight = this.$refs.header.clientHeight;
       this.$store.commit("setHeaderHeight", headerHeight);
+    },
+
+    switchLang() {
+      console.log(this.$i18n, this.$i18n.locale);
+      if (this.$i18n.locale == "zh") {
+        this.$i18n.locale = "en";
+
+        this.$i18n.setLocale("en");
+        this.$i18n.setLocaleCookie("en");
+      } else {
+        this.$i18n.locale = "zh";
+        this.$i18n.setLocale("zh");
+        this.$i18n.setLocaleCookie("zh");
+      }
     },
   },
 };
@@ -446,6 +499,9 @@ export default {
         color: #333;
       }
     }
+    .language {
+      color: #444;
+    }
   }
   .header-style {
     // line-height: $header-height;
@@ -454,10 +510,16 @@ export default {
     justify-content: flex-start;
     align-items: center;
   }
+  .language {
+    color: #fff;
+  }
+  .languageMob{
+    color:#444;
+  }
 }
-.header-white {
-  height: $header-height;
-}
+// .header-white {
+//   height: $header-height;
+// }
 
 .active-header {
   background-color: #fff;
@@ -465,6 +527,9 @@ export default {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   color: $theme-color;
   transition: all 0.3s;
+  .language {
+    color: #444;
+  }
 }
 </style>
 
@@ -633,7 +698,7 @@ export default {
   width: 26px;
   height: 44px;
   position: relative;
-  margin-left: 10px;
+  // margin-left: 10px;
   span {
     position: absolute;
     width: 100%;
@@ -843,9 +908,9 @@ export default {
     background: none;
     text-decoration: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 1);
-    -webkit-user-select: none;
+    // -webkit-user-select: none;
     -moz-user-focus: none;
-    -moz-user-select: none;
+    // -moz-user-select: none;
   }
 }
 
@@ -862,10 +927,16 @@ export default {
   position: absolute;
   left: 10px;
   right: 10px;
-  transform: translate3d(0px, 39px, 0px) !important;
+  transform: translate3d(0px, 45px, 0px) !important;
   // background: rgb(241, 238, 238);
   background-color: #f3f3f3;
+  li{
+    line-height:30px;
+    width:40px;
+  }
 }
+
+
 ::v-deep .dropdown-menu-right {
   border: none;
   li {
@@ -879,7 +950,7 @@ export default {
         height: 8px;
         content: "";
         display: inline-block;
-        margin-right:8px;
+        margin-right: 8px;
         background: $theme-color;
       }
     }
@@ -890,11 +961,12 @@ export default {
 //   padding-top: 6px;
 //   padding-bottom: 6px;
 // }
+
 ::v-deep .nav-link,
 .nav-link-custom {
   color: #333;
   border-left: 3px solid $primary-color;
-  background-color: #f3f3f3;
+  // background-color: #f3f3f3;
 }
 
 ::v-deep .dropdown-toggle:after {
