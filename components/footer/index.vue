@@ -12,7 +12,7 @@ export default {};
 
 <style lang="scss" scoped>
 .bg-color {
-  background-color: $mask-color;
+  background-color: $foot-color;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 

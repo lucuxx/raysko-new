@@ -135,12 +135,15 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
+    // baseURL: '/api',
     proxy: true,
   },
   // 后台接口
   proxy: {
     "/api": {
-      target: "http://localhost:3003",
+      target: "https://www.raysko.com",
+      changeOrigin: true,
+      logLevel: 'debug',
       // pathRewrite: { '^/api': '' }
     },
   },

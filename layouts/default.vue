@@ -5,7 +5,7 @@
     <!-- 内容 -->
     <my-header />
     <nuxt v-if="!show2" />
-    <concat  />
+    <concat />
     <my-footer />
     <go-top />
   </div>
@@ -36,12 +36,16 @@ export default {
   data() {
     return {
       show2: true,
-      footBarHeight:200
+      footBarHeight: 200,
     };
   },
   created() {
     var that = this;
     if (process.client) {
+      console.log("enter", document.readyState);
+      if (document.readyState === "complete") {
+        that.show2 = false;
+      }
       document.onreadystatechange = function () {
         if (document.readyState === "complete") {
           that.show2 = false;

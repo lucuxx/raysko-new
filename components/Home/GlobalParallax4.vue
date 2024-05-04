@@ -1,31 +1,72 @@
 <template>
-  <div class="py-5">
-    <b-container class="text-center">
-      <Heading :level="2" class="wow fadeInUp">我们的优势</Heading>
-      <p class="wow fadeInDown">
-        专注于对品牌、策划、体验等方面的探索和研究，保证了策划、开发、设计、方案实施、研究等完善的专业化运作，根据客户具体情况制定系列专业和规范的客户服务和保障体系，为企业提供周到、放心的一站式服务。
-      </p>
+  <div>
+    <b-container class="content">
+      <b-img fluid :src="require('~/static/img/home/wang_4_title.png')"></b-img>
+
+      <b-row class="mx-0">
+        <b-col
+          lg="8"
+          md="12"
+          sm="12"
+          class="wow fadeInUp"
+          :data-wow-delay="0.2 * 0 + 's'"
+        >
+          <b-card
+            overlay
+            :img-src="productList1[0].icon"
+            :img-alt="productList1[0].title"
+            text-variant="white"
+            :title="productList1[0].title"
+            class="my-2"
+            align="left"
+          >
+            <b-card-text class="subtitle-style">{{
+              productList1[0].desc
+            }}</b-card-text>
+          </b-card>
+        </b-col>
+        <b-col
+          lg="4"
+          md="12"
+          sm="12"
+          class="wow fadeInUp"
+          :data-wow-delay="0.2 * 1 + 's'"
+        >
+          <b-card
+            overlay
+            :img-src="productList1[1].icon"
+            :img-alt="productList1[1].title"
+            text-variant="white"
+            :title="productList1[1].title"
+            class="my-2"
+            align="left"
+          >
+            <b-card-text class="subtitle-style">{{
+              productList1[1].desc
+            }}</b-card-text>
+          </b-card>
+        </b-col>
+      </b-row>
+      <br />
       <b-row class="mx-0">
         <b-col
           lg="4"
           md="6"
           sm="12"
-          v-for="(item, ind) of productList"
+          v-for="(item, ind) of productList2"
           :key="ind"
-          class="wow fadeInUp"
+          class="my-2 wow fadeInUp"
           :data-wow-delay="0.2 * ind + 's'"
+          align="left"
         >
-          <b-card img-top class="my-2" img-height="100" img-width="100">
-            <b-card-img
-              class="w-50 mx-auto d-block"
-              :src="item.icon"
-            ></b-card-img>
-            <b-card-title class="w-70 mx-auto mt-2 text-truncate">{{
-              item.title
-            }}</b-card-title>
-            <b-card-text class="w-70 mx-auto card-body-text text-muted">{{
-              item.desc
-            }}</b-card-text>
+          <b-card
+            overlay
+            :img-src="item.icon"
+            :img-alt="item.title"
+            text-variant="white"
+            :title="item.title"
+          >
+            <b-card-text class="subtitle-style">{{ item.desc }}</b-card-text>
           </b-card>
         </b-col>
       </b-row>
@@ -43,24 +84,38 @@ export default {
   },
   data() {
     return {
-      productList: [
+      productList1: [
         {
           id: 1,
-          icon: require("~/static/img/home/youshi01.png"),
-          title: "先进技术",
-          desc: "先进技术，工艺卓越，量身定制",
+          icon: require("~/static/img/home/wang_8.png"),
+          title: "智慧物流",
+          desc: "INTELLIGENT LOGISTICS",
         },
         {
           id: 2,
-          icon: require("~/static/img/home/youshi02.png"),
-          title: "专业品质",
-          desc: "专业品质，业界领航，新标杆",
+          icon: require("~/static/img/home/wang_9.png"),
+          title: "公共事业",
+          desc: "PUBLIC SERVICE",
         },
+      ],
+      productList2: [
         {
           id: 3,
-          icon: require("~/static/img/home/youshi03.png"),
-          title: "优质服务",
-          desc: "专职客服，贴心服务",
+          icon: require("~/static/img/home/wang_10.png"),
+          title: "政府事业",
+          desc: "GOVERNMENT UNDERTAKING",
+        },
+        {
+          id: 4,
+          icon: require("~/static/img/home/wang_11.png"),
+          title: "零售连锁",
+          desc: "RETAIL CHAIN",
+        },
+        {
+          id: 5,
+          icon: require("~/static/img/home/wang_12.png"),
+          title: "医疗服务",
+          desc: "MEDICALSERVICE",
         },
       ],
     };
@@ -71,5 +126,18 @@ export default {
 <style lang="scss" scoped>
 .card {
   border: none;
+}
+.card-title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.subtitle-style {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.content {
+  padding-bottom: 40px;
 }
 </style>

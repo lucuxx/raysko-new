@@ -13,39 +13,39 @@
     >
       <b-carousel-slide caption="">
         <template slot="img">
-          <div class="banner-img1">
+          <div class="banner-img img1">
 
           </div>
         </template>
       </b-carousel-slide>
       <b-carousel-slide caption="">
         <template slot="img">
-          <div class="banner-img2">
+          <div class="banner-img img2">
 
           </div>
         </template>
       </b-carousel-slide>
       <b-carousel-slide caption="">
         <template slot="img">
-          <div class="banner-img3">
+          <div class="banner-img img3">
 
           </div>
         </template>
       </b-carousel-slide>
       <b-carousel-slide caption="">
         <template slot="img">
-          <div class="banner-img4">
+          <div class="banner-img img4">
 
           </div>
         </template>
       </b-carousel-slide>
-      <b-carousel-slide caption="">
+      <!-- <b-carousel-slide caption="">
         <template slot="img">
-          <div class="banner-img5">
+          <div class="banner-img img5">
 
           </div>
         </template>
-      </b-carousel-slide>
+      </b-carousel-slide> -->
     </b-carousel>
     <div
       class="masthead_btn wow fadeOutDown"
@@ -124,90 +124,90 @@ export default {
 //   width: 100vw;
 // }
 
-.banner-img1 {
+.img1 {
   height: 100vh;
   width: 100vw;
-  background: url("~/static/img/banner/R350C.jpg") center center no-repeat;
+  background: url("~/static/img/banner/zhu350_1.jpg") center center no-repeat;
   background-size: cover;
   // background-attachment: fixed;
 }
-.banner-img2 {
+.img2 {
   height: 100vh;
   width: 100vw;
-  background: url("~/static/img/banner/R366C.jpg") center center no-repeat;
-  background-size: cover;
-  // background-attachment: fixed;
-}
-
-
-.banner-img3 {
-  height: 100vh;
-  width: 100vw;
-  background: url("~/static/img/banner/R530C.jpg") center center no-repeat;
-  background-size: cover;
-  // background-attachment: fixed;
-}
-.banner-img4 {
-  height: 100vh;
-  width: 100vw;
-  background: url("~/static/img/banner/R800C.jpg") center center no-repeat;
-  background-size: cover;
-  // background-attachment: fixed;
-}
-.banner-img5 {
-  height: 100vh;
-  width: 100vw;
-  background: url("~/static/img/banner/R系列.jpg") center center no-repeat;
+  background: url("~/static/img/banner/zhu366c_2.jpg") center center no-repeat;
   background-size: cover;
   // background-attachment: fixed;
 }
 
-// /* 超小设备 (手机, 400px 以下屏幕设备) */
-// @media only screen and (max-width: 400px) {
-//   .banner-img {
-//     height: 200px;
-//     width: 100vw;
-//   }
-// }
-// /* 超小设备 (手机, 400px 以上屏幕设备) */
-// @media only screen and (min-width: 400px) {
-//   .banner-img {
-//     height: 300px;
-//     width: 100vw;
-//   }
+
+.img3 {
+  height: 100vh;
+  width: 100vw;
+  background: url("~/static/img/banner/zhu860_3.jpg") center center no-repeat;
+  background-size: cover;
+  // background-attachment: fixed;
+}
+.img4 {
+  height: 100vh;
+  width: 100vw;
+  background: url("~/static/img/banner/R8.jpg") center center no-repeat;
+  background-size: cover;
+  // background-attachment: fixed;
+}
+// .img5 {
+//   height: 100vh;
+//   width: 100vw;
+//   background: url("~/static/img/banner/R系列.jpg") center center no-repeat;
+//   background-size: cover;
+//   // background-attachment: fixed;
 // }
 
-// /* 小设备 (平板电脑和大型手机，600 像素及以上) */
-// @media only screen and (min-width: 600px) {
-//   .banner-img {
-//     height: 360px;
-//     width: 100vw;
-//   }
-// }
+/* 超小设备 (手机, 400px 以下屏幕设备) */
+@media only screen and (max-width: 400px) {
+  .banner-img {
+    height: 200px;
+    width: 100vw;
+  }
+}
+/* 超小设备 (手机, 400px 以上屏幕设备) */
+@media only screen and (min-width: 400px) {
+  .banner-img {
+    height: 300px;
+    width: 100vw;
+  }
+}
 
-// /* 中型设备（平板电脑，768 像素及以上） */
-// @media only screen and (min-width: 768px) {
-//   .banner-img {
-//     height: 400px;
-//     width: 100vw;
-//   }
-// }
+/* 小设备 (平板电脑和大型手机，600 像素及以上) */
+@media only screen and (min-width: 600px) {
+  .banner-img {
+    height: 360px;
+    width: 100vw;
+  }
+}
 
-// /* 大型设备（笔记本电脑/台式机，992 像素及以上） */
-// @media only screen and (min-width: 992px) {
-//   .banner-img {
-//     height: 100vh;
-//     width: 100vw;
-//   }
-// }
+/* 中型设备（平板电脑，768 像素及以上） */
+@media only screen and (min-width: 768px) {
+  .banner-img {
+    height: 400px;
+    width: 100vw;
+  }
+}
 
-// /* 超大型设备（大型笔记本电脑和台式机，1200 像素及以上） */
-// @media only screen and (min-width: 1200px) {
-//   .banner-img {
-//     height: 100vh;
-//     width: 100vw;
-//   }
-// }
+/* 大型设备（笔记本电脑/台式机，992 像素及以上） */
+@media only screen and (min-width: 992px) {
+  .banner-img {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+/* 超大型设备（大型笔记本电脑和台式机，1200 像素及以上） */
+@media only screen and (min-width: 1200px) {
+  .banner-img {
+    height: 100vh;
+    width: 100vw;
+  }
+}
 
 .hero-text {
   position: absolute;

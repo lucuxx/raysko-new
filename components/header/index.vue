@@ -4,11 +4,11 @@
     class="header"
     :class="{ 'active-header': showNavbarBg }"
   >
-    <b-row class="container mx-auto">
+    <b-row class="container mx-auto" align-h="between" align-v="center">
       <b-col cols="2" class="row header-style">
         <b-img height="50" :src="require('~/assets/img/logo2.png')" alt="" />
       </b-col>
-      <b-col cols="8" class="mx-auto">
+      <b-col cols="7" class="mx-auto custom-nav-bar-wrap">
         <!-- 导航 -->
         <div class="custom-nav-bar">
           <ul class="custom-nav">
@@ -73,12 +73,22 @@
       </ul> -->
         </div>
       </b-col>
-      <b-col cols="2">
-        <div class="custom-button" @click="handleToggleBtn()">
-          <div class="mobnav-btn" :class="{ open: isCollapse }">
-            <span></span>
-            <span></span>
-            <span></span>
+      <b-col cols="2" class="borrow-button pc-borrow-button-wrap">
+        <b-button pill variant="primary" @click="handleToApply"
+          >样机借用</b-button
+        >
+      </b-col>
+      <b-col cols="10" class="mobil-btn-wrap">
+        <div class="borrow-button">
+          <b-button pill variant="primary" @click="handleToApply"
+            >样机借用</b-button
+          >
+          <div class="custom-button" @click="handleToggleBtn()">
+            <div class="mobnav-btn" :class="{ open: isCollapse }">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
       </b-col>
@@ -317,10 +327,19 @@ export default {
           ],
         },
         // { name: "用户案例", link: "/example" },
-        { name: "服务与支持", link: "/service/repair",children:[
-          { name: "维修服务", link: "/service/repair" },
-          { name: "产品文档", link: "/service/document" },
-        ] },
+
+        {
+          name: "场景应用",
+          link: "/application",
+        },
+        {
+          name: "定制服务",
+          link: "/service/repair",
+          children: [
+            { name: "维修服务", link: "/service/repair" },
+            { name: "产品文档", link: "/service/document" },
+          ],
+        },
         {
           name: "关于我们",
           link: "/about/company",
@@ -351,9 +370,9 @@ export default {
   },
 
   mounted() {
-    this.$nextTick(() => {
+    if (process.browser) {
       this.getHeaderHeight();
-    });
+    }
     window.addEventListener("scroll", this.handleWindowScroll);
   },
   beforeDestroy() {
@@ -420,11 +439,19 @@ export default {
       const headerHeight = this.$refs.header.clientHeight;
       this.$store.commit("setHeaderHeight", headerHeight);
     },
+    handleToApply() {
+      this.$router.push(`/apply`);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.font-monospace {
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+}
 .header {
   // display: flex;
   // justify-content: center;
@@ -444,6 +471,8 @@ export default {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
     transition: all 0.5s;
     .custom-nav-item {
+      width: 100%;
+      text-align: center;
       a {
         display: block;
         color: #333;
@@ -473,25 +502,43 @@ export default {
 
 <style lang="scss" scoped>
 @media (max-width: 992px) {
-  .custom-nav-bar {
-    .custom-nav {
+  .custom-nav-bar-wrap {
+    display: none !important;
+    .custom-nav-bar {
       display: none !important;
+      .custom-nav {
+        display: none !important;
+      }
     }
 
     // .nav-m {
     //   display: block !important;
     // }
-
-    // button {
-
-    // }
   }
-  .custom-button {
+  .pc-borrow-button-wrap {
+    display: none !important;
+  }
+  .mobil-btn-wrap {
     display: block !important;
   }
+
   .custom-site-nav {
     display: block !important;
   }
+}
+
+.mobil-btn-wrap {
+  display: none;
+  padding: 0 !important;
+}
+
+.pc-borrow-button-wrap {
+  display: block;
+}
+.borrow-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 // .nav-m {
@@ -542,6 +589,8 @@ export default {
   // align-items: center;
 
   .custom-nav-item {
+    width: 100%;
+    text-align: center;
     margin: 0 40px;
     cursor: pointer;
     position: relative;
@@ -562,7 +611,7 @@ export default {
 
       .active {
         color: $theme-color;
-        border-bottom: 3px solid $primary-color;
+        // border-bottom: 3px solid $primary-color;
       }
 
       &::before {
@@ -819,11 +868,12 @@ export default {
   background-color: $white;
   width: 100vw;
   height: 100vh;
-  transform: translateX(100vw);
+  transform: translateY(-100vh);
+
   padding-top: $header-height;
-  z-index: -1;
+  z-index: -10;
   flex-direction: column;
-  transition: 0.3s ease-in-out;
+  transition: 0.1s none;
   list-style-type: none;
   overflow-y: auto;
   padding-left: 10px;
@@ -853,7 +903,6 @@ export default {
 }
 
 .custom-button {
-  display: none;
   line-height: $header-height;
   cursor: pointer;
 }
@@ -882,7 +931,7 @@ export default {
         height: 8px;
         content: "";
         display: inline-block;
-        margin-right:8px;
+        margin-right: 8px;
         background: $theme-color;
       }
     }

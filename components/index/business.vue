@@ -1,16 +1,31 @@
 <template>
-  <my-slot :title="title" :desc="desc" :showBgColor="false">
+  <my-slot title="" desc="" :showBgColor="false">
     <b-row class="mx-0">
-      <b-col lg="4" md="6" sm="12"
+      <b-col
+        lg="3"
+        md="6"
+        sm="12"
         v-for="(item, ind) of productList"
         :key="ind"
         class="wow fadeInUp"
-        :data-wow-delay="(0.2 * ind) + 's'"
+        :data-wow-delay="0.2 * ind + 's'"
       >
-        <b-card img-top class="my-2">
-          <b-card-img class="w-90 mx-auto d-block rounded thumbnail " height="300"  :src="item.icon"></b-card-img>
-          <b-card-title class="w-90 mx-auto mt-2 text-truncate">{{item.title}}</b-card-title>
-          <b-card-text class="w-90 mx-auto card-body-text text-muted">{{item.desc}}</b-card-text>
+        <b-card img-top class="my-2" align="left">
+          <b-img
+            class="d-block rounded thumbnail"
+            height="80"
+            width="60"
+            :src="item.icon"
+          ></b-img>
+          <br />
+          <br />
+          <br />
+          <b-card-title class="w-90 mx-auto mt-2 text-truncate">{{
+            item.title
+          }}</b-card-title>
+          <b-card-text class="w-90 mx-auto card-body-text text-muted">{{
+            item.desc
+          }}</b-card-text>
           <!-- <b-button
             variant="outline-secondary"
             squared
@@ -24,30 +39,51 @@
 </template>
 
 <script>
-import MySlot from '@/components/slot/index'
+import MySlot from "@/components/slot/index";
 
 export default {
   components: {
-    MySlot
+    MySlot,
   },
   data() {
     return {
-      title: '行业应用',
-      desc: '睿思科信息技术有限公司是优秀产品供应商及整体解决方案提供商和专业技术服务商。',
+      title: "行业应用",
+      desc: "睿思科信息技术有限公司是优秀产品供应商及整体解决方案提供商和专业技术服务商。",
       productList: [
-        {id: 1, icon: require('~/static/img/home/case01.jpeg'), title: '零售', desc: '通过采用手持终端，对入库商品进行智能化核对、统计及数据上报等，精准、快速、智能地完成统计入库操作。'},
-        {id: 2, icon: require('~/static/img/home/case02.jpg'), title: '访客/道闸', desc: '通过采用访客终端，对来访人员进行智能化识别，核对，授权，精准、快速，实现更好的访客管理'},
-        {id: 3, icon: require('~/static/img/home/case03.jpeg'), title: '公共事业', desc: 'ETC自动收费时，经常会因为设备故障，导致无法扣费，车辆无法正常通过。手持ETC终端不仅可以支持ETC应急收费，还可以进行ETC充值/消费、ETC设备发行、ETC卡片发行、ETC智慧停车等。'}
-      ]
-    }
-  }
-}
+        {
+          id: 1,
+          icon: require("~/static/img/home/wang_4.png"),
+          title: "定制服务",
+          desc: "优秀服务团队",
+        },
+        {
+          id: 2,
+          icon: require("~/static/img/home/wang_5.png"),
+          title: "数据集成",
+          desc: "硬件集成方案",
+        },
+        {
+          id: 3,
+          icon: require("~/static/img/home/wang_6.png"),
+          title: "产品保障",
+          desc: "产品性能强大",
+        },
+        {
+          id: 4,
+          icon: require("~/static/img/home/wang_7.png"),
+          title: "售后服务",
+          desc: "提供售后支持",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 .card {
-  border: none;
+  // border: none;
+  border-radius: 0;
 }
 .card:hover {
   // background: #F1F1F1;

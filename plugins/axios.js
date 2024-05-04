@@ -4,11 +4,12 @@ export default ({ $axios, redirect, route, store }) => {
   // 基本配置
   $axios.defaults.timeout = 10000;
 
+
   //请求时拦截
   $axios.onRequest(config => {
     console.log('发送请求时的拦截')
     // config.header.token = '加token'
-    config.headers.token = store.state.user.token
+    // config.headers.token = store.state.user.token
     return config
   })
 

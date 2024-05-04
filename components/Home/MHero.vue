@@ -7,21 +7,21 @@
         :interval="4000"
         no-hover-pause
       >
-        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R350C.jpg')">
+        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/zhu350_1.jpg')">
 
         </b-carousel-slide>
-        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R366C.jpg')">
+        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/zhu366c_2.jpg')">
 
         </b-carousel-slide>
-        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R530C.jpg')">
+        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/zhu860_3.jpg')">
 
         </b-carousel-slide>
-        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R800C.jpg')">
+        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R8.jpg')">
 
         </b-carousel-slide>
-        <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R系列.jpg')">
+        <!-- <b-carousel-slide caption="" :img-src="require('~/static/img/banner/R系列.jpg')">
 
-        </b-carousel-slide>
+        </b-carousel-slide> -->
       </b-carousel>
     </div>
   </template>

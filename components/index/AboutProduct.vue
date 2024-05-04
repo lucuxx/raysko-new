@@ -36,7 +36,7 @@ import SectionHeading from '~/components/SectionHeading'
 
 <template>
   <section class="my-5">
-    <SectionHeading heading="主营板块" content=""/>
+    <SectionHeading heading="" content=""/>
 
   <b-container class="homeabout">
       <b-row class="align-items-center py-5 wow fadeInUp" v-for="(items, index) in homeabout" :key="index">
