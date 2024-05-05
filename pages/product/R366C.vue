@@ -3,10 +3,8 @@
     <div class="empty-nav"></div>
     <div class="product-nav-wrap">
       <div class="container mx-auto product-nav">
-        <div class="product-nav-left">R350</div>
+        <div class="product-nav-left">R366C</div>
         <div class="product-nav-right">
-          <!-- <a href="#/overview">概览</a>
-          <a href="#/parameter">技术参数</a> -->
           <b-button
             variant="link"
             class="text-decoration-none"
@@ -22,91 +20,46 @@
         </div>
       </div>
     </div>
-    <!-- <div class="mobile-auto d-block d-md-none"></div> -->
-    <!-- <div class="header-white"></div> -->
-    <!-- <div class="header-content spin-content">
-      <div style="height: 100%">
-        <div class="flex">
-          <div class="content">
-            <h1 class="wow slideInLeft">终端产品</h1>
-            <p class="wow slideInRight">先进产品，贴心服务</p>
-          </div>
-        </div>
-      </div>
-    </div> -->
+
     <div style="border-bottom: 1px solid gray">
-      <!-- <div class="border-bottom mb-5 header-top">
-        <div
-          class="container d-flex justify-content-between align-items-center"
-        >
-          <h4 class="py-3">{{ info.title }}</h4>
-          <div class="d-none d-md-block">
-            <b-button
-              variant="link"
-              class="text-decoration-none"
-              @click="handleToImg"
-              >概览</b-button
-            >
-            <b-button
-              variant="link"
-              class="text-decoration-none"
-              @click="handleToTable"
-              >产品参数</b-button
-            >
-          </div>
-        </div>
-      </div> -->
       <section id="overview">
         <div id="insmeter-img">
           <b-img
             fluid
-            :src="require('~/static/img/350/350-xiangqing_01.png')"
+            :src="require('~/static/img/R366C/366c-xiangqing_01.png')"
           ></b-img>
           <b-img
             fluid
-            :src="require('~/static/img/350/350-xiangqing_02.png')"
+            :src="require('~/static/img/R366C/366c-xiangqing_02.png')"
           ></b-img>
           <b-img
             fluid
-            :src="require('~/static/img/350/350-xiangqing_03.png')"
+            :src="require('~/static/img/R366C/366c-xiangqing_03.png')"
           ></b-img>
           <b-img
             fluid
-            :src="require('~/static/img/350/350-xiangqing_04.png')"
+            :src="require('~/static/img/R366C/366c-xiangqing_04.png')"
           ></b-img>
           <b-img
             fluid
-            :src="require('~/static/img/350/350-xiangqing_05.png')"
+            :src="require('~/static/img/R366C/366c-xiangqing_05.png')"
           ></b-img>
           <b-img
             fluid
-            :src="require('~/static/img/350/350-xiangqing_06.png')"
+            :src="require('~/static/img/R366C/366c-xiangqing_06.png')"
           ></b-img>
           <b-img
             fluid
-            :src="require('~/static/img/350/350-xiangqing_07.png')"
+            :src="require('~/static/img/R366C/366c-xiangqing_07.png')"
           ></b-img>
           <b-img
             fluid
-            :src="require('~/static/img/350/350-xiangqing_08.png')"
+            :src="require('~/static/img/R366C/366c-xiangqing_08.png')"
           ></b-img>
-          <b-img
-            fluid
-            :src="require('~/static/img/350/350-xiangqing_09.png')"
-          ></b-img>
-          <b-img
-            fluid
-            :src="require('~/static/img/350/350-xiangqing_10.png')"
-          ></b-img>
-          <!-- <b-img fluid :src="require('~/static/img/product/02.png')"></b-img>
-        <b-img fluid :src="require('~/static/img/product/03.png')"></b-img>
-        <b-img fluid :src="require('~/static/img/product/04.png')"></b-img>
-        <b-img fluid :src="require('~/static/img/product/05.png')"></b-img>
-        <b-img fluid :src="require('~/static/img/product/06.png')"></b-img> -->
         </div>
       </section>
 
-      <section id="parameter">
+      <!-- <section id="parameter">
         <div class="insmeter-table container mx-auto" ref="tableRef">
           <table>
             <tbody>
@@ -426,13 +379,12 @@
             </tbody>
           </table>
         </div>
-      </section>
+      </section> -->
     </div>
   </section>
 </template>
 
 <script>
-import { product } from "@/utils/mock.js";
 import smoothscroll from "smoothscroll-polyfill";
 
 if (process.browser) {
@@ -444,24 +396,8 @@ export default {
   layout: "ProductLayout",
   data() {
     return {
-      // tableTop: "",
-      currentRouter: "",
+      tableTop: "",
     };
-  },
-  computed: {
-    info() {
-      const index = this.$route.params.id;
-      return product[index - 1];
-    },
-  },
-  watch: {
-    $route: {
-      immediate: true, //加上此配置之后，watch即可以在首次进入或刷新之后执行handler （），即初始化即可执行监听
-      handler(to, from) {
-        //监听之后执行的回调
-        this.currentRouter = to.path;
-      },
-    },
   },
 
   mounted() {

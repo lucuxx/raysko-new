@@ -128,7 +128,7 @@ export default {
             {
               name: "手持打印终端",
               link: "/solution/bank",
-              children: [{ name: "R800C" }],
+              children: [{ name: "R860" }],
             },
             {
               name: "人脸门禁/车载终端",

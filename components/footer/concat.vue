@@ -12,7 +12,6 @@
             <dd>UHF RFID终端</dd>
             <dd>人脸访客终端</dd>
             <dd>PCBA主板</dd>
-            <dd>警务通终端</dd>
           </dl>
         </b-col>
 

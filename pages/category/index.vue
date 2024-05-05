@@ -80,27 +80,27 @@ export default {
           link: "/category/1",
           children: [
             {
-              id: 1,
+              id: "R366",
               name: "R366",
               image: require("~/static/img/products/R366.jpg"),
             },
             {
-              id: 1,
+              id: "R366A",
               name: "R366A（大电池厚款）",
               image: require("~/static/img/products/R366A.jpg"),
             },
             {
-              id: 1,
+              id: "R350C",
               name: "R350C",
               image: require("~/static/img/products/R350.jpg"),
             },
+            // {
+            //   id: 1,
+            //   name: "R606",
+            //   image: require("~/static/img/categorys/go.png"),
+            // },
             {
-              id: 1,
-              name: "R606",
-              image: require("~/static/img/categorys/go.png"),
-            },
-            {
-              id: 1,
+              id: "R530C",
               name: "R530C",
               image: require("~/static/img/products/R530C.jpg"),
             },
@@ -112,8 +112,8 @@ export default {
           link: "/category/1",
           children: [
             {
-              id: 1,
-              name: "R800C",
+              id: "R860",
+              name: "R860",
               image: require("~/static/img/products/R800C.jpg"),
             },
           ],
@@ -124,7 +124,7 @@ export default {
           link: "/category/1",
           children: [
             {
-              id: 1,
+              id: "R366C",
               name: "R366C（UHF）",
               image: require("~/static/img/products/R366C.jpg"),
             },
@@ -136,22 +136,22 @@ export default {
           link: "/category/1",
           children: [
             {
-              id: 1,
+              id: "R900P",
               name: "R900P",
               image: require("~/static/img/products/R900P.jpg"),
             },
             {
-              id: 1,
+              id: "R8",
               name: "R8",
               image: require("~/static/img/products/R8.jpg"),
             },
             {
-              id: 1,
+              id: "R7",
               name: "R7",
               image: require("~/static/img/products/R7.jpg"),
             },
             {
-              id: 1,
+              id: "R6",
               name: "R6",
               image: require("~/static/img/products/R6挂壁.jpg"),
             },
@@ -163,12 +163,12 @@ export default {
           link: "/category/1",
           children: [
             {
-              id: 1,
+              id: "R450",
               name: "R450",
               image: require("~/static/img/products/R450.jpg"),
             },
             {
-              id: 1,
+              id: "R229",
               name: "R229",
               image: require("~/static/img/products/R229.jpg"),
             },
@@ -180,41 +180,41 @@ export default {
           link: "/category/1",
           children: [
             {
-              id: 1,
+              id: "铝合金速通门",
               name: "铝合金速通门",
               image: require("~/static/img/products/铝合金速通门.jpg"),
             },
             {
-              id: 1,
+              id: "铝合金小摆闸",
               name: "铝合金小摆闸",
               image: require("~/static/img/products/铝合金小摆闸.jpg"),
             },
           ],
         },
-        {
-          id: 7,
-          name: "警务通终端",
-          link: "/category/1",
-          children: [
-            {
-              id: 1,
-              name: "P7",
-              image: require("~/static/img/products/P7警务终端.jpg"),
-            },
-          ],
-        },
+        // {
+        //   id: 7,
+        //   name: "警务通终端",
+        //   link: "/category/1",
+        //   children: [
+        //     {
+        //       id: 1,
+        //       name: "P7",
+        //       image: require("~/static/img/products/P7警务终端.jpg"),
+        //     },
+        //   ],
+        // },
         {
           id: 8,
           name: "ETC智能终端",
           link: "/category/1",
           children: [
             {
-              id: 1,
+              id: "R366ETC",
               name: "R366ETC",
               image: require("~/static/img/products/R366ETC.jpg"),
             },
             {
-              id: 1,
+              id: "R800CETC",
               name: "R800CETC",
               image: require("~/static/img/products/R800CETC.jpg"),
             },

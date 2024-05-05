@@ -183,17 +183,17 @@ export default {
               link: "/category/1",
               children: [
                 {
-                  id: 1,
+                  id: "R366",
                   name: "R366",
                   image: require("~/static/img/categorys/R366.jpg"),
                 },
                 {
-                  id: 1,
+                  id: "R366A",
                   name: "R366A（大电池厚款）",
                   image: require("~/static/img/categorys/R366A.jpg"),
                 },
                 {
-                  id: 1,
+                  id: "R350C",
                   name: "R350C",
                   image: require("~/static/img/categorys/R350.jpg"),
                 },
@@ -203,7 +203,7 @@ export default {
                 //   image: require("~/static/img/categorys/go.png"),
                 // },
                 {
-                  id: 1,
+                  id: "R530C",
                   name: "R530C",
                   image: require("~/static/img/categorys/R530C.jpg"),
                 },
@@ -214,8 +214,8 @@ export default {
               link: "/category/2",
               children: [
                 {
-                  id: 1,
-                  name: "R800C",
+                  id: "R860",
+                  name: "R860",
                   image: require("~/static/img/categorys/R800C.jpg"),
                 },
               ],
@@ -225,7 +225,7 @@ export default {
               link: "/category/3",
               children: [
                 {
-                  id: 1,
+                  id: "R366C",
                   name: "R366C（UHF）",
                   image: require("~/static/img/categorys/R366C.jpg"),
                 },
@@ -236,22 +236,22 @@ export default {
               link: "/category/4",
               children: [
                 {
-                  id: 1,
+                  id: "R900P",
                   name: "R900P",
                   image: require("~/static/img/categorys/R900P.jpg"),
                 },
                 {
-                  id: 1,
+                  id: "R8",
                   name: "R8",
                   image: require("~/static/img/categorys/R8.jpg"),
                 },
                 {
-                  id: 1,
+                  id: "R7",
                   name: "R7",
                   image: require("~/static/img/categorys/R7.jpg"),
                 },
                 {
-                  id: 1,
+                  id: "R6",
                   name: "R6",
                   image: require("~/static/img/categorys/R6挂壁.jpg"),
                 },
@@ -262,12 +262,12 @@ export default {
               link: "/category/5",
               children: [
                 {
-                  id: 1,
+                  id: "R450",
                   name: "R450",
                   image: require("~/static/img/categorys/R450.jpg"),
                 },
                 {
-                  id: 1,
+                  id: "R229",
                   name: "R229",
                   image: require("~/static/img/categorys/R229.jpg"),
                 },
@@ -278,39 +278,39 @@ export default {
               link: "/category/6",
               children: [
                 {
-                  id: 1,
+                  id: "铝合金速通门",
                   name: "铝合金速通门",
                   image: require("~/static/img/categorys/铝合金速通门.jpg"),
                 },
                 {
-                  id: 1,
+                  id: "铝合金小摆闸",
                   name: "铝合金小摆闸",
                   image: require("~/static/img/categorys/铝合金小摆闸.jpg"),
                 },
               ],
             },
-            {
-              name: "警务通终端",
-              link: "/category/7",
-              children: [
-                {
-                  id: 1,
-                  name: "P7",
-                  image: require("~/static/img/categorys/P7警务终端.jpg"),
-                },
-              ],
-            },
+            // {
+            //   name: "警务通终端",
+            //   link: "/category/7",
+            //   children: [
+            //     {
+            //       id: 1,
+            //       name: "P7",
+            //       image: require("~/static/img/categorys/P7警务终端.jpg"),
+            //     },
+            //   ],
+            // },
             {
               name: "ETC智能终端",
               link: "/category/8",
               children: [
                 {
-                  id: 1,
+                  id: "R366ETC",
                   name: "R366ETC",
                   image: require("~/static/img/categorys/R366ETC.jpg"),
                 },
                 {
-                  id: 1,
+                  id: "R800CETC",
                   name: "R800CETC",
                   image: require("~/static/img/categorys/R800CETC.jpg"),
                 },
@@ -320,10 +320,10 @@ export default {
         },
         // { name: "用户案例", link: "/example" },
 
-        {
-          name: "场景应用",
-          link: "/application",
-        },
+        // {
+        //   name: "场景应用",
+        //   link: "/application",
+        // },
         {
           name: "定制服务",
           link: "/service/repair",

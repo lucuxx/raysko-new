@@ -63,7 +63,7 @@ export default {
               id: 2,
               name: "打印手持终端",
               link: "/category/1",
-              children: [{ id: 1, name: "R800C",image:require('~/static/img/products/R800C.jpg') }],
+              children: [{ id: 1, name: "R860",image:require('~/static/img/products/R800C.jpg') }],
             },
             {
               id: 3,
