@@ -16,9 +16,9 @@
           <b-button
             variant="link"
             class="text-decoration-none"
-            @click="handleToTable"
-            >产品参数</b-button
-          >
+            @click="handleToTable('#parameter')"
+            >产品参数
+          </b-button>
         </div>
       </div>
     </div>
@@ -479,7 +479,6 @@
 import { product } from "@/utils/mock.js";
 import smoothscroll from "smoothscroll-polyfill";
 
-
 if (process.browser) {
   // 在这里根据环境引入wow.js
   var { WOW } = require("wowjs");
@@ -489,7 +488,8 @@ export default {
   layout: "ProductLayout",
   data() {
     return {
-      tableTop: "",
+      // tableTop: "",
+      currentRouter: "",
     };
   },
   computed: {
@@ -498,16 +498,25 @@ export default {
       return product[index - 1];
     },
   },
+  watch: {
+    $route: {
+      immediate: true, //加上此配置之后，watch即可以在首次进入或刷新之后执行handler （），即初始化即可执行监听
+      handler(to, from) {
+        //监听之后执行的回调
+        this.currentRouter = to.path;
+      },
+    },
+  },
 
   mounted() {
     if (process.browser) {
       // 在页面mounted生命周期里面 根据环境实例化WOW
       new WOW({}).init();
-      this.tableTop = this.$refs.tableRef.offsetTop - 110;
     }
 
-    // setTimeout(() => {
-    // }, 1000);
+    setTimeout(() => {
+      this.tableTop = this.$refs.tableRef.offsetTop - 110;
+    }, 1000);
   },
   methods: {
     handleToImg() {
@@ -517,12 +526,20 @@ export default {
         behavior: "smooth",
       });
     },
-    handleToTable() {
-      window.scrollTo({
-        top: this.tableTop,
-        left: 0,
-        behavior: "smooth",
-      });
+    handleToTable(selector) {
+      if (!this.tableTop) {
+        setTimeout(() => {
+          // 获取锚点元素
+          let anchor = this.$el.querySelector(selector);
+          anchor.scrollIntoView();
+        }, 500);
+      } else {
+        window.scrollTo({
+          top: this.tableTop,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
     },
   },
 };
@@ -540,6 +557,7 @@ export default {
   width: 100%;
   background-color: snow;
   position: sticky;
+  z-index: 9998;
   top: 0;
   .product-nav {
     // width: 100%;
@@ -555,7 +573,6 @@ export default {
     }
     &-right {
       line-height: $header-height;
-
     }
   }
 }
