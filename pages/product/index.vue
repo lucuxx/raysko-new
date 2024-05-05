@@ -122,7 +122,7 @@ export default {
       }
       this.$nextTick(() => {
         if (process.browser) {
-          new WOW({}).init();
+          new WOW({mobile: false}).init();
         }
       });
     },

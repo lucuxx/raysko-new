@@ -59,7 +59,7 @@ export default {
         },
         {
           title: "邮箱地址:",
-          desc: "xiongpeng0809@raysko.cn",
+          desc: "xiongp@raysko.com",
           img: require("~/static/img/about/email.png"),
         },
         {
@@ -73,7 +73,7 @@ export default {
   mounted() {
     if (process.browser) {
       // 在页面mounted生命周期里面 根据环境实例化WOW
-      new WOW({}).init();
+      new WOW({mobile: false}).init();
     }
   },
 };

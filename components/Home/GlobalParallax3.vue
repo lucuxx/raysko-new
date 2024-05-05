@@ -3,7 +3,7 @@
     <!-- <SectionHeading heading="" content="" style="padding: 20px 0" /> -->
     <!-- <div class="global-parallax py-5"> -->
       <b-container class="text-center">
-        <b-img fluid :src="require('~/static/img/home/wang_3_title.jpeg')"  ></b-img>
+        <b-img fluid :src="require('~/static/img/home/wang_3_title.png')"  ></b-img>
         <!-- <Heading :level="2">解决方案</Heading> -->
         <!-- <p>I am available for freelance projects. Hire me and get your project done.</p> -->
         <!-- <Btn to="/about">Hire Me</Btn> -->

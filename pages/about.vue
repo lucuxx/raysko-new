@@ -39,7 +39,7 @@ export default {
       active: 0,
       list: [
         { link: "/about/company", name: "公司简介" },
-        { link: "/about/course", name: "发展历程" },
+        // { link: "/about/course", name: "发展历程" },
         { link: "/about/culture", name: "企业文化" },
         { link: "/about/contact", name: "联系我们" },
       ],

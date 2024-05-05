@@ -63,26 +63,18 @@
               </div>
             </li>
           </ul>
-          <!-- 移动端 -->
-          <!-- <ul class="nav-m" :class="{ collapse: !isCollapse }">
-        <li v-for="(nav, index) in navList" :key="index">
-          <nuxt-link :class="{ active: routePath == nav.link }" :to="nav.link"
-            >{{ nav.name }}
-          </nuxt-link>
-        </li>
-      </ul> -->
         </div>
       </b-col>
       <b-col cols="2" class="borrow-button pc-borrow-button-wrap">
-        <b-button pill variant="primary" @click="handleToApply"
+        <!-- <b-button pill variant="primary" @click="handleToApply"
           >样机借用</b-button
-        >
+        > -->
       </b-col>
       <b-col cols="10" class="mobil-btn-wrap">
         <div class="borrow-button">
-          <b-button pill variant="primary" @click="handleToApply"
+          <!-- <b-button pill variant="primary" @click="handleToApply"
             >样机借用</b-button
-          >
+          > -->
           <div class="custom-button" @click="handleToggleBtn()">
             <div class="mobnav-btn" :class="{ open: isCollapse }">
               <span></span>
@@ -205,11 +197,11 @@ export default {
                   name: "R350C",
                   image: require("~/static/img/categorys/R350.jpg"),
                 },
-                {
-                  id: 1,
-                  name: "R606",
-                  image: require("~/static/img/categorys/go.png"),
-                },
+                // {
+                //   id: 1,
+                //   name: "R606",
+                //   image: require("~/static/img/categorys/go.png"),
+                // },
                 {
                   id: 1,
                   name: "R530C",
@@ -345,7 +337,7 @@ export default {
           link: "/about/company",
           children: [
             { name: "公司介绍", link: "/about/company" },
-            { name: "发展历程", link: "/about/course" },
+            // { name: "发展历程", link: "/about/course" },
             { name: "企业文化", link: "/about/culture" },
             { name: "联系我们", link: "/about/contact" },
           ],
@@ -754,6 +746,7 @@ export default {
   justify-content: center;
   align-items: center;
   border-top: 1px solid rgba(173, 166, 166, 0.5);
+  z-index:1010;
   .custom-dropdown-menu {
     padding: 6px 0;
     color: #fff;
@@ -797,7 +790,8 @@ export default {
         font-weight: 400;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
-        background: rgba(246, 242, 242, 0.5);
+        // background: rgba(246, 242, 242, 0.5);
+        background: #fff;
         text-align: center;
         padding: 10px;
         display: flex;

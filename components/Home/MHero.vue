@@ -65,7 +65,7 @@
     mounted() {
       if (process.browser) {
         // 在页面mounted生命周期里面 根据环境实例化WOW
-        new WOW({}).init();
+        new WOW({mobile: false}).init();
       }
     },
 

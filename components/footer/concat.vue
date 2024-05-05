@@ -39,7 +39,7 @@
           <dl>
             <dt class="title mb-2">关于我们</dt>
             <dd>公司介绍</dd>
-            <dd>发展历程</dd>
+            <!-- <dd>发展历程</dd> -->
             <dd>企业文化</dd>
             <dd>联系我们</dd>
           </dl>
@@ -54,7 +54,7 @@
             </dd>
             <dd>
               <font-awesome-icon size="lg" :icon="['fas', 'envelope']" />
-              xiongpeng0809@raysko.cn
+              xiongp@raysko.com
             </dd>
             <dd>
               <font-awesome-icon size="lg" :icon="['fas', 'compass']" />
@@ -73,7 +73,7 @@
         </b-col>
       </b-row>
       <br />
-      <div class="divider"></div>
+      <!-- <div class="divider"></div>
       <div class="title">欢迎在线咨询</div>
       <br />
       <b-row align-v="center">
@@ -103,7 +103,7 @@
             <b-button type="submit" variant="primary">提 交</b-button>
           </b-form>
         </b-col>
-      </b-row>
+      </b-row> -->
     </b-container>
   </section>
 </template>

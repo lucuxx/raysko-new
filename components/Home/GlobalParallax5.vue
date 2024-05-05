@@ -1,7 +1,7 @@
 <template>
   <div class="global-parallax py-5">
-    <b-container class="wrap">
-      <b-jumbotron>
+    <b-jumbotron>
+      <b-container class="wrap">
         <template name="header">
           <h1 style="color: #fff">
             致力于研究出客户最满意的终端产品
@@ -45,8 +45,8 @@
             <div class="wrap-title">{{ item.title }}</div>
           </b-col>
         </b-row>
-      </b-jumbotron>
-    </b-container>
+      </b-container>
+    </b-jumbotron>
   </div>
 </template>
 
@@ -75,7 +75,7 @@ export default {
   mounted() {
     if (process.browser) {
       // 在页面mounted生命周期里面 根据环境实例化WOW
-      new WOW({}).init();
+      new WOW({mobile: false}).init();
     }
   },
 };
@@ -104,7 +104,7 @@ export default {
   }
 }
 .wrap {
-  padding: 30px 0;
+  padding: 30px 15px;
   &-num {
     color: $white;
     font-size: 42px;

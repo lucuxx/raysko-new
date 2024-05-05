@@ -3,7 +3,7 @@
     <div class="empty-nav"></div>
     <div class="product-nav-wrap">
       <div class="container mx-auto product-nav">
-        <div class="product-nav-left">手持终端</div>
+        <div class="product-nav-left">R350</div>
         <div class="product-nav-right">
           <!-- <a href="#/overview">概览</a>
           <a href="#/parameter">技术参数</a> -->
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <div class="mobile-auto d-block d-md-none"></div>
+    <!-- <div class="mobile-auto d-block d-md-none"></div> -->
     <!-- <div class="header-white"></div> -->
     <!-- <div class="header-content spin-content">
       <div style="height: 100%">
@@ -58,7 +58,16 @@
       </div> -->
       <section id="overview">
         <div id="insmeter-img">
-          <b-img fluid :src="require('~/static/img/banner/R350C.jpg')"></b-img>
+          <b-img fluid :src="require('~/static/img/350/350-xiangqing_01.png')"></b-img>
+          <b-img fluid :src="require('~/static/img/350/350-xiangqing_02.png')"></b-img>
+          <b-img fluid :src="require('~/static/img/350/350-xiangqing_03.png')"></b-img>
+          <b-img fluid :src="require('~/static/img/350/350-xiangqing_04.png')"></b-img>
+          <b-img fluid :src="require('~/static/img/350/350-xiangqing_05.png')"></b-img>
+          <b-img fluid :src="require('~/static/img/350/350-xiangqing_06.png')"></b-img>
+          <b-img fluid :src="require('~/static/img/350/350-xiangqing_07.png')"></b-img>
+          <b-img fluid :src="require('~/static/img/350/350-xiangqing_08.png')"></b-img>
+          <b-img fluid :src="require('~/static/img/350/350-xiangqing_09.png')"></b-img>
+          <b-img fluid :src="require('~/static/img/350/350-xiangqing_10.png')"></b-img>
           <!-- <b-img fluid :src="require('~/static/img/product/02.png')"></b-img>
         <b-img fluid :src="require('~/static/img/product/03.png')"></b-img>
         <b-img fluid :src="require('~/static/img/product/04.png')"></b-img>
@@ -68,17 +77,17 @@
       </section>
 
       <section id="parameter">
-        <div class="insmeter-table" ref="tableRef">
-          <table class="container">
-            <h3>标准配置</h3>
+        <div class="insmeter-table container mx-auto" ref="tableRef">
+          <table>
             <tbody>
               <tr>
                 <td
                   colspan="2"
                   style="
                     background-color: transparent;
-                    padding: 20px 0;
-                    font-size: 16px;
+                    padding: 15px;
+                    font-size: 20px;
+                    font-weight: 500;
                     color: #fff;
                   "
                 >
@@ -203,8 +212,9 @@
                   colspan="2"
                   style="
                     background-color: transparent;
-                    padding: 20px 0;
-                    font-size: 16px;
+                    padding: 15px;
+                    font-size: 20px;
+                    font-weight: 500;
                   "
                 >
                   结构参数
@@ -225,8 +235,9 @@
                   colspan="2"
                   style="
                     background-color: transparent;
-                    padding: 20px 0;
-                    font-size: 16px;
+                    padding: 15px;
+                    font-size: 20px;
+                    font-weight: 500;
                   "
                 >
                   通讯传输
@@ -279,8 +290,9 @@
                   colspan="2"
                   style="
                     background-color: transparent;
-                    padding: 20px 0;
-                    font-size: 16px;
+                    padding: 15px;
+                    font-size: 20px;
+                    font-weight: 500;
                   "
                 >
                   环境参数
@@ -326,8 +338,9 @@
                   colspan="2"
                   style="
                     background-color: transparent;
-                    padding: 20px 0;
-                    font-size: 16px;
+                    padding: 15px;
+                    font-size: 20px;
+                    font-weight: 500;
                   "
                 >
                   扫描引擎
@@ -372,8 +385,9 @@
                   colspan="2"
                   style="
                     background-color: transparent;
-                    padding: 20px 0;
-                    font-size: 16px;
+                    padding: 15px;
+                    font-size: 20px;
+                    font-weight: 500;
                   "
                 >
                   通讯接口
@@ -396,8 +410,9 @@
                   colspan="2"
                   style="
                     background-color: transparent;
-                    padding: 20px 0;
-                    font-size: 16px;
+                    padding: 15px;
+                    font-size: 20px;
+                    font-weight: 500;
                   "
                 >
                   开发支持
@@ -425,8 +440,9 @@
                   colspan="2"
                   style="
                     background-color: transparent;
-                    padding: 20px 0;
-                    font-size: 16px;
+                    padding: 15px;
+                    font-size: 20px;
+                    font-weight: 500;
                   "
                 >
                   设备配件
@@ -449,8 +465,9 @@
                   colspan="2"
                   style="
                     background-color: transparent;
-                    padding: 20px 0;
-                    font-size: 16px;
+                    padding: 15px;
+                    font-size: 20px;
+                    font-weight: 500;
                   "
                 >
                   温馨提示
@@ -511,11 +528,11 @@ export default {
   mounted() {
     if (process.browser) {
       // 在页面mounted生命周期里面 根据环境实例化WOW
-      new WOW({}).init();
+      new WOW({ mobile: false }).init();
     }
 
     setTimeout(() => {
-      this.tableTop = this.$refs.tableRef.offsetTop - 110;
+      this.tableTop = this.$refs.tableRef.offsetTop - 64;
     }, 1000);
   },
   methods: {
@@ -557,7 +574,7 @@ export default {
   width: 100%;
   background-color: snow;
   position: sticky;
-  z-index: 9998;
+  // z-index: 1004;
   top: 0;
   .product-nav {
     // width: 100%;
@@ -570,6 +587,8 @@ export default {
 
     &-left {
       line-height: $header-height;
+      font-size: 20px;
+      font-weight: 500;
     }
     &-right {
       line-height: $header-height;
@@ -610,10 +629,14 @@ export default {
   color: $theme-color;
 }
 
+#parameter {
+  background: #131313;
+}
+
 .insmeter-table {
   color: #fff;
   background: #131313;
-  padding: 20px 40px;
+  padding: 20px 0px;
 }
 table {
   border-collapse: collapse;
@@ -634,6 +657,6 @@ table tr td {
   word-break: break-all;
   word-wrap: break-word;
   font-size: 12px;
-  padding: 10px 30px;
+  padding: 15px;
 }
 </style>
