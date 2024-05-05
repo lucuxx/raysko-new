@@ -329,7 +329,7 @@ export default {
           link: "/service/repair",
           children: [
             { name: "维修服务", link: "/service/repair" },
-            { name: "产品文档", link: "/service/document" },
+            // { name: "产品文档", link: "/service/document" },
           ],
         },
         {

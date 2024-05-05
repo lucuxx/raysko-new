@@ -25,34 +25,42 @@
       <section id="overview">
         <div id="insmeter-img">
           <b-img
+            class="wow fadeInUp"
             fluid
             :src="require('~/static/img/R366C/366c-xiangqing_01.png')"
           ></b-img>
           <b-img
+            class="wow fadeInUp"
             fluid
             :src="require('~/static/img/R366C/366c-xiangqing_02.png')"
           ></b-img>
           <b-img
+            class="wow fadeInUp"
             fluid
             :src="require('~/static/img/R366C/366c-xiangqing_03.png')"
           ></b-img>
           <b-img
+            class="wow fadeInUp"
             fluid
             :src="require('~/static/img/R366C/366c-xiangqing_04.png')"
           ></b-img>
           <b-img
+            class="wow fadeInUp"
             fluid
             :src="require('~/static/img/R366C/366c-xiangqing_05.png')"
           ></b-img>
           <b-img
+            class="wow fadeInUp"
             fluid
             :src="require('~/static/img/R366C/366c-xiangqing_06.png')"
           ></b-img>
           <b-img
+            class="wow fadeInUp"
             fluid
             :src="require('~/static/img/R366C/366c-xiangqing_07.png')"
           ></b-img>
           <b-img
+            class="wow fadeInUp"
             fluid
             :src="require('~/static/img/R366C/366c-xiangqing_08.png')"
           ></b-img>
