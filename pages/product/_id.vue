@@ -58,16 +58,46 @@
       </div> -->
       <section id="overview">
         <div id="insmeter-img">
-          <b-img fluid :src="require('~/static/img/350/350-xiangqing_01.png')"></b-img>
-          <b-img fluid :src="require('~/static/img/350/350-xiangqing_02.png')"></b-img>
-          <b-img fluid :src="require('~/static/img/350/350-xiangqing_03.png')"></b-img>
-          <b-img fluid :src="require('~/static/img/350/350-xiangqing_04.png')"></b-img>
-          <b-img fluid :src="require('~/static/img/350/350-xiangqing_05.png')"></b-img>
-          <b-img fluid :src="require('~/static/img/350/350-xiangqing_06.png')"></b-img>
-          <b-img fluid :src="require('~/static/img/350/350-xiangqing_07.png')"></b-img>
-          <b-img fluid :src="require('~/static/img/350/350-xiangqing_08.png')"></b-img>
-          <b-img fluid :src="require('~/static/img/350/350-xiangqing_09.png')"></b-img>
-          <b-img fluid :src="require('~/static/img/350/350-xiangqing_10.png')"></b-img>
+          <b-img
+            fluid
+            :src="require('~/static/img/350/350-xiangqing_01.png')"
+          ></b-img>
+          <b-img
+            fluid
+            :src="require('~/static/img/350/350-xiangqing_02.png')"
+          ></b-img>
+          <b-img
+            fluid
+            :src="require('~/static/img/350/350-xiangqing_03.png')"
+          ></b-img>
+          <b-img
+            fluid
+            :src="require('~/static/img/350/350-xiangqing_04.png')"
+          ></b-img>
+          <b-img
+            fluid
+            :src="require('~/static/img/350/350-xiangqing_05.png')"
+          ></b-img>
+          <b-img
+            fluid
+            :src="require('~/static/img/350/350-xiangqing_06.png')"
+          ></b-img>
+          <b-img
+            fluid
+            :src="require('~/static/img/350/350-xiangqing_07.png')"
+          ></b-img>
+          <b-img
+            fluid
+            :src="require('~/static/img/350/350-xiangqing_08.png')"
+          ></b-img>
+          <b-img
+            fluid
+            :src="require('~/static/img/350/350-xiangqing_09.png')"
+          ></b-img>
+          <b-img
+            fluid
+            :src="require('~/static/img/350/350-xiangqing_10.png')"
+          ></b-img>
           <!-- <b-img fluid :src="require('~/static/img/product/02.png')"></b-img>
         <b-img fluid :src="require('~/static/img/product/03.png')"></b-img>
         <b-img fluid :src="require('~/static/img/product/04.png')"></b-img>
@@ -81,18 +111,7 @@
           <table>
             <tbody>
               <tr>
-                <td
-                  colspan="2"
-                  style="
-                    background-color: transparent;
-                    padding: 15px;
-                    font-size: 20px;
-                    font-weight: 500;
-                    color: #fff;
-                  "
-                >
-                  系统配置
-                </td>
+                <td colspan="2" class="td-title">系统配置</td>
               </tr>
               <tr>
                 <td>处理器</td>
@@ -208,17 +227,7 @@
               </tr>
 
               <tr>
-                <td
-                  colspan="2"
-                  style="
-                    background-color: transparent;
-                    padding: 15px;
-                    font-size: 20px;
-                    font-weight: 500;
-                  "
-                >
-                  结构参数
-                </td>
+                <td colspan="2" class="td-title">结构参数</td>
               </tr>
               <tr>
                 <td>尺寸（H*W*D）</td>
@@ -231,17 +240,7 @@
               </tr>
 
               <tr>
-                <td
-                  colspan="2"
-                  style="
-                    background-color: transparent;
-                    padding: 15px;
-                    font-size: 20px;
-                    font-weight: 500;
-                  "
-                >
-                  通讯传输
-                </td>
+                <td colspan="2" class="td-title">通讯传输</td>
               </tr>
               <tr>
                 <td>无线广域网络（网络频率）</td>
@@ -286,17 +285,7 @@
               </tr>
 
               <tr>
-                <td
-                  colspan="2"
-                  style="
-                    background-color: transparent;
-                    padding: 15px;
-                    font-size: 20px;
-                    font-weight: 500;
-                  "
-                >
-                  环境参数
-                </td>
+                <td colspan="2" class="td-title">环境参数</td>
               </tr>
               <tr>
                 <td>工作温度</td>
@@ -334,17 +323,7 @@
               </tr>
 
               <tr>
-                <td
-                  colspan="2"
-                  style="
-                    background-color: transparent;
-                    padding: 15px;
-                    font-size: 20px;
-                    font-weight: 500;
-                  "
-                >
-                  扫描引擎
-                </td>
+                <td colspan="2" class="td-title">扫描引擎</td>
               </tr>
               <tr>
                 <td>条码支持</td>
@@ -381,17 +360,7 @@
               </tr>
 
               <tr>
-                <td
-                  colspan="2"
-                  style="
-                    background-color: transparent;
-                    padding: 15px;
-                    font-size: 20px;
-                    font-weight: 500;
-                  "
-                >
-                  通讯接口
-                </td>
+                <td colspan="2" class="td-title">通讯接口</td>
               </tr>
               <tr>
                 <td>USB接口</td>
@@ -406,17 +375,7 @@
               </tr>
 
               <tr>
-                <td
-                  colspan="2"
-                  style="
-                    background-color: transparent;
-                    padding: 15px;
-                    font-size: 20px;
-                    font-weight: 500;
-                  "
-                >
-                  开发支持
-                </td>
+                <td colspan="2" class="td-title">开发支持</td>
               </tr>
               <tr>
                 <td>开发语言</td>
@@ -436,17 +395,7 @@
               </tr>
 
               <tr>
-                <td
-                  colspan="2"
-                  style="
-                    background-color: transparent;
-                    padding: 15px;
-                    font-size: 20px;
-                    font-weight: 500;
-                  "
-                >
-                  设备配件
-                </td>
+                <td colspan="2" class="td-title">设备配件</td>
               </tr>
               <tr>
                 <td>标准配件</td>
@@ -461,17 +410,7 @@
               </tr>
 
               <tr>
-                <td
-                  colspan="2"
-                  style="
-                    background-color: transparent;
-                    padding: 15px;
-                    font-size: 20px;
-                    font-weight: 500;
-                  "
-                >
-                  温馨提示
-                </td>
+                <td colspan="2" class="td-title">温馨提示</td>
               </tr>
               <tr>
                 <td>提示1</td>
@@ -658,5 +597,12 @@ table tr td {
   word-wrap: break-word;
   font-size: 12px;
   padding: 15px;
+}
+.td-title {
+  background-color: transparent;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
 }
 </style>
