@@ -88,24 +88,28 @@ export default {
       active: null,
       tabList: [
         {
-          id: 1,
-          name: "手持终端",
+          name: "智能手持终端",
           link: "/category/1",
           children: [
             {
               id: "R366",
               name: "R366",
-              image: require("~/static/img/products/R366.jpg"),
+              image: require("~/static/img/categorys/R366.jpg"),
             },
             {
               id: "R366A",
-              name: "R366A（大电池厚款）",
-              image: require("~/static/img/products/R366A.jpg"),
+              name: "R366A",
+              image: require("~/static/img/categorys/R366A.jpg"),
+            },
+            {
+              id: "R366-S",
+              name: "R366-S",
+              image: require("~/static/img/categorys/R366A.jpg"),
             },
             {
               id: "R350C",
               name: "R350C",
-              image: require("~/static/img/products/R350.jpg"),
+              image: require("~/static/img/categorys/R350.jpg"),
             },
             // {
             //   id: 1,
@@ -113,123 +117,101 @@ export default {
             //   image: require("~/static/img/categorys/go.png"),
             // },
             {
-              id: "R530C",
-              name: "R530C",
-              image: require("~/static/img/products/R530C.jpg"),
+              id: "R530",
+              name: "R530",
+              image: require("~/static/img/categorys/R530C.jpg"),
             },
           ],
         },
         {
-          id: 2,
-          name: "打印手持终端",
-          link: "/category/1",
+          name: "手持打印终端",
+          link: "/category/2",
           children: [
             {
               id: "R860",
               name: "R860",
-              image: require("~/static/img/products/R800C.jpg"),
+              image: require("~/static/img/categorys/R800C.jpg"),
+            },
+            {
+              id: "R860-S",
+              name: "R860-S",
+              image: require("~/static/img/categorys/R800C.jpg"),
             },
           ],
         },
         {
-          id: 3,
-          name: "UHF RFID手持终端",
-          link: "/category/1",
+          name: "智能平板",
+          link: "/category/3",
+          children: [
+            {
+              id: "R888",
+              name: "R888",
+              image: require("~/static/img/categorys/R888.png"),
+            },
+          ],
+        },
+        {
+          name: "RFID手持终端",
+          link: "/category/4",
           children: [
             {
               id: "R366C",
-              name: "R366C（UHF）",
-              image: require("~/static/img/products/R366C.jpg"),
+              name: "R366C",
+              image: require("~/static/img/categorys/R366C.jpg"),
+            },
+            {
+              id: "R366-UHF",
+              name: "R366-UHF",
+              image: require("~/static/img/categorys/R366ETC.jpg"),
+            },
+            {
+              id: "R860-ETC",
+              name: "R860-ETC",
+              image: require("~/static/img/categorys/R800CETC.jpg"),
             },
           ],
         },
         {
-          id: 4,
-          name: "双屏/单屏人脸访客终端",
-          link: "/category/1",
+          name: "访客终端",
+          link: "/category/5",
           children: [
             {
               id: "R900P",
               name: "R900P",
-              image: require("~/static/img/products/R900P.jpg"),
+              image: require("~/static/img/categorys/R900P.jpg"),
+            },
+
+            {
+              id: "R6",
+              name: "R6",
+              image: require("~/static/img/categorys/R6挂壁.jpg"),
+            },
+
+            {
+              id: "R7",
+              name: "R7",
+              image: require("~/static/img/categorys/R7.jpg"),
             },
             {
               id: "R8",
               name: "R8",
-              image: require("~/static/img/products/R8.jpg"),
-            },
-            {
-              id: "R7",
-              name: "R7",
-              image: require("~/static/img/products/R7.jpg"),
-            },
-            {
-              id: "R6",
-              name: "R6",
-              image: require("~/static/img/products/R6挂壁.jpg"),
+              image: require("~/static/img/categorys/R8.jpg"),
             },
           ],
         },
         {
-          id: 5,
-          name: "PCBA主版",
-          link: "/category/1",
+          name: "智能PCBA方案",
+          link: "/category/6",
           children: [
-            {
-              id: "R450",
-              name: "R450",
-              image: require("~/static/img/products/R450.jpg"),
-            },
             {
               id: "R229",
               name: "R229",
-              image: require("~/static/img/products/R229.jpg"),
-            },
-          ],
-        },
-        {
-          id: 6,
-          name: "智能通道闸",
-          link: "/category/1",
-          children: [
-            {
-              id: "铝合金速通门",
-              name: "铝合金速通门",
-              image: require("~/static/img/products/铝合金速通门.jpg"),
+              image: require("~/static/img/categorys/R229.jpg"),
             },
             {
-              id: "铝合金小摆闸",
-              name: "铝合金小摆闸",
-              image: require("~/static/img/products/铝合金小摆闸.jpg"),
-            },
-          ],
-        },
-        // {
-        //   id: 7,
-        //   name: "警务通终端",
-        //   link: "/category/1",
-        //   children: [
-        //     {
-        //       id: 1,
-        //       name: "P7",
-        //       image: require("~/static/img/products/P7警务终端.jpg"),
-        //     },
-        //   ],
-        // },
-        {
-          id: 8,
-          name: "ETC智能终端",
-          link: "/category/1",
-          children: [
-            {
-              id: "R366ETC",
-              name: "R366ETC",
-              image: require("~/static/img/products/R366ETC.jpg"),
-            },
-            {
-              id: "R800CETC",
-              name: "R800CETC",
-              image: require("~/static/img/products/R800CETC.jpg"),
+              id: "R450",
+              name: "R450",
+              image: require("~/static/img/categorys/R450.jpg"),
             },
           ],
         },
@@ -258,7 +240,7 @@ export default {
       });
       this.$nextTick(() => {
         if (process.browser) {
-          new WOW({mobile: false}).init();
+          new WOW({ mobile: false }).init();
         }
       });
     },

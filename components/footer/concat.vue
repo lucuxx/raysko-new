@@ -7,11 +7,12 @@
         <b-col lg="2" sm="10" md="10" xs="10">
           <dl>
             <dt class="title mb-2">产品中心</dt>
-            <dd>手持终端</dd>
-            <dd>打印手持终端</dd>
-            <dd>UHF RFID终端</dd>
-            <dd>人脸访客终端</dd>
-            <dd>PCBA主板</dd>
+            <dd>智能手持终端</dd>
+            <dd>手持打印终端</dd>
+            <dd>智能平板</dd>
+            <dd>RFID终端</dd>
+            <dd>访客终端</dd>
+            <dd>智能PCBA方案</dd>
           </dl>
         </b-col>
 

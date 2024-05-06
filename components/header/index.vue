@@ -179,7 +179,7 @@ export default {
           link: "/category",
           children: [
             {
-              name: "手持终端",
+              name: "智能手持终端",
               link: "/category/1",
               children: [
                 {
@@ -189,7 +189,12 @@ export default {
                 },
                 {
                   id: "R366A",
-                  name: "R366A（大电池厚款）",
+                  name: "R366A",
+                  image: require("~/static/img/categorys/R366A.jpg"),
+                },
+                {
+                  id: "R366-S",
+                  name: "R366-S",
                   image: require("~/static/img/categorys/R366A.jpg"),
                 },
                 {
@@ -203,14 +208,14 @@ export default {
                 //   image: require("~/static/img/categorys/go.png"),
                 // },
                 {
-                  id: "R530C",
-                  name: "R530C",
+                  id: "R530",
+                  name: "R530",
                   image: require("~/static/img/categorys/R530C.jpg"),
                 },
               ],
             },
             {
-              name: "打印手持终端",
+              name: "手持打印终端",
               link: "/category/2",
               children: [
                 {
@@ -218,101 +223,86 @@ export default {
                   name: "R860",
                   image: require("~/static/img/categorys/R800C.jpg"),
                 },
-              ],
-            },
-            {
-              name: "UHF RFID手持终端",
-              link: "/category/3",
-              children: [
                 {
-                  id: "R366C",
-                  name: "R366C（UHF）",
-                  image: require("~/static/img/categorys/R366C.jpg"),
+                  id: "R860-S",
+                  name: "R860-S",
+                  image: require("~/static/img/categorys/R800C.jpg"),
                 },
               ],
             },
             {
-              name: "双屏/单屏人脸访客终端",
+              name: "智能平板",
+              link: "/category/3",
+              children: [
+                {
+                  id: "R888",
+                  name: "R888",
+                  image: require("~/static/img/categorys/R888.png"),
+                },
+              ],
+            },
+            {
+              name: "RFID手持终端",
               link: "/category/4",
+              children: [
+                {
+                  id: "R366C",
+                  name: "R366C",
+                  image: require("~/static/img/categorys/R366C.jpg"),
+                },
+                {
+                  id: "R366-UHF",
+                  name: "R366-UHF",
+                  image: require("~/static/img/categorys/R366ETC.jpg"),
+                },
+                {
+                  id: "R860-ETC",
+                  name: "R860-ETC",
+                  image: require("~/static/img/categorys/R800CETC.jpg"),
+                },
+              ],
+            },
+            {
+              name: "访客终端",
+              link: "/category/5",
               children: [
                 {
                   id: "R900P",
                   name: "R900P",
                   image: require("~/static/img/categorys/R900P.jpg"),
                 },
+
                 {
-                  id: "R8",
-                  name: "R8",
-                  image: require("~/static/img/categorys/R8.jpg"),
+                  id: "R6",
+                  name: "R6",
+                  image: require("~/static/img/categorys/R6挂壁.jpg"),
                 },
+
                 {
                   id: "R7",
                   name: "R7",
                   image: require("~/static/img/categorys/R7.jpg"),
                 },
                 {
-                  id: "R6",
-                  name: "R6",
-                  image: require("~/static/img/categorys/R6挂壁.jpg"),
+                  id: "R8",
+                  name: "R8",
+                  image: require("~/static/img/categorys/R8.jpg"),
                 },
               ],
             },
             {
-              name: "PCBA主版",
-              link: "/category/5",
+              name: "智能PCBA方案",
+              link: "/category/6",
               children: [
-                {
-                  id: "R450",
-                  name: "R450",
-                  image: require("~/static/img/categorys/R450.jpg"),
-                },
                 {
                   id: "R229",
                   name: "R229",
                   image: require("~/static/img/categorys/R229.jpg"),
                 },
-              ],
-            },
-            {
-              name: "智能通道闸",
-              link: "/category/6",
-              children: [
                 {
-                  id: "铝合金速通门",
-                  name: "铝合金速通门",
-                  image: require("~/static/img/categorys/铝合金速通门.jpg"),
-                },
-                {
-                  id: "铝合金小摆闸",
-                  name: "铝合金小摆闸",
-                  image: require("~/static/img/categorys/铝合金小摆闸.jpg"),
-                },
-              ],
-            },
-            // {
-            //   name: "警务通终端",
-            //   link: "/category/7",
-            //   children: [
-            //     {
-            //       id: 1,
-            //       name: "P7",
-            //       image: require("~/static/img/categorys/P7警务终端.jpg"),
-            //     },
-            //   ],
-            // },
-            {
-              name: "ETC智能终端",
-              link: "/category/8",
-              children: [
-                {
-                  id: "R366ETC",
-                  name: "R366ETC",
-                  image: require("~/static/img/categorys/R366ETC.jpg"),
-                },
-                {
-                  id: "R800CETC",
-                  name: "R800CETC",
-                  image: require("~/static/img/categorys/R800CETC.jpg"),
+                  id: "R450",
+                  name: "R450",
+                  image: require("~/static/img/categorys/R450.jpg"),
                 },
               ],
             },
@@ -325,7 +315,7 @@ export default {
         //   link: "/application",
         // },
         {
-          name: "定制服务",
+          name: "服务与支持",
           link: "/service/repair",
           children: [
             { name: "维修服务", link: "/service/repair" },
@@ -746,7 +736,7 @@ export default {
   justify-content: center;
   align-items: center;
   border-top: 1px solid rgba(173, 166, 166, 0.5);
-  z-index:1010;
+  z-index: 1010;
   .custom-dropdown-menu {
     padding: 6px 0;
     color: #fff;

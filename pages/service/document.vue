@@ -55,8 +55,8 @@ export default {
                 { id: 1, name: "R366",image:require('~/static/img/products/R366.jpg')},
                 { id: 1, name: "R366A（大电池厚款）",image:require('~/static/img/products/R366A.jpg') },
                 { id: 1, name: "R350C",image:require('~/static/img/products/R350.jpg') },
-                { id: 1, name: "R606" ,image:require('~/static/img/categorys/go.png') },
-                { id: 1, name: "R530C" ,image:require('~/static/img/products/R530C.jpg')},
+                // { id: 1, name: "R606" ,image:require('~/static/img/categorys/go.png') },
+                { id: 1, name: "R530" ,image:require('~/static/img/products/R530C.jpg')},
               ],
             },
             {

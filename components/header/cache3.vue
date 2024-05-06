@@ -122,7 +122,7 @@ export default {
                 { name: "R366C（UHF）" },
                 { name: "R350C" },
                 { name: "R606" },
-                { name: "R530C" },
+                { name: "R530" },
               ],
             },
             {
