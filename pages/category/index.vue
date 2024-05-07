@@ -241,11 +241,17 @@ export default {
     // 点击筛选
     handleTabClick(item, index) {
       if (index !== 0) {
-        this.$router.push(`/category/${item.id}`);
+        // this.$router.push(`/category/${index}`);
+        this.products = this.tabList[index - 1].children;
+      } else {
+        this.products = []
+        this.tabList.forEach((i) => {
+          this.products = this.products.concat(i.children);
+        });
       }
     },
     handleChange() {
-      console.log(this.active);
+      // console.log(this.active);
       if (this.active !== 0) {
         this.$router.push(`/category/${this.active}`);
       }

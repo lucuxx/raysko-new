@@ -48,13 +48,15 @@
       </b-carousel-slide> -->
     </b-carousel>
     <div
-      class="masthead_btn wow fadeOutDown"
+      class="masthead_btn wow bounce"
       data-wow-iteration="infinite"
-      data-wow-duration="2s"
-      data-wow-delay="1.5s"
+      data-wow-duration="2.5s"
+      data-wow-delay="1s"
     >
-      下拉<br />
+
       <font-awesome-icon size="lg" :icon="['fas', 'angle-double-down']" />
+      <!-- <br /> -->
+      <!-- 下拉 -->
     </div>
   </div>
 </template>

@@ -6,7 +6,7 @@
   >
     <b-row class="container mx-auto" align-h="between" align-v="center">
       <b-col cols="2" class="row header-style">
-        <b-img height="50" :src="require('~/assets/img/logo2.png')" alt="" />
+        <b-img height="50" :src="require('~/assets/img/logo2.png')" alt="" @click="handleToHome" />
       </b-col>
       <b-col cols="7" class="mx-auto custom-nav-bar-wrap">
         <!-- 导航 -->
@@ -361,6 +361,9 @@ export default {
     window.removeEventListener("scroll", this.handleWindowScroll);
   },
   methods: {
+    handleToHome(){
+      this.$router.push("/")
+    },
     // 导航栏点击事件
     handleNavbarClick() {
       this.currentChildren = [];

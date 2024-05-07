@@ -13,7 +13,7 @@
     <GlobalParallax3 />
     <GlobalParallax4 />
     <GlobalParallax5 />
-    <Partner />
+    <!-- <Partner /> -->
   </div>
 </template>
 
