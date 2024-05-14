@@ -185,32 +185,27 @@ export default {
                 {
                   id: "R366",
                   name: "R366",
-                  image: require("~/static/img/categorys/R366.jpg"),
+                  image: require("~/static/img/categorys/icon/R366.png"),
                 },
                 {
                   id: "R366A",
                   name: "R366A",
-                  image: require("~/static/img/categorys/R366A.jpg"),
+                  image: require("~/static/img/categorys/icon/R366A.png"),
                 },
                 {
                   id: "R366-S",
                   name: "R366-S",
-                  image: require("~/static/img/categorys/R366A.jpg"),
+                  image: require("~/static/img/categorys/icon/R366-S.png"),
                 },
                 {
                   id: "R350C",
                   name: "R350C",
-                  image: require("~/static/img/categorys/R350.jpg"),
+                  image: require("~/static/img/categorys/icon/R350C.png"),
                 },
-                // {
-                //   id: 1,
-                //   name: "R606",
-                //   image: require("~/static/img/categorys/go.png"),
-                // },
                 {
                   id: "R530",
                   name: "R530",
-                  image: require("~/static/img/categorys/R530C.jpg"),
+                  image: require("~/static/img/categorys/icon/R530.png"),
                 },
               ],
             },
@@ -221,7 +216,7 @@ export default {
                 {
                   id: "R860",
                   name: "R860",
-                  image: require("~/static/img/categorys/R800C.jpg"),
+                  image: require("~/static/img/categorys/icon/R860.png"),
                 },
                 {
                   id: "R860-S",
@@ -237,7 +232,7 @@ export default {
                 {
                   id: "R888",
                   name: "R888",
-                  image: require("~/static/img/categorys/R888.png"),
+                  image: require("~/static/img/categorys/icon/R888.png"),
                 },
               ],
             },
@@ -248,7 +243,7 @@ export default {
                 {
                   id: "R366C",
                   name: "R366C",
-                  image: require("~/static/img/categorys/R366C.jpg"),
+                  image: require("~/static/img/categorys/icon/R366C.png"),
                 },
                 {
                   id: "R366-UHF",
@@ -269,24 +264,24 @@ export default {
                 {
                   id: "R900P",
                   name: "R900P",
-                  image: require("~/static/img/categorys/R900P.jpg"),
+                  image: require("~/static/img/categorys/icon/R900P.png"),
                 },
 
                 {
                   id: "R6",
                   name: "R6",
-                  image: require("~/static/img/categorys/R6挂壁.jpg"),
+                  image: require("~/static/img/categorys/icon/R6.png"),
                 },
 
                 {
                   id: "R7",
                   name: "R7",
-                  image: require("~/static/img/categorys/R7.jpg"),
+                  image: require("~/static/img/categorys/icon/R7.png"),
                 },
                 {
                   id: "R8",
                   name: "R8",
-                  image: require("~/static/img/categorys/R8.jpg"),
+                  image: require("~/static/img/categorys/icon/R8.png"),
                 },
               ],
             },
@@ -297,12 +292,12 @@ export default {
                 {
                   id: "R229",
                   name: "R229",
-                  image: require("~/static/img/categorys/R229.jpg"),
+                  image: require("~/static/img/categorys/icon/R229.png"),
                 },
                 {
                   id: "R450",
                   name: "R450",
-                  image: require("~/static/img/categorys/R450.jpg"),
+                  image: require("~/static/img/categorys/icon/R450.png"),
                 },
               ],
             },

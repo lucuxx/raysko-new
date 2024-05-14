@@ -3,7 +3,7 @@
     <div class="empty-nav"></div>
     <div class="product-nav-wrap">
       <div class="container mx-auto product-nav">
-        <div class="product-nav-left">R366</div>
+        <div class="product-nav-left">R350C</div>
         <div class="product-nav-right">
           <b-button
             variant="link"
@@ -27,42 +27,47 @@
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R366/R366_detail_01.png')"
+            :src="require('~/static/img/R350C/R350C_detail_01.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R366/R366_detail_02.png')"
+            :src="require('~/static/img/R350C/R350C_detail_02.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R366/R366_detail_03.png')"
+            :src="require('~/static/img/R350C/R350C_detail_03.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R366/R366_detail_04.png')"
+            :src="require('~/static/img/R350C/R350C_detail_04.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R366/R366_detail_05.png')"
+            :src="require('~/static/img/R350C/R350C_detail_05.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R366/R366_detail_06.png')"
+            :src="require('~/static/img/R350C/R350C_detail_06.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R366/R366_detail_07.png')"
+            :src="require('~/static/img/R350C/R350C_detail_07.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R366/R366_detail_08.png')"
+            :src="require('~/static/img/R350C/R350C_detail_08.png')"
+          ></b-img>
+          <b-img
+            class="wow fadeInUp"
+            fluid
+            :src="require('~/static/img/R350C/R350C_detail_09.png')"
           ></b-img>
 
         </div>

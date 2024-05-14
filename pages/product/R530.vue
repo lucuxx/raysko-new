@@ -27,42 +27,42 @@
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R530/530-xiangqing_01.png')"
+            :src="require('~/static/img/R530/R530_detail_01.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R530/530-xiangqing_02.png')"
+            :src="require('~/static/img/R530/R530_detail_02.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R530/530-xiangqing_03.png')"
+            :src="require('~/static/img/R530/R530_detail_03.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R530/530-xiangqing_04.png')"
+            :src="require('~/static/img/R530/R530_detail_04.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R530/530-xiangqing_05.png')"
+            :src="require('~/static/img/R530/R530_detail_05.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R530/530-xiangqing_06.png')"
+            :src="require('~/static/img/R530/R530_detail_06.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R530/530-xiangqing_07.png')"
+            :src="require('~/static/img/R530/R530_detail_07.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R530/530-xiangqing_08.png')"
+            :src="require('~/static/img/R530/R530_detail_08.png')"
           ></b-img>
 
         </div>

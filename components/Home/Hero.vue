@@ -11,30 +11,30 @@
       :interval="4000"
       no-hover-pause
     >
-      <b-carousel-slide caption="">
+      <b-carousel-slide caption="" >
         <template slot="img">
-          <div class="banner-img img1">
+          <div class="banner-img img1" @click.prevent="handleTo('R350C')">
 
           </div>
         </template>
       </b-carousel-slide>
       <b-carousel-slide caption="">
         <template slot="img">
-          <div class="banner-img img2">
+          <div class="banner-img img2"  @click.prevent="handleTo('R366C')">
 
           </div>
         </template>
       </b-carousel-slide>
       <b-carousel-slide caption="">
         <template slot="img">
-          <div class="banner-img img3">
+          <div class="banner-img img3" @click.prevent="handleTo('R800C')">
 
           </div>
         </template>
       </b-carousel-slide>
       <b-carousel-slide caption="">
         <template slot="img">
-          <div class="banner-img img4">
+          <div class="banner-img img4"  @click.prevent="handleTo('R8')">
 
           </div>
         </template>
@@ -103,6 +103,12 @@ export default {
       new WOW({mobile: false}).init();
     }
   },
+  methods:{
+    handleTo(name){
+      console.log(name)
+      this.$router.push(`/product/${name}`)
+    }
+  }
 
 };
 </script>

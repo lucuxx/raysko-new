@@ -27,52 +27,52 @@
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R350/350-xiangqing_01.png')"
+            :src="require('~/static/img/R350/R350_detail_01.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R350/350-xiangqing_02.png')"
+            :src="require('~/static/img/R350/R350_detail_02.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R350/350-xiangqing_03.png')"
+            :src="require('~/static/img/R350/R350_detail_03.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R350/350-xiangqing_04.png')"
+            :src="require('~/static/img/R350/R350_detail_04.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R350/350-xiangqing_05.png')"
+            :src="require('~/static/img/R350/R350_detail_05.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R350/350-xiangqing_06.png')"
+            :src="require('~/static/img/R350/R350_detail_06.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R350/350-xiangqing_07.png')"
+            :src="require('~/static/img/R350/R350_detail_07.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R350/350-xiangqing_08.png')"
+            :src="require('~/static/img/R350/R350_detail_08.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R350/350-xiangqing_09.png')"
+            :src="require('~/static/img/R350/R350_detail_09.png')"
           ></b-img>
           <b-img
             class="wow fadeInUp"
             fluid
-            :src="require('~/static/img/R350/350-xiangqing_10.png')"
+            :src="require('~/static/img/R350/R350_detail_10.png')"
           ></b-img>
         </div>
       </section>
