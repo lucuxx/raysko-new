@@ -42,7 +42,7 @@ module.exports = {
   loading: {
     color: "blue", // 进度条的颜色
     failedColor: "red", // 页面加载失败时的颜色（ 当 data 或 fetch 方法返回错误时）
-    height: "20px", // 进度条的高度(在进度条元素的 style 属性上体现)
+    height: "4px", // 进度条的高度(在进度条元素的 style 属性上体现)
     throttle: 200, // 在 ms 中， 在显示进度条之前等待指定的时间。 用于防止条形闪烁
     duration: 5000, // 进度条的最大显示时长， 单位毫秒。 Nuxt.js 假设页面在该时长内加载完毕
     continuous: false, // 当加载时间超过duration时， 保持动画进度条
