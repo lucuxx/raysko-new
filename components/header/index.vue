@@ -6,7 +6,12 @@
   >
     <b-row class="container mx-auto" align-h="between" align-v="center">
       <b-col cols="2" class="row header-style">
-        <b-img height="50" :src="require('~/assets/img/logo2.png')" alt="" @click="handleToHome" />
+        <b-img
+          height="50"
+          :src="require('~/assets/img/logo2.png')"
+          alt=""
+          @click="handleToHome"
+        />
       </b-col>
       <b-col cols="7" class="mx-auto custom-nav-bar-wrap">
         <!-- 导航 -->
@@ -152,7 +157,7 @@
               class="menuItem"
               @click="handleToProductClick(item)"
             >
-              <b-img fluid :src="item.image"></b-img>
+              <b-img fluid :src="item.image" :key="item.name"></b-img>
               <div>{{ item.name }}</div>
             </div>
           </b-col>
@@ -167,6 +172,12 @@ import NavBar from "@/components/header/NavBar.vue";
 export default {
   name: "MyHeader",
   components: { NavBar },
+  props: {
+    isLock: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       navIndex: 0,
@@ -350,14 +361,17 @@ export default {
     if (process.browser) {
       this.getHeaderHeight();
     }
+    if (this.isLock) {
+      this.showNavbarBg = true;
+    }
     window.addEventListener("scroll", this.handleWindowScroll);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleWindowScroll);
   },
   methods: {
-    handleToHome(){
-      this.$router.push("/")
+    handleToHome() {
+      this.$router.push("/");
     },
     // 导航栏点击事件
     handleNavbarClick() {
@@ -407,11 +421,13 @@ export default {
     },
     // 监听窗口滚动，改变导航背景色
     handleWindowScroll(e) {
-      const myTop =
-        document.documentElement.scrollTop || document.body.scrollTop;
-      const flag = myTop > 30;
-      if (this.showNavbarBg != flag) {
-        this.showNavbarBg = flag;
+      if (!this.isLock) {
+        const myTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const flag = myTop > 30;
+        if (this.showNavbarBg != flag) {
+          this.showNavbarBg = flag;
+        }
       }
     },
     // 获取导航栏高度

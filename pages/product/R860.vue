@@ -455,20 +455,21 @@ export default {
   position: static;
 }
 .empty-nav {
-  background: #001220;
+  background: transparent;
   height: $header-height;
 }
 .product-nav-wrap {
   width: 100%;
-  background-color: snow;
+  background: rgba(17, 16, 16, 0.7);
   position: sticky;
   // z-index: 1004;
   top: 0;
   .product-nav {
     // width: 100%;
-    background-color: snow;
+    // background-color: snow;
     height: $header-height;
-    color: #000;
+    // color: #000;
+    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -480,6 +481,9 @@ export default {
     }
     &-right {
       line-height: $header-height;
+      button {
+        color: #fff;
+      }
     }
   }
 }

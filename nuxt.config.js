@@ -75,7 +75,8 @@ module.exports = {
     {
       src: '@/plugins/vue-count-to',
       ssr: true
-    }
+    },
+    // { src: "@/plugins/vue-lazyload", ssr: false }
   ],
   /**
    * 关闭遥感采集

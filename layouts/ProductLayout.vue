@@ -2,7 +2,7 @@
   <div>
     <Loading :hidden="!show2" />
 
-    <MyHeader v-show="showNavbarBg" />
+    <MyHeader v-show="showNavbarBg"  :isLock="true" />
     <nuxt />
     <concat />
     <my-footer />
@@ -65,10 +65,15 @@ export default {
     handleWindowScroll(e) {
       const myTop =
         document.documentElement.scrollTop || document.body.scrollTop;
+
+
       const flag = myTop > 30;
       if (this.showNavbarBg == flag) {
         this.showNavbarBg = !flag;
+
       }
+
+
     },
   },
 };
