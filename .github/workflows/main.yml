@@ -34,7 +34,7 @@ jobs:
         # npm install
       - name: npm install
         run: |
-          npm install
+          yarn
           npm run build
         env:
           CI: true
