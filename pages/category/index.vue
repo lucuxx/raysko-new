@@ -5,8 +5,8 @@
       <div style="height: 100%">
         <div class="flex">
           <div class="content">
-            <h1 class="wow slideInLeft">产品中心</h1>
-            <p class="wow slideInRight">先进产品，定制服务</p>
+            <!-- <h1 class="wow slideInLeft">产品中心</h1>
+            <p class="wow slideInRight">先进产品，定制服务</p> -->
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@ export default {
 
 <style lang="scss" scoped>
 .header-content {
-  background: url("~/static/img/banner/inside-banner3.jpeg") center center
+  background: url("~/static/img/banner/products_banner.jpg") center center
     no-repeat;
   background-size: cover;
   // background-attachment: fixed;

@@ -11,12 +11,12 @@
             @click="handleToImg"
             >概览</b-button
           >
-          <b-button
+          <!-- <b-button
             variant="link"
             class="text-decoration-none"
             @click="handleToTable('#parameter')"
             >产品参数
-          </b-button>
+          </b-button> -->
         </div>
       </div>
     </div>
