@@ -19,7 +19,7 @@
 
     <b-tooltip target="button-2" placement="left">
       <strong class="font-strong">
-        联系我们 13798209586
+        联系我们 13682386347
       </strong>
     </b-tooltip>
     <div class="Rtop" @click="GoTop()" v-show="flag">

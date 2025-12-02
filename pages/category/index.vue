@@ -135,8 +135,10 @@ export default {
 
 <style lang="scss" scoped>
 .header-content {
-  background: url("~/static/img/banner/products_banner.jpg") center center
+  background: url("https://raysko-image.oss-cn-shenzhen.aliyuncs.com/raysko.com/src_image/home-product/R350C_home.png?Expires=1723022922&OSSAccessKeyId=TMP.3KfJZmRtWtdvApcvQJePkSiQSiL6Xmd7cmTZHaMmJCH5HYuzH4L2igKMVHuNQo7AanYUP6akGGZt8pxfyPafGEujxCea1v&Signature=EAOssiG2AZ6d0xVhjUpSaRrBhGY%3D") center center
     no-repeat;
+  // background: url("~/static/img/banner/products_banner.jpg") center center
+  //   no-repeat;
   background-size: cover;
   // background-attachment: fixed;
 }

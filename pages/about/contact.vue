@@ -54,12 +54,12 @@ export default {
       contactList: [
         {
           title: "咨询电话:",
-          desc: "熊先生 13798209586",
+          desc: "熊先生 13682386347",
           img: require("~/static/img/about/mobile.png"),
         },
         {
           title: "邮箱地址:",
-          desc: "xiongp@raysko.com",
+          desc: "xiongxy@raysko.com",
           img: require("~/static/img/about/email.png"),
         },
         {

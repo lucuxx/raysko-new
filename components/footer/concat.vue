@@ -50,15 +50,15 @@
             <!-- <dt class="title mb-2">关注我们</dt> -->
             <dd>
               <font-awesome-icon size="lg" :icon="['fas', 'phone']" />
-              13798209586
+              13682386347
             </dd>
             <dd>
               <font-awesome-icon size="lg" :icon="['fas', 'envelope']" />
-              xiongp@raysko.com
+              xiongxy@raysko.com
             </dd>
             <dd>
               <font-awesome-icon size="lg" :icon="['fas', 'compass']" />
-              深圳市宝安区兴业路2005号广兴源互联网创意园C栋509
+              深圳市宝安区航城街道后瑞社区后瑞第二工业区13号2栋301
             </dd>
             <dd>
               <font-awesome-icon size="lg" :icon="['fas', 'globe']" />
